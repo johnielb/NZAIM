@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<main class="cover" role="main" id="main-content">
+  <div class="cover__stripe"></div>
+
+  <div class="cover__body">
+    <h1 class="cover__title">
+      Re-Engineering New Zealand Government Guidance for <em>Trustworthy AI System Delivery</em>
+    </h1>
+
+    <p class="cover__subtitle">Authors</p>
+    <p class="cover__authors">
+      {% for author in site.authors %}
+        {{ author.name }}{% unless forloop.last %},&nbsp;{% endunless %}
+      {% endfor %}
+    </p>
+    <p class="cover__institution">{{ site.institution }}</p>
+
+    <div class="cover__hero-image">
+      <img src="{{ '/assets/images/image1.jpeg' | relative_url }}" alt="Cover photo" />
+    </div>
+
+    <div class="cover__epigraph">
+      <blockquote>
+        <p>"The use of data and Artificial Intelligence is the big opportunity of our time.
+        We stand at the cusp of a digital revolution that has the power to transform the way
+        our government serves New Zealanders. […] I'd like to see the public service embrace
+        the potential of AI."</p>
+      </blockquote>
+      <cite>— Minister for Digitising Government Hon Judith Collins to government chief
+      executives, February 2025</cite>
+    </div>
+  </div>
+
+  {% if content and content != '' %}
+  <div class="cover__abstract">
+    <h2 class="cover__abstract-heading">Abstract</h2>
+    <div class="cover__abstract-body">
+      {{ content }}
+    </div>
+  </div>
+  {% endif %}
+
+</main>

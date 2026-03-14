@@ -1,0 +1,198 @@
+{% comment %}
+  Left sidebar navigation.
+  - Section entries link to each _sections/*.md page.
+  - H2 sub-items are revealed for the currently active section.
+  - "Action:" H2s get the --lime colour treatment.
+{% endcomment %}
+
+<div class="sidebar__brand">
+  <a href="{{ '/' | relative_url }}">
+    <span class="sidebar__brand-title">Re-Engineering New Zealand Government Guidance for Trustworthy AI System Delivery</span>
+  </a>
+</div>
+
+<nav class="sidebar__nav" aria-label="Document sections">
+  <ul class="nav__list">
+
+    {%- assign home_active = false -%}
+    {%- if page.url == "/" or page.url == "/whitepaper/" -%}
+      {%- assign home_active = true -%}
+    {%- endif -%}
+    <li class="nav__item {% if home_active %}is-active{% endif %}">
+      <a class="nav__section-link {% if home_active %}is-current{% endif %}"
+         href="{{ '/' | relative_url }}"
+         aria-current="{% if home_active %}page{% else %}false{% endif %}">
+        <span class="nav__section-short">Home</span>
+      </a>
+    </li>
+
+    {%- assign sections = site.nav_sections -%}
+    {%- for section in sections -%}
+      {%- assign section_url = "/sections/" | append: section.file | append: "/" | relative_url -%}
+      {%- assign is_active = false -%}
+      {%- if page.url contains section.file -%}
+        {%- assign is_active = true -%}
+      {%- endif -%}
+
+      <li class="nav__item {% if is_active %}is-active{% endif %}">
+        <a class="nav__section-link {% if is_active %}is-current{% endif %}"
+           href="{{ section_url }}"
+           aria-current="{% if is_active %}page{% else %}false{% endif %}">
+          {%- if section.number -%}<span class="nav__section-num">{{ section.number }}</span>{%- endif -%}
+          <span class="nav__section-short">{{ section.title }}</span>
+        </a>
+
+        {%- comment -%}
+          Sub-items: only shown for the active section.
+          We pull H2s from the matching page in site.pages.
+        {%- endcomment -%}
+        {%- if is_active -%}
+          {%- for p in site.pages -%}
+            {%- if p.name == section.file | append: ".md" -%}
+              {%- assign h2s = p.content | split: "## " -%}
+              {%- if h2s.size > 1 -%}
+                <ul class="nav__sub">
+                  {%- for chunk in h2s offset: 1 -%}
+                    {%- assign heading_text = chunk | split: "
+" | first | strip -%}
+                    {%- if heading_text != "" -%}
+                      {%- assign is_action = false -%}
+                      {%- if heading_text contains "Action:" -%}
+                        {%- assign is_action = true -%}
+                      {%- endif -%}
+                      {%- comment -%}Generate slug matching kramdown auto_ids{%- endcomment -%}
+                      {%- assign slug = heading_text | downcase
+                            | replace: " ", "-"
+                            | replace: ":", ""
+                            | replace: "'", ""
+                            | replace: "'", ""
+                            | replace: "–", ""
+                            | replace: "ā", "a"
+                            | replace: "ō", "o"
+                            | replace: "ū", "u"
+                            | replace: "ī", "i"
+                            | replace: "ē", "e"
+                            | replace: ".", ""
+                            | replace: ",", ""
+                            | replace: "/", ""
+                            | replace: "(", ""
+                            | replace: ")", "" -%}
+                      <li class="nav__sub-item {% if is_action %}is-action{% endif %}">
+                        <a class="nav__sub-link {% if is_action %}is-action{% endif %}"
+                           href="{{ section_url | append: '#' | append: slug }}"
+                           title="{{ heading_text }}">
+                          {{ heading_text | truncate: 58 }}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+
+  </ul>
+</nav>
+
+<div class="sidebar__footer">
+  <p>{{ site.institution }}</p>
+  <p>{{ site.date }}</p>
+</div>
+
+<style>
+/* Nav component styles — scoped here to avoid SCSS complexity */
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.nav__section-link {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .65rem 1.25rem;
+  font-size: .8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
+  line-height: 1.35;
+  transition: color 150ms ease, background 150ms ease;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255,255,255,.05);
+    border-left-color: rgba(255,255,255,.2);
+  }
+}
+
+.nav__section-link.is-current {
+  color: #fff;
+  background: rgba(0,120,187,.2);
+  border-left-color: #0078BB;
+  font-weight: 700;
+}
+
+/* Collapsed: only short_title visible */
+.nav__section-num {
+  flex-shrink: 0;
+  font-size: .7rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+  min-width: 1.2rem;
+}
+
+.nav__section-short {
+  display: block;
+}
+
+/* Sub-items (H2s of active section) */
+.nav__sub {
+  list-style: none;
+  padding: 0 0 .5rem 0;
+  margin: 0;
+  background: rgba(0,0,0,.15);
+}
+
+.nav__sub-item {
+  border: none;
+}
+
+.nav__sub-link {
+  display: block;
+  padding: .38rem 1.25rem .38rem 1.75rem;
+  font-size: .73rem;
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+  line-height: 1.3;
+  transition: color 150ms ease;
+  border-left: 2px solid transparent;
+  margin-left: 3px;
+
+  &:hover {
+    color: rgba(255,255,255,.85);
+    border-left-color: rgba(255,255,255,.2);
+  }
+}
+
+/* Action: H2 items — lime treatment */
+.nav__sub-item.is-action .nav__sub-link,
+.nav__sub-link.is-action {
+  color: rgba(120, 189, 0, .85);
+  font-weight: 600;
+
+  &:hover {
+    color: #78BD00;
+    border-left-color: #78BD00;
+  }
+}
+</style>

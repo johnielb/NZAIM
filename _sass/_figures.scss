@@ -1,0 +1,226 @@
+// ─── Figure wrapper (used via _includes/figure.html) ────────────────────────
+.figure {
+  margin: $sp-8 0;
+  max-width: 100%;
+
+  &--full {
+    margin-left: -$sp-10;
+    margin-right: -$sp-10;
+
+    @media (max-width: 900px) {
+      margin-left: -$sp-5;
+      margin-right: -$sp-5;
+    }
+  }
+
+  &--float-right {
+    float: right;
+    margin: $sp-4 0 $sp-6 $sp-8;
+    max-width: 45%;
+    clear: right;
+
+    @media (max-width: 900px) {
+      float: none;
+      max-width: 100%;
+      margin: $sp-6 0;
+    }
+  }
+}
+
+.figure__inner {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+// ─── Placeholder container (for <!-- FIGURE_N --> images not yet embedded) ───
+.figure__placeholder {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $surface 0%, rgba($grey-light, 0.6) 100%);
+  padding: $sp-8 $sp-10;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: background $transition-base;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba($blue, 0.04) 0%, rgba($teal, 0.06) 100%);
+  }
+
+  // Type badge (top-right corner)
+  &::before {
+    content: attr(data-type);
+    position: absolute;
+    top: $sp-3;
+    right: $sp-3;
+    font-size: $text-xs;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px $sp-2;
+    border-radius: $border-radius;
+    background: $navy;
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+.figure__placeholder-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: $sp-4;
+  opacity: 0.25;
+  color: $navy;
+}
+
+.figure__placeholder-id {
+  font-family: $font-mono;
+  font-size: $text-sm;
+  font-weight: 700;
+  color: $navy;
+  margin-bottom: $sp-2;
+}
+
+.figure__placeholder-hint {
+  font-size: $text-xs;
+  color: $text-light;
+}
+
+// ─── Actual image container ────────────────────────────────────────────────
+.figure__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+// ─── Caption bar ──────────────────────────────────────────────────────────
+.figure__caption {
+  padding: $sp-3 $sp-5;
+  background: $white;
+  border-top: 1px solid $border;
+  font-size: $text-xs;
+  color: $text-light;
+  line-height: $leading-snug;
+  font-style: italic;
+
+  strong {
+    font-style: normal;
+    font-weight: 700;
+    color: $navy;
+    margin-right: $sp-1;
+  }
+}
+
+// ─── Figure type visual identities ────────────────────────────────────────
+// pyramid_hierarchy → blue gradient top bar
+.figure--pyramid_hierarchy .figure__inner {
+  border-top: 3px solid $blue;
+}
+
+// nested_taxonomy → teal gradient top bar
+.figure--nested_taxonomy .figure__inner {
+  border-top: 3px solid $teal;
+}
+
+// matrix_empty → grey top bar
+.figure--matrix_empty .figure__inner {
+  border-top: 3px solid $grey-mid;
+}
+
+// matrix_populated → navy top bar
+.figure--matrix_populated .figure__inner {
+  border-top: 3px solid $navy;
+
+  .figure__placeholder {
+    min-height: 280px;
+  }
+}
+
+// annotated_pyramid → coral accent
+.figure--annotated_pyramid .figure__inner {
+  border-top: 3px solid $coral;
+}
+
+// table → green accent
+.figure--table .figure__inner {
+  border-top: 3px solid $green;
+}
+
+// decorative → subtle lime
+.figure--decorative .figure__inner {
+  border-top: 3px solid $lime;
+  opacity: 0.7;
+}
+
+// ─── Diagram interactive container ────────────────────────────────────────
+// Used for taxonomy / hierarchy diagrams that will be rendered interactively
+.diagram {
+  position: relative;
+  width: 100%;
+  padding: $sp-6;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $border-radius-lg;
+  margin: $sp-8 0;
+
+  // Scrollable if content overflows
+  overflow-x: auto;
+}
+
+.diagram__label {
+  position: absolute;
+  top: $sp-3;
+  left: $sp-4;
+  font-size: $text-xs;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-light;
+}
+
+// ─── Figure grid (for multiple small figures side by side) ──────────────
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $sp-5;
+  margin: $sp-8 0;
+}
+
+// ─── Lightbox trigger ────────────────────────────────────────────────────
+.figure__expand {
+  position: absolute;
+  bottom: $sp-3;
+  right: $sp-3;
+  width: 28px;
+  height: 28px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid $border;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity $transition-fast;
+  color: $navy;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.figure__inner:hover .figure__expand {
+  opacity: 1;
+}

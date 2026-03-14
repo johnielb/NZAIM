@@ -1,0 +1,93 @@
+title: "Re-Engineering New Zealand Government Guidance for Trustworthy AI System Delivery"
+short_title: "NZAIM Whitepaper"
+description: "A whitepaper proposing a unified New Zealand Artificial Intelligence Manual"
+authors:
+  - name: "Johniel Bocacao"
+    affiliation: "Te Herenga Waka Victoria University of Wellington"
+  - name: "Ali Knott"
+    affiliation: "Te Herenga Waka Victoria University of Wellington"
+  - name: "Andrew Lensen"
+    affiliation: "Te Herenga Waka Victoria University of Wellington"
+date: "2 March 2026"
+institution: "Te Herenga Waka Victoria University of Wellington"
+
+baseurl: "/whitepaper"
+url: ""
+
+# Treat _sections/ as a Jekyll collection so each .md becomes an HTML page
+collections:
+  sections:
+    output: true
+    permalink: /sections/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: sections
+    values:
+      layout: section
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  toc_levels: [1, 2]
+  syntax_highlighter: rouge
+
+highlighter: rouge
+
+sass:
+  sass_dir: _sass
+  style: compressed
+  quiet_deps: true
+  silence_deprecations:
+    - import
+
+permalink: pretty
+
+exclude:
+  - extract_whitepaper.py
+  - whitepaper.docx
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Navigation sections in order
+nav_sections:
+  - file: 01-section1
+    number: "1"
+    title: "Rules and best practice in NZ for algorithm and AI system delivery are currently fragmented"
+    short_title: "1. Fragmented Guidance"
+    layout: section
+  - file: 02-section2
+    number: "2"
+    title: "The Algorithm Charter has yet to develop into the world-class framework that it could be"
+    short_title: "2. Algorithm Charter"
+    layout: section
+  - file: 03-section3
+    number: "3"
+    title: "The GCDO's PSAIF and RAIG is not currently a unified guidance framework"
+    short_title: "3. PSAIF & RAIG"
+    layout: section
+  - file: 04-section4
+    number: "4"
+    title: "Like the NZISM, the NZAIM should delineate the different types of algorithm and AI techniques"
+    short_title: "4. Taxonomy"
+    layout: section
+  - file: 05-section5
+    number: "5"
+    title: "Guidance must acknowledge different requirements across different use cases AI is applied in"
+    short_title: "5. Use Cases"
+    layout: section
+  - file: 06-conclusion
+    title: "The NZAIM unifies technical guidance, while supporting frameworks can be re-engineered"
+    short_title: "Conclusion"
+    layout: section
+  - file: 07-appendix1
+    title: "Appendix 1: Summary of challenges by technical category"
+    short_title: "Appendix 1"
+    layout: section
+  - file: 08-appendix2
+    title: "Appendix 2: Map of NZ government algorithms and AI"
+    short_title: "Appendix 2"
+    layout: section

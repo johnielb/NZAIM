@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{% comment %}
+  Build page-level ToC from H1 and H2 headings in the page content.
+  Action: headings get a data-action attribute for lime styling.
+{% endcomment %}
+
+<div class="content-wrap">
+
+  <!-- Main prose -->
+  <article class="content" role="main">
+    {{ content }}
+  </article>
+
+  <!-- In-page ToC (right rail) -->
+  {% assign toc_items = content | split: '<h' %}
+  <nav class="page-toc" aria-label="On this page">
+    <div class="page-toc__inner">
+      <p class="page-toc__label">On this page</p>
+      <ul class="page-toc__list">
+        {% for chunk in toc_items %}
+          {% assign level = chunk | slice: 0 %}
+          {% if level == '1' or level == '2' %}
+            {% assign parts    = chunk | split: '>' %}
+            {% assign open_tag = parts | first %}
+            {% assign id_start = open_tag | split: 'id="' | last | split: '"' | first %}
+            {% assign text_raw = parts[1] | split: '<' | first | strip_html | strip %}
+            {% if text_raw != "" and id_start != "" %}
+              {% assign is_action = false %}
+              {% if text_raw contains 'Action:' %}{% assign is_action = true %}{% endif %}
+              <li class="{% if level == '1' %}toc-h1{% else %}toc-h2{% endif %}{% if is_action %} toc-action{% endif %}">
+                <a href="#{{ id_start }}"{% if is_action %} data-action="true"{% endif %}>
+                  {{ text_raw }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+
+</div>

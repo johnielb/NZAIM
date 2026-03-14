@@ -1,0 +1,21 @@
+---
+layout: cover
+title: "Re-Engineering New Zealand Government Guidance for Trustworthy AI System Delivery"
+short_title: "Home"
+permalink: /
+---
+The digital revolution brought about by new techniques in Artificial Intelligence (AI), packaged into general-purpose user-friendly tools like ChatGPT, has rapidly transformed how people work, learn, and live. Just as businesses are using AI to enhance productivity and deliver genuinely personalised customer experiences, government agencies in Aotearoa New Zealand ("the Government") are now also using AI to improve how they serve the citizenry. However, just as businesses have used traditional AI techniques for decades for narrow data-driven decision-making, the Government has been using traditional AI techniques as early as 2001 to inform decision-making in offender management. Consequently, the Government has, for decades, considered what it means to develop effective, safe, fair, and accountable AI, given the mandatory, monopolistic nature of government actions and decisions, and the government's enhanced ability to operate when it maintains the trust of its citizens.
+
+Predating ChatGPT and Generative AI (GenAI), the culmination of this work was the Algorithm Charter, voluntarily committing agencies to maintaining public trust in their use of algorithms, of which AI is a subset. This paper argues that this Charter was world class in principle but lacked specificity and enforcement. The subsequent algorithm impact assessment (AIA) toolkit provided specificity, but without enforcement, no agency has published a completed AIA.
+
+In the age of GenAI, a parallel guidance framework has emerged specific to GenAI, while the Algorithm Charter work programme has not kept pace with the changes and increase in the use of AI. Both now overlap significantly in scope and substantive guidance, while omitting useful substance from each other, resulting in duplicated interpretive effort in navigating them both.
+
+While experts have rightfully called for further explicit regulation around the broader harm AI poses to New Zealand, this paper argues that – at least for government AI systems – the right fundamental legislation is already in place to enforce best practice in high-impact use of AI, while providing flexibility for lower-impact uses. Despite being older than the modern computer, the Official Information Act 1982 sets an adequate floor for government transparency around impactful automated decision-making. Instead, this paper calls for streamlining guidance across algorithms and all types of AI, given the technical universality of the major risks (and therefore mitigations) in any such system, and the legal universality of decisions and recommendations informed by technology. The legal principles are fit for purpose; unified guidance is all you need.
+
+In addition to universal challenges, such unified guidance must consider both the unique challenges within certain types of algorithms and AI, and the unique challenges within the context of government in which these systems are deployed. I propose a technical-contextual taxonomy that goes into the right level of depth to provide enough utility in governance.
+
+## About the Author
+
+Johniel Bocacao has held multiple roles in the data and policy space across government over the last five years. He currently holds a Postgraduate Certificate in Science in Artificial Intelligence, with academic experience spanning the design of databases, data products, computer games and algorithms; software engineering practice; and offensive, defensive and organisational cybersecurity. He is working towards a Master of Science in Artificial Intelligence. This whitepaper serves as an overview of the actionable conclusions of the thesis.
+
+His current role at ACC has informed his perspective around the use of AI in an operational setting. With modern technology, security, privacy and data science systems and capability, ACC leads in the careful yet innovative design and adoption of AI in the public service. His specific role in evidence and analytics across multiple organisations has informed how he sees AI use in a policy setting: delivering products in, and promoting the use of, predictive analytics to unlock a powerful evidence base for both public and private firms to make better decisions.r

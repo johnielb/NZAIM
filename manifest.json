@@ -1,0 +1,37 @@
+{
+  "FIGURE_1": {
+    "filename": "image1.jpeg",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_2": {
+    "filename": "image2.png",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_3": {
+    "filename": "image4.png",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_4": {
+    "filename": "image14.png",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_5": {
+    "filename": "image39.png",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_6": {
+    "filename": "image40.png",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_7": {
+    "filename": "image41.png",
+    "caption": "",
+    "type": "decorative"
+  }
+}

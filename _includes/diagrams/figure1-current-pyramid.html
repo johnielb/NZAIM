@@ -1,0 +1,479 @@
+<div class="fig1-wrap" id="fig-current-pyramid">
+<style>
+.fig1-wrap { font-family: inherit; margin: 2rem 0; }
+.fig1-inner { position: relative; }
+.fig1-inner svg { width: 100%; height: auto; display: block; }
+.fig1-pill { cursor: pointer; }
+.fig1-pill rect { transition: filter 0.15s; }
+.fig1-pill:hover rect.pill-bg { filter: brightness(1.15); }
+.fig1-pill:focus { outline: none; }
+.fig1-pill:focus rect.pill-bg { filter: brightness(1.2); }
+.fig1-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #182549;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  max-width: 220px;
+  line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.fig1-tooltip.visible { opacity: 1; }
+.fig1-tt-name { display: block; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.2rem; }
+.fig1-tt-type { display: inline-block; font-size: 0.7rem; opacity: 0.8; margin-right: 0.4rem; }
+.fig1-tt-maint { display: inline-block; font-size: 0.7rem; opacity: 0.8; }
+.fig1-detail {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: #f0f4ff;
+  border-left: 4px solid #182549;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  display: none;
+}
+.fig1-detail.open { display: block; }
+.fig1-detail-name { font-weight: 700; font-size: 1rem; color: #182549; margin-bottom: 0.25rem; }
+.fig1-detail-meta { font-size: 0.78rem; color: #555; margin-bottom: 0.5rem; }
+.fig1-detail-desc { color: #333; }
+.fig1-detail-close { float: right; cursor: pointer; font-size: 1.1rem; color: #888; border: none; background: none; padding: 0; line-height: 1; }
+.fig1-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #444;
+}
+.fig1-legend-group { display: flex; align-items: center; gap: 0.75rem; }
+.fig1-legend-title { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #666; margin-right: 0.25rem; }
+.fig1-legend-item { display: flex; align-items: center; gap: 0.35rem; }
+.fig1-legend-swatch { width: 28px; height: 14px; border-radius: 7px; flex-shrink: 0; }
+.fig1-legend-maint { display: flex; align-items: center; gap: 0.35rem; }
+.fig1-legend-maint-badge {
+  width: 28px; height: 14px; border-radius: 7px;
+  background: #dde4f0; border: 2px solid #182549; flex-shrink: 0;
+}
+.fig1-caption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 0.75rem;
+}
+</style>
+
+<div class="fig1-inner">
+  <svg id="fig1-svg" viewBox="0 0 880 560" role="img"
+       aria-label="Current state hierarchy of NZ government AI frameworks"
+       xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="fig1-shadow" x="-5%" y="-5%" width="110%" height="110%">
+        <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.18)"/>
+      </filter>
+    </defs>
+
+    <!-- Layer band fills (trapezoids) -->
+    <g id="fig1-bands"></g>
+    <!-- Divider lines -->
+    <g id="fig1-dividers"></g>
+    <!-- Layer labels -->
+    <g id="fig1-layer-labels"></g>
+    <!-- Pyramid outline -->
+    <g id="fig1-outline"></g>
+    <!-- Pills -->
+    <g id="fig1-pills" role="list"></g>
+  </svg>
+  <div class="fig1-tooltip" id="fig1-tooltip" role="tooltip" aria-hidden="true">
+    <strong class="fig1-tt-name"></strong>
+    <span class="fig1-tt-type"></span>
+    <span class="fig1-tt-maint"></span>
+  </div>
+</div>
+
+<div class="fig1-detail" id="fig1-detail" role="region" aria-label="Selected framework detail">
+  <button class="fig1-detail-close" id="fig1-detail-close" aria-label="Close detail">×</button>
+  <div class="fig1-detail-name" id="fig1-detail-name"></div>
+  <div class="fig1-detail-meta" id="fig1-detail-meta"></div>
+  <div class="fig1-detail-desc" id="fig1-detail-desc"></div>
+</div>
+
+<div class="fig1-legend">
+  <div class="fig1-legend-group">
+    <span class="fig1-legend-title">Type:</span>
+    <span class="fig1-legend-item"><span class="fig1-legend-swatch" style="background:#B91C6E;"></span>Law</span>
+    <span class="fig1-legend-item"><span class="fig1-legend-swatch" style="background:#6B3A9E;"></span>Standard</span>
+    <span class="fig1-legend-item"><span class="fig1-legend-swatch" style="background:#C04080;"></span>Principle</span>
+    <span class="fig1-legend-item"><span class="fig1-legend-swatch" style="background:#7040A8;"></span>Guidance</span>
+    <span class="fig1-legend-item"><span class="fig1-legend-swatch" style="background:#D05580;"></span>Charter</span>
+  </div>
+  <div class="fig1-legend-group">
+    <span class="fig1-legend-title">Maintained by:</span>
+    <span class="fig1-legend-maint"><span class="fig1-legend-maint-badge" style="border-color:#2563EB; border-style:solid;"></span>GCDS</span>
+    <span class="fig1-legend-maint"><span class="fig1-legend-maint-badge" style="border-color:#059669; border-style:dashed;"></span>GCISO</span>
+    <span class="fig1-legend-maint"><span class="fig1-legend-maint-badge" style="border-color:#D97706; border-style:dotted; border-width:3px;"></span>GCDO</span>
+  </div>
+</div>
+
+<p class="fig1-caption">
+  Figure 1: Current state hierarchy of laws, standards, principles and charters, and guidance
+  that inform the use of information, information technology, algorithms and AI systems —
+  coloured by instrument type, outlined by system leader. Click any node for details.
+</p>
+
+<script>
+(function(){
+  // Pyramid geometry
+  // Flat-top trapezoid: top edge x=[340,540] at y=40; bottom x=[30,850] at y=520
+  const PY = { topY:40, botY:520, topLeft:340, topRight:540, botLeft:30, botRight:850 };
+  const H = PY.botY - PY.topY; // 480
+
+  function leftX(y)  { return PY.topLeft  + (y - PY.topY) / H * (PY.botLeft  - PY.topLeft);  }
+  function rightX(y) { return PY.topRight + (y - PY.topY) / H * (PY.botRight - PY.topRight); }
+
+  // Layer bands: [y_top, y_bottom, name, fill, id]
+  const LAYERS = [
+    { id:'benefits',   y1:40,  y2:136, name:'Benefits\nRealisation', fill:'rgba(120,189,0,0.10)',  lpos:'inside' },
+    { id:'ai-systems', y1:136, y2:232, name:'AI Systems',             fill:'rgba(24,37,73,0.07)',   lpos:'inside' },
+    { id:'algorithms', y1:232, y2:328, name:'Algorithms',             fill:'rgba(24,37,73,0.055)',  lpos:'inside' },
+    { id:'it',         y1:328, y2:424, name:'Information Technology', fill:'rgba(24,37,73,0.04)',   lpos:'inside' },
+    { id:'info',       y1:424, y2:520, name:'Information',            fill:'rgba(24,37,73,0.025)',  lpos:'inside' },
+  ];
+
+  const TYPE_COLOR = {
+    law:      '#B91C6E',
+    standard: '#6B3A9E',
+    principle:'#C04080',
+    guidance: '#7040A8',
+    charter:  '#D05580',
+  };
+  const MAINT_STROKE = {
+    GCDS:  { color:'#2563EB', dash:'none', w:2.5 },
+    GCISO: { color:'#059669', dash:'6,3',  w:2.5 },
+    GCDO:  { color:'#D97706', dash:'3,3',  w:3   },
+  };
+
+  const NODES = [
+    // Information layer
+    { id:'OIA',    abbr:'OIA',      name:'Official Information Act 1982',            type:'law',       maint:null,   layer:'info',
+      desc:'Promotes government transparency and accountability by providing citizens a right of access to official information.' },
+    { id:'Privacy',abbr:'Privacy',  name:'Privacy Act 2020',                          type:'law',       maint:null,   layer:'info',
+      desc:'Governs how agencies collect, use, disclose, store, and provide access to personal information about individuals.' },
+    { id:'PRA',    abbr:'PRA',      name:'Public Records Act 2005',                   type:'law',       maint:null,   layer:'info',
+      desc:'Requires public offices to create and maintain full and accurate records to support accountability and future use.' },
+    { id:'IRMS',   abbr:'IRMS',     name:'Information & Records Management Standard', type:'standard',  maint:'GCDS', layer:'info',
+      desc:'Mandatory standard for managing official information and records, maintained by the Government Chief Data Steward.' },
+    { id:'DPUP',   abbr:'DPUP',     name:'Data Protection and Use Policy',            type:'principle', maint:'GCDS', layer:'info',
+      desc:'Principles guiding how government agencies protect, manage and ethically use data assets.' },
+    { id:'NTP',    abbr:'NTP',      name:'Ngā Tikanga Paihere',                       type:'principle', maint:'GCDS', layer:'info',
+      desc:'Data sharing guidance grounded in Māori tikanga, supporting safe and appropriate data exchange.' },
+    { id:'PIA-TK', abbr:'PIA TK',  name:'Privacy Impact Assessment Toolkit',         type:'guidance',  maint:null,   layer:'info',
+      desc:'Practical guidance for agencies conducting privacy impact assessments before implementing new data practices.' },
+    { id:'MDSov',  abbr:'MDSov',    name:'Māori Data Sovereignty Principles',         type:'principle', maint:null,   layer:'info',
+      desc:'Principles asserting indigenous rights and interests in data, advocating that Māori data should be subject to Māori governance.' },
+    { id:'MDG',    abbr:'MDG',      name:'Mandatory Data Guidelines',                 type:'guidance',  maint:'GCDS', layer:'info',
+      desc:'Mandatory guidelines for data collection, management, quality and interoperability across the public service.' },
+    // IT layer
+    { id:'GWS',    abbr:'GWS',      name:'Government Web Standards',                  type:'standard',  maint:'GCDO', layer:'it',
+      desc:'Standards ensuring NZ government websites are accessible, secure, and consistent in their digital design.' },
+    { id:'DSDS',   abbr:'DSDS',     name:'Digital Service Design Standard',           type:'standard',  maint:'GCDO', layer:'it',
+      desc:'Principles and practices for designing user-centred government digital services, maintained by the GCDO.' },
+    { id:'ISO27k', abbr:'ISO 27k',  name:'ISO 27000 Information Security Standards',  type:'standard',  maint:null,   layer:'it',
+      desc:'International family of standards for establishing, implementing and maintaining information security management systems.' },
+    { id:'NZISM',  abbr:'NZISM',    name:'NZ Information Security Manual',            type:'standard',  maint:'GCISO',layer:'it',
+      desc:'Mandatory baseline security controls for NZ government ICT systems, maintained by the Government Chief Information Security Officer.' },
+    { id:'PSR',    abbr:'PSR',      name:'Protective Security Requirements',          type:'standard',  maint:'GCISO',layer:'it',
+      desc:'Framework for managing personnel, physical, and information security risks across government agencies.' },
+    { id:'CRDT',   abbr:'CRDT',     name:'Cloud Risk & Decision Tool',                type:'guidance',  maint:'GCISO',layer:'it',
+      desc:'Guidance to support agencies in assessing and managing risks when adopting cloud-based services.' },
+    // Algorithms layer
+    { id:'AC',     abbr:'AC',       name:'Algorithm Charter',                         type:'charter',   maint:null,   layer:'algorithms',
+      desc:'Voluntary charter committing government agencies to be transparent, accountable, and fair in their use of algorithms.' },
+    { id:'AIA-TK', abbr:'AIA TK',  name:'Algorithmic Impact Assessment Toolkit',     type:'guidance',  maint:null,   layer:'algorithms',
+      desc:'Practical toolkit for agencies to assess and mitigate potential harms from algorithmic decision-making.' },
+    { id:'MASov',  abbr:'MASov',    name:'Māori Algorithm Sovereignty',               type:'principle', maint:null,   layer:'algorithms',
+      desc:'Emerging principles asserting Māori rights to govern the use of algorithms that affect Māori communities and data.' },
+    // AI Systems layer
+    { id:'PSAIF',  abbr:'PSAIF',    name:'Public Service AI Framework',               type:'guidance',  maint:'GCDO', layer:'ai-systems',
+      desc:'Framework providing guidance to government agencies on adopting AI responsibly, maintained by the Government Chief Digital Officer.' },
+    { id:'RAIG',   abbr:'RAIG',     name:'Responsible AI Guidance',                   type:'guidance',  maint:'GCDO', layer:'ai-systems',
+      desc:'Supplementary guidance supporting the PSAIF, addressing ethics, safety and accountability in AI deployment.' },
+    { id:'MAIG',   abbr:'MAIG',     name:'Mandatory AI Guidelines',                   type:'guidance',  maint:'GCDO', layer:'ai-systems',
+      desc:'Mandatory requirements for government agencies deploying AI systems in high-risk decision-making contexts.' },
+    { id:'ISO42k', abbr:'ISO 42k+', name:'ISO 42001+ AI Management Systems',         type:'standard',  maint:null,   layer:'ai-systems',
+      desc:'International standards family for AI management systems, including risk management, governance and transparency requirements.' },
+  ];
+
+  const PILL_W = 72, PILL_H = 20, PILL_RX = 10, GAP_X = 10, GAP_Y = 30;
+
+  function layoutLayer(nodes, layerY1, layerY2) {
+    const cx = 440;
+    const bandH = layerY2 - layerY1;
+    // use the narrower top width as constraint
+    const topUsable = rightX(layerY1) - leftX(layerY1);
+    const perRow = Math.max(1, Math.floor((topUsable + GAP_X) / (PILL_W + GAP_X)));
+    const rows = [];
+    for (let i = 0; i < nodes.length; i += perRow) rows.push(nodes.slice(i, i + perRow));
+    const totalH = rows.length * PILL_H + (rows.length - 1) * (GAP_Y - PILL_H);
+    const startY = (layerY1 + layerY2) / 2 - totalH / 2 + PILL_H / 2;
+
+    return rows.flatMap((row, ri) => {
+      const rowW = row.length * PILL_W + (row.length - 1) * GAP_X;
+      const startX = cx - rowW / 2;
+      return row.map((node, ci) => ({
+        node,
+        x: startX + ci * (PILL_W + GAP_X),
+        y: startY + ri * GAP_Y,
+      }));
+    });
+  }
+
+  function svgEl(tag, attrs, text) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+
+  function buildPyramid() {
+    // Band fills
+    const bands = document.getElementById('fig1-bands');
+    const dividers = document.getElementById('fig1-dividers');
+    const outline = document.getElementById('fig1-outline');
+    const layerLabels = document.getElementById('fig1-layer-labels');
+
+    LAYERS.forEach(layer => {
+      const { y1, y2, fill } = layer;
+      const lx1 = leftX(y1), rx1 = rightX(y1);
+      const lx2 = leftX(y2), rx2 = rightX(y2);
+      const pts = `${lx1},${y1} ${rx1},${y1} ${rx2},${y2} ${lx2},${y2}`;
+      bands.appendChild(svgEl('polygon', { points: pts, fill, 'stroke-width': 0 }));
+    });
+
+    // Dividers (horizontal lines at layer boundaries, except outermost)
+    [136, 232, 328, 424].forEach(y => {
+      dividers.appendChild(svgEl('line', {
+        x1: leftX(y), y1: y, x2: rightX(y), y2: y,
+        stroke: '#c0c0c0', 'stroke-width': 1, 'stroke-dasharray': '4,4'
+      }));
+    });
+
+    // Outer pyramid outline
+    const pts = `${PY.topLeft},${PY.topY} ${PY.topRight},${PY.topY} ${PY.botRight},${PY.botY} ${PY.botLeft},${PY.botY}`;
+    outline.appendChild(svgEl('polygon', {
+      points: pts, fill: 'none', stroke: '#888', 'stroke-width': 1.5
+    }));
+
+    // Left and right slant lines
+    outline.appendChild(svgEl('line', {
+      x1: PY.topLeft, y1: PY.topY, x2: PY.botLeft, y2: PY.botY,
+      stroke: '#888', 'stroke-width': 1.5
+    }));
+    outline.appendChild(svgEl('line', {
+      x1: PY.topRight, y1: PY.topY, x2: PY.botRight, y2: PY.botY,
+      stroke: '#888', 'stroke-width': 1.5
+    }));
+
+    // Layer labels (left-side, outside)
+    const labelData = [
+      { y1:40,  y2:136, text:'Benefits\nRealisation' },
+      { y1:136, y2:232, text:'AI Systems' },
+      { y1:232, y2:328, text:'Algorithms' },
+      { y1:328, y2:424, text:'Information\nTechnology' },
+      { y1:424, y2:520, text:'Information' },
+    ];
+    labelData.forEach(({ y1, y2, text }) => {
+      const cy = (y1 + y2) / 2;
+      const lx = leftX(cy) - 12;
+      const lines = text.split('\n');
+      const g = svgEl('g', {});
+      lines.forEach((line, i) => {
+        const lineY = cy + (i - (lines.length - 1) / 2) * 13;
+        g.appendChild(svgEl('text', {
+          x: lx, y: lineY,
+          'text-anchor': 'end',
+          'dominant-baseline': 'middle',
+          'font-size': '11',
+          'font-weight': '600',
+          fill: '#444',
+          'font-family': 'inherit',
+        }, line));
+      });
+      layerLabels.appendChild(g);
+    });
+
+    // Benefits apex label inside the top band
+    const benefitsG = svgEl('g', {});
+    benefitsG.appendChild(svgEl('text', {
+      x: 440, y: 78,
+      'text-anchor': 'middle',
+      'dominant-baseline': 'middle',
+      'font-size': '12',
+      'font-weight': '700',
+      fill: '#3a7d00',
+      'font-family': 'inherit',
+    }, '⭐ Benefits Realisation'));
+    layerLabels.appendChild(benefitsG);
+  }
+
+  function buildPills() {
+    const pillsG = document.getElementById('fig1-pills');
+    const byLayer = {};
+    NODES.forEach(n => { (byLayer[n.layer] = byLayer[n.layer] || []).push(n); });
+
+    const layerBounds = {
+      'info':        { y1: 424, y2: 520 },
+      'it':          { y1: 328, y2: 424 },
+      'algorithms':  { y1: 232, y2: 328 },
+      'ai-systems':  { y1: 136, y2: 232 },
+    };
+
+    Object.entries(byLayer).forEach(([layerId, nodes]) => {
+      const bounds = layerBounds[layerId];
+      if (!bounds) return;
+      const placed = layoutLayer(nodes, bounds.y1, bounds.y2);
+
+      placed.forEach(({ node, x, y }) => {
+        const fill = TYPE_COLOR[node.type] || '#555';
+        const maint = node.maint ? MAINT_STROKE[node.maint] : null;
+
+        const g = svgEl('g', {
+          class: 'fig1-pill',
+          role: 'listitem',
+          tabindex: '0',
+          'aria-label': node.name,
+          'data-id': node.id,
+        });
+
+        // Maintainer outline (slightly larger rect behind pill)
+        if (maint) {
+          g.appendChild(svgEl('rect', {
+            x: x - 3, y: y - PILL_H / 2 - 3,
+            width: PILL_W + 6, height: PILL_H + 6,
+            rx: PILL_RX + 3,
+            fill: 'none',
+            stroke: maint.color,
+            'stroke-width': maint.w,
+            'stroke-dasharray': maint.dash === 'none' ? '' : maint.dash,
+          }));
+        }
+
+        // Pill background
+        g.appendChild(svgEl('rect', {
+          class: 'pill-bg',
+          x, y: y - PILL_H / 2,
+          width: PILL_W, height: PILL_H,
+          rx: PILL_RX,
+          fill,
+          filter: 'url(#fig1-shadow)',
+        }));
+
+        // Pill label
+        g.appendChild(svgEl('text', {
+          x: x + PILL_W / 2,
+          y,
+          'text-anchor': 'middle',
+          'dominant-baseline': 'middle',
+          'font-size': '9.5',
+          'font-weight': '700',
+          fill: '#fff',
+          'font-family': 'inherit',
+          'pointer-events': 'none',
+        }, node.abbr));
+
+        pillsG.appendChild(g);
+      });
+    });
+  }
+
+  function setupInteractivity() {
+    const tooltip = document.getElementById('fig1-tooltip');
+    const ttName = tooltip.querySelector('.fig1-tt-name');
+    const ttType = tooltip.querySelector('.fig1-tt-type');
+    const ttMaint = tooltip.querySelector('.fig1-tt-maint');
+    const detail = document.getElementById('fig1-detail');
+    const detailName = document.getElementById('fig1-detail-name');
+    const detailMeta = document.getElementById('fig1-detail-meta');
+    const detailDesc = document.getElementById('fig1-detail-desc');
+    const detailClose = document.getElementById('fig1-detail-close');
+    const svgEl_ref = document.getElementById('fig1-svg');
+
+    const nodeMap = {};
+    NODES.forEach(n => { nodeMap[n.id] = n; });
+
+    let lastPillRect = null;
+
+    function showTooltip(pill, node) {
+      ttName.textContent = node.name;
+      ttType.textContent = node.type.charAt(0).toUpperCase() + node.type.slice(1);
+      ttMaint.textContent = node.maint ? `· ${node.maint}` : '';
+
+      const svgRect = svgEl_ref.getBoundingClientRect();
+      const pillRect = pill.getBoundingClientRect();
+      lastPillRect = pillRect;
+
+      const wrapRect = svgEl_ref.closest('.fig1-inner').getBoundingClientRect();
+      let left = pillRect.left - wrapRect.left + pillRect.width / 2;
+      let top = pillRect.top - wrapRect.top - tooltip.offsetHeight - 8;
+
+      // Keep within wrap
+      tooltip.style.left = Math.max(0, left - 110) + 'px';
+      tooltip.style.top = (top < 0 ? pillRect.top - wrapRect.top + pillRect.height + 4 : top) + 'px';
+      tooltip.setAttribute('aria-hidden', 'false');
+      tooltip.classList.add('visible');
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('visible');
+      tooltip.setAttribute('aria-hidden', 'true');
+    }
+
+    function showDetail(node) {
+      detailName.textContent = node.name + ' (' + node.abbr + ')';
+      const typeLabel = node.type.charAt(0).toUpperCase() + node.type.slice(1);
+      const maintLabel = node.maint ? ' · Maintained by ' + node.maint : '';
+      detailMeta.textContent = typeLabel + maintLabel;
+      detailDesc.textContent = node.desc;
+      detail.classList.add('open');
+    }
+
+    document.getElementById('fig1-pills').addEventListener('mouseover', e => {
+      const pill = e.target.closest('.fig1-pill');
+      if (!pill) return;
+      const node = nodeMap[pill.dataset.id];
+      if (node) showTooltip(pill, node);
+    });
+    document.getElementById('fig1-pills').addEventListener('mouseout', e => {
+      if (!e.target.closest('.fig1-pill')) hideTooltip();
+      const pill = e.target.closest('.fig1-pill');
+      if (!pill || !pill.contains(e.relatedTarget)) hideTooltip();
+    });
+    document.getElementById('fig1-pills').addEventListener('click', e => {
+      const pill = e.target.closest('.fig1-pill');
+      if (!pill) return;
+      const node = nodeMap[pill.dataset.id];
+      if (node) showDetail(node);
+    });
+    document.getElementById('fig1-pills').addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      const pill = e.target.closest('.fig1-pill');
+      if (!pill) return;
+      const node = nodeMap[pill.dataset.id];
+      if (node) showDetail(node);
+    });
+    detailClose.addEventListener('click', () => detail.classList.remove('open'));
+  }
+
+  buildPyramid();
+  buildPills();
+  setupInteractivity();
+})();
+</script>
+</div>
