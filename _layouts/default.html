@@ -9,7 +9,7 @@
   <!-- DM Sans from Google Fonts (fallback for Founders Grotesk) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
@@ -40,9 +40,11 @@
         </svg>
       </button>
       <div class="topbar__breadcrumb">
-        <a href="{{ '/' | relative_url }}" style="color:inherit;text-decoration:none;">{{ site.title }}</a>
-        {% if page.short_title %}
-          &nbsp;›&nbsp;<span>{{ page.short_title }}</span>
+        <a href="{{ '/' | relative_url }}" style="color:inherit;text-decoration:none;">Whitepaper</a>
+        {% if page.title %}
+          &nbsp;›&nbsp;<span>
+            {% if page.section_number %}{{ page.section_number }}. {% endif %}
+            {{ page.title }}</span>
         {% endif %}
       </div>
     </header>
@@ -57,6 +59,13 @@
   var toggle   = document.getElementById('sidebar-toggle');
   var sidebar  = document.getElementById('sidebar');
   var overlay  = document.getElementById('sidebar-overlay');
+  var topbar   = document.querySelector('.topbar');
+
+  function setTopbarHeight() {
+    document.documentElement.style.setProperty('--topbar-h', topbar.offsetHeight + 'px');
+  }
+  setTopbarHeight();
+  window.addEventListener('resize', setTopbarHeight);
 
   function openNav() {
     sidebar.classList.add('is-open');
@@ -81,6 +90,59 @@
   // Close on Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && sidebar.classList.contains('is-open')) closeNav();
+  });
+
+  // ── Footnote tooltips with overflow autoscroll ─────────────────────────────
+  document.querySelectorAll('sup[id^="fnref:"] a[href^="#fn:"]').forEach(function (link) {
+    var fnId = link.getAttribute('href').slice(1);
+    var fnEl = document.getElementById(fnId);
+    if (!fnEl) return;
+    var clone = fnEl.cloneNode(true);
+    var backref = clone.querySelector('.reversefootnote');
+    if (backref) backref.parentNode.removeChild(backref);
+    var text = (clone.textContent || clone.innerText || '').trim().replace(/\s+/g, ' ');
+    if (!text) return;
+
+    var sup = link.parentElement;
+
+    // Build tooltip DOM: .fn-tip > .fn-tip__inner (div so block layout is reliable)
+    var tip = document.createElement('div');
+    tip.className = 'fn-tip';
+    var inner = document.createElement('div');
+    inner.className = 'fn-tip__inner';
+    inner.textContent = text;
+    tip.appendChild(inner);
+    sup.appendChild(tip);
+
+    sup.addEventListener('mouseenter', function () {
+      // Reset state
+      inner.classList.remove('is-scrolling');
+      inner.style.removeProperty('--tip-dist');
+      inner.style.removeProperty('--tip-dur');
+      tip.classList.remove('fn-tip--below');
+
+      setTimeout(function () {
+        // Flip below if tooltip goes above the topbar
+        var topbarH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--topbar-h')) || 52;
+        var rect = tip.getBoundingClientRect();
+        if (rect.top < topbarH) {
+          tip.classList.add('fn-tip--below');
+        }
+
+        // Autoscroll if content overflows max-height
+        var overflow = tip.scrollHeight - tip.clientHeight;
+        if (overflow > 0) {
+          inner.style.setProperty('--tip-dist', '-' + overflow + 'px');
+          inner.style.setProperty('--tip-dur', (overflow / 15).toFixed(1) + 's');
+          inner.classList.add('is-scrolling');
+        }
+      }, 0);
+    });
+
+    sup.addEventListener('mouseleave', function () {
+      inner.classList.remove('is-scrolling');
+      tip.classList.remove('fn-tip--below');
+    });
   });
 
   // ── Active section highlighting in page-toc ─────────────────────────────

@@ -3,14 +3,12 @@ layout: default
 ---
 
 <main class="cover" role="main" id="main-content">
-  <div class="cover__stripe"></div>
+  <!-- <div class="cover__stripe"></div> -->
 
   <div class="cover__body">
-    <h1 class="cover__title">
-      Re-Engineering New Zealand Government Guidance for <em>Trustworthy AI System Delivery</em>
-    </h1>
+    <h1 class="cover__title">{{ site.title }}</h1>
 
-    <p class="cover__subtitle">Authors</p>
+    <!-- <p class="cover__subtitle">Authors</p> -->
     <p class="cover__authors">
       {% for author in site.authors %}
         {{ author.name }}{% unless forloop.last %},&nbsp;{% endunless %}

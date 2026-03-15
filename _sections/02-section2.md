@@ -27,9 +27,11 @@ In the age of generative AI, whose capacity to generate “unknown unknowns” s
 
 However, normative frameworks cannot substitute for existing organisational methodologies – they must inform them. The practical difficulty of operationalising the Charter’s norms was made clear in the Year 1 Review of the Algorithm Charter conducted by Taylor Fry (2021). However, this review did affirm the overall nature and approach of the Charter.
 
-## Action: Fold Algorithm Charter improvement work into the Public Service AI work programme
+## 2.1 Action: Fold Algorithm Charter improvement work into the Public Service AI work programme {#s2-1}
 
 Operationalising the findings of the Year 1 Review has also proven difficult, with the implementation of its recommendations remaining incomplete. **Error! Reference source not found.** tracks the progress of the considerations identified in the review, excluding those that merely affirm the current direction of travel. Of my seven groupings of considerations, only two have been completed. Two show progress largely driven by efforts outside of the system lead agencies. Three show no apparent publicly available evidence of progress.
+
+<a id="table-5"></a>
 
 | Done? | Grouping of actionable consideration(s) in Taylor Fry (2021) | Progress as of January 2025 |
 | --- | --- | --- |
@@ -40,14 +42,15 @@ Operationalising the findings of the Year 1 Review has also proven difficult, wi
 | ❌ | Investigate novel forms of citizen participation, and measuring public trust and confidence in algorithm use. | The [Digital Council report](https://www.toiaria.org/our-projects/towards-trustworthybrand-trusted-automated-decision-brmaking-aotearoa/) investigating this for automated decision-making was shelved and the Digital Council was dissolved. DPMC’s [PCET](https://www.dpmc.govt.nz/publications/policy-community-engagement-tool) may be relevant. |
 | ❌ | Consider the creation of an oversight body for the Charter. | No public knowledge of consideration. GCDO has appointed an AI Expert **Advisory** Panel, which does not have any oversight capacity. |
 | ❌ | Develop an annually updated algorithm register. | The GCDO has committed to a central AI register by 2027. |
+{:.table-status}
 
 > _Table 5: Actionable considerations identified in the year 1 review of the Algorithm Charter. "Actionable" excludes passive considerations that recommend maintaining current direction. From Taylor Fry, 2021. Algorithm Charter for Aotearoa New Zealand Year 1 Review. [https://www.data.govt.nz/assets/data-ethics/algorithm/Algorithm-Charter-Year-1-Review-FINAL.pdf](https://www.data.govt.nz/assets/data-ethics/algorithm/Algorithm-Charter-Year-1-Review-FINAL.pdf)_
 
-Over the same period, the GC taken a more active approach to maintenance, completing four reviews of the DADM. Two of these reviews were conducted in the generative AI era following the release of ChatGPT. Similarly to New Zealand, the GC has also issued dedicated guidance on the use of generative AI. Unlike New Zealand’s guidance, their GenAI guidance properly delineates a boundary between existing algorithmic guidance. The GC’s guidance also provides direction around which contexts the techniques are most appropriately applied. Section 3 of this report assesses the progress of the New Zealand Government’s generative AI guidance.
+Over the same period, the GC taken a more active approach to maintenance, completing four reviews of the DADM. Two of these reviews were conducted in the generative AI era following the release of ChatGPT. Similarly to New Zealand, the GC has also issued dedicated guidance on the use of generative AI. Unlike New Zealand’s guidance, their GenAI guidance properly delineates a boundary between existing algorithmic guidance. The GC’s guidance also provides direction around which contexts the techniques are most appropriately applied. [Section 3](../03-section3/) of this report assesses the progress of the New Zealand Government’s generative AI guidance.
 
 > While Canada has kept its government automated decision-making guidance up-to-date and integrated with new generative AI guidance, New Zealand has not kept up.
 
-## Action: Conduct an evaluation of the AIA toolkit with a view to folding it into the NZAIM
+## 2.2 Action: Conduct an evaluation of the AIA toolkit with a view to folding it into the NZAIM {#s2-2}
 
 The release of the AIA toolkit represents the most significant advance in all-of-Government AI policy since the introduction of the Algorithm Charter in terms of operational utility. The AIA toolkit shifted the Algorithm Charter from ambitious high-level commitments towards practical and implementable actions. The first tool, the algorithm threshold assessment (ATA), addresses a significant criticism of the Charter, the lack of a clear definition and scope of what systems the Charter applies to. The ATA’s “material impact” test aligns closely with (but is wider than) the Ombudsman’s interpretation of “personal capacity” in the OIA.
 
@@ -65,7 +68,7 @@ Issues that a review of the AIA toolkit may explore include:
 
 > The AIA toolkit is the strongest AI guidance instrument the Government currently maintains, but it must be evaluated to understand why no agencies have published a worked example in its two years of existence.
 
-## Action: Promote publication of algorithm threshold and impact assessments to data.govt.nz, creating a register that establishes implicit accountability
+## 2.3 Action: Promote publication of algorithm threshold and impact assessments to data.govt.nz, creating a register that establishes implicit accountability {#s2-3}
 
 The Taylor Fry review found that public reporting of each agency’s use of algorithms, as recommended under the Transparency commitment of the Charter, was “fragmented and incomplete” in 2021. As of December 2025, a site-specific search of “algorithm” for each Charter signatory’s website only yielded one example of a self-reported agency-wide stocktake: the Ministry of Justice. agencies do make certain algorithm and AI assessments available, often as a reaction to OIA requests around the Charter. However, consolidated information should already exist for agencies who responded to government-wide stocktakes by system lead agencies for the 2018 algorithm assessment report[^11] and 2024 cross-agency survey for AI[^12]. Consolidated information for high-impact algorithms (i.e. algorithms that “must” follow the Charter) should already exist as part of agencies’ enterprise risk registers.
 
@@ -83,7 +86,7 @@ In Canada, their DADM mandates transparency through publication of algorithmic i
 
 > Data.govt.nz can already be used to create a minimum viable self-reported register of algorithm and AI use across government with little additional work, given agencies should already know the necessary information.
 
-## Action: Refactor the Algorithm Charter as an extension of DPUP: normative values for AI system delivery to follow
+## 2.4 Action: Refactor the Algorithm Charter as an extension of DPUP: normative values for AI system delivery to follow {#s2-4}
 
 Both the Charter and the DPUP fulfil closely related functions. Each articulates expectations around the use of data and algorithms that extend beyond existing obligations, with the aim of promoting public trust through the respectful and safe use of data and algorithms. However, each fall short in ways that the other compensates for. Taylor Fry (2021) observed the Charter lacks clarity around practical implementation of its commitments around partnership and community engagement. The subsequent AIA toolkit now points to DPUP for guidance in these areas. On the other hand, DPUP lacks the formal mandate of other standards, or in the case of the Charter, publicly recorded voluntary commitment by agencies. DPUP has been employed by agencies implementing AI outside of its original remit in the social sector, such as ACC.[^14]
 
@@ -114,4 +117,4 @@ After streamlining normative commitments, what remains of the Algorithm Charter 
 [^15]: Reorganising text (typically software code) to improve readability and reusability without affecting its function.
 [^16]: Department of Prime Minister and Cabinet, October 2023. Policy Community Engagement Tool. [https://www.dpmc.govt.nz/publications/policy-community-engagement-tool](https://www.dpmc.govt.nz/publications/policy-community-engagement-tool)
 [^17]: Digital Council for Aotearoa New Zealand, 2020. Towards trustworthy and trusted automated decision-making in Aotearoa. [https://www.toiaria.org/our-projects/towards-trustworthybrand-trusted-automated-decision-brmaking-aotearoa/](https://www.toiaria.org/our-projects/towards-trustworthybrand-trusted-automated-decision-brmaking-aotearoa/)
-[^18]: As outlined in Table 4.
+[^18]: As outlined in [Table 4](../01-section1/#table-4).

@@ -7,21 +7,21 @@ description: Overview of the fragmented legal and guidance landscape for AI in N
 ---
 # Rules and best practice in NZ for algorithm and AI system delivery are currently fragmented across different laws and guidance
 
-Deployers of AI systems in government face a complex maze of laws, principles, standards, and guidance to deploy AI safely and effectively. This approach can be advantageous, as broad rules address long-lasting risks or support enduring objectives – rules relevant regardless of context or technology. Specific rules are created by specialised entities with the expertise to manage certain risks or achieve certain objectives. <u>Figure 1</u> depicts this guidance ecosystem as a layered pyramid, with higher-level instruments becoming more technically specific, while guidance in instruments below it remains applicable. Following guidance at all levels is essential to maximising the benefits.
+Deployers of AI systems in government face a complex maze of laws, principles, standards, and guidance to deploy AI safely and effectively. This approach can be advantageous, as broad rules address long-lasting risks or support enduring objectives – rules relevant regardless of context or technology. Specific rules are created by specialised entities with the expertise to manage certain risks or achieve certain objectives. [Figure 1](#figure-1) depicts this guidance ecosystem as a layered pyramid, with higher-level instruments becoming more technically specific, while guidance in instruments below it remains applicable. Following guidance at all levels is essential to maximising the benefits.
 
 This fragmentation becomes problematic when each specialist entity develops its own framework, toolkit, or checklist for AI, often with overlapping elements. This issue worsens for implementing agencies, which must interpret the various rules and tools and incorporate these frameworks into their policies. While this integration can help tailor governance to each agency’s operational environment, a lack of a common scope and framework leads to inconsistent recordkeeping across agencies. This inconsistency makes it harder for the public –including academia and the media – or even a government system leader, to understand AI use across the government.
 
-{% include diagrams/figure1-current-pyramid.html %}
+<div id="figure-1">{% include diagrams/figure1-current-pyramid.html %}</div>
 
 Figure 1: Current hierarchy of laws, standards, principles, and guidance that inform the use of information, information technology, algorithms, and AI systems, coloured by the type of instrument, and outlined if the instrument is maintained by a system leader. Following guidance in all layers is essential to fully realise its benefits.
 
-## **Generic legislation** mandates broad obligations on the use of AI, like transparency, privacy and information provenance
+## 1.1 **Generic legislation** mandates broad obligations on the use of AI, like transparency, privacy and information provenance {#s1-1}
 
-> _As previously discussed, generic legislation establishes lasting rules that persist regardless of context or technology. Three such acts serve as technology-neutral mechanisms that address specific risks through principles or rights-based regulation. The Official Information Act 1982 mitigates government opacity and promotes good decision-making and behaviour through freedom of information mechanisms (Box 1.1.1). The Privacy Act 2020 mitigates unauthorised and harmful collection, use, and disclosure of personal information, which infringes on individuals' rights to privacy (Box 1.1.2). The Public Records Act 2005 mitigates the erosion of accountability caused by poor and incomplete record-keeping (Box 1.1.3). Together, this ecosystem provides a stable regulatory baseline for democratic accountability. This baseline endures regardless of the technology in use and therefore applies to AI systems._
+As previously discussed, generic legislation establishes lasting rules that persist regardless of context or technology. Three such acts serve as technology-neutral mechanisms that address specific risks through principles or rights-based regulation. The Official Information Act 1982 mitigates government opacity and promotes good decision-making and behaviour through freedom of information mechanisms ([Box 1.1.1](#box-1-1-1)). The Privacy Act 2020 mitigates unauthorised and harmful collection, use, and disclosure of personal information, which infringes on individuals' rights to privacy ([Box 1.1.2](#box-1-1-2)). The Public Records Act 2005 mitigates the erosion of accountability caused by poor and incomplete record-keeping ([Box 1.1.3](#box-1-1-3)). Together, this ecosystem provides a stable regulatory baseline for democratic accountability. This baseline endures regardless of the technology in use and therefore applies to AI systems.
 
 
 <div class="box" id="box-1-1-1">
-<div class="box__header"><span class="box__number">Box 1.1.1</span><h3 class="box__title">Official Information Act 1982 (OIA)</h3></div>
+<div class="box__header"><span class="box__number">Box 1.1.1</span><h3 class="box__title" id="box-1-1-1-h">Official Information Act 1982 (OIA)</h3></div>
 <div class="box__body" markdown="1">
 
 Promotes government transparency and accountability, requiring all public service agencies to provide anyone in New Zealand with information the government holds. Sections 22 and 23 promote good government decision-making by providing anyone in New Zealand (including businesses) the right to know, respectively:
@@ -39,7 +39,7 @@ A response to a s23 request must include:
 
 These provisions are closely coupled with that of the **Ombudsman Act 1975** enabling the Ombudsman to investigate most government actions or decisions as contrary to law; unreasonable, unjust, oppressive, or improperly discriminatory; a mistake; or wrong.
 
-For AI use in government, OIA ss 22 and 23 serve as the most significant constraint. Agencies that deploy AI that cannot faithfully explain personally impactful decisions deprive people of their right to information contravening the OIA. Unexplainable AI may still be used outside of making conclusive personally impactful decisions. Section 5 elaborates on the different degrees of compliance required for different uses of AI systems.
+For AI use in government, OIA ss 22 and 23 serve as the most significant constraint. Agencies that deploy AI that cannot faithfully explain personally impactful decisions deprive people of their right to information contravening the OIA. Unexplainable AI may still be used outside of making conclusive personally impactful decisions. [Section 5](../05-section5/) elaborates on the different degrees of compliance required for different uses of AI systems.
 
 **Further reading**: [a] [Requests for internal decision making rules: A guide to section 22 of the OIA and section 21 of the LGOIMA - Ombudsman New Zealand - May 2019](https://www.ombudsman.parliament.nz/resources/requests-internal-decision-making-rules-guide-section-22-oia-and-section-21-lgoima) and [b] [Requests for reasons for a decision or recommendation: A guide to section 23 of the OIA and section 22 of the LGOIMA - Ombudsman New Zealand - May 2019](https://www.ombudsman.parliament.nz/resources/requests-reasons-decision-or-recommendation-guide-section-23-oia-and-section-22-lgoima) and [c] [AI systems and OIA section 22 and 23 - Ombudsman query - Johniel Bocacao - February 2026](https://fyi.org.nz/request/33209-ai-systems-and-oia-section-22-and-23?post_redirect=1)
 
@@ -48,7 +48,7 @@ For AI use in government, OIA ss 22 and 23 serve as the most significant constra
 
 
 <div class="box" id="box-1-1-2">
-<div class="box__header"><span class="box__number">Box 1.1.2</span><h3 class="box__title">Privacy Act 2020</h3></div>
+<div class="box__header"><span class="box__number">Box 1.1.2</span><h3 class="box__title" id="box-1-1-2-h">Privacy Act 2020</h3></div>
 <div class="box__body" markdown="1">
 
 Promotes the human right to privacy by requiring any holder of a person’s information (not just a government agency) to follow these information privacy principles (IPPs), notwithstanding exceptions elsewhere in the Act.
@@ -77,7 +77,7 @@ Wherever AI systems in government use personal information, the Privacy Act’s 
 
 
 <div class="box" id="box-1-1-3">
-<div class="box__header"><span class="box__number">Box 1.1.3</span><h3 class="box__title">Public Records Act 2005 (PRA)</h3></div>
+<div class="box__header"><span class="box__number">Box 1.1.3</span><h3 class="box__title" id="box-1-1-3-h">Public Records Act 2005 (PRA)</h3></div>
 <div class="box__body" markdown="1">
 
 Promotes comprehensive recordkeeping within government by regulating how all information about an agency’s “affairs” is managed within them.
@@ -94,9 +94,9 @@ Wherever AI is used in government, the use and impact of AI on an agency’s aff
 </div>
 </div>
 
-## Automating statutory decisions and actions must be legislated
+## 1.2 Automating statutory decisions and actions must be legislated {#s1-2}
 
-Establishing legislation, the laws that set up an entity and determine its mandate, may include provisions that enable Automated Electronic Systems (AES) to perform actions specified in legislation that only specified authorised people (typically the chief executive) can do, as if such an authorised person performed the action themselves. While the term is not defined in law, it can reasonably be understood to include any algorithm or AI (as defined in Section 4) that makes decisions without human intervention. AES provisions typically follow this pattern:
+Establishing legislation, the laws that set up an entity and determine its mandate, may include provisions that enable Automated Electronic Systems (AES) to perform actions specified in legislation that only specified authorised people (typically the chief executive) can do, as if such an authorised person performed the action themselves. While the term is not defined in law, it can reasonably be understood to include any algorithm or AI (as defined in [Section 4](../04-section4/)) that makes decisions without human intervention. AES provisions typically follow this pattern:
 
 - Arranging the use of an AES
 
@@ -130,7 +130,7 @@ This pattern is not in legislation where powers are conferred on entities rather
 
 > Explicit legislation is required to say the system’s action counts as a specified person’s action, if the legislation requires a specified person to perform an action to be automated.
 
-## Agencies may be given the power to enact secondary legislation on their own
+## 1.3 Agencies may be given the power to enact secondary legislation on their own {#s1-3}
 
 Two examples of secondary legislation have already been mentioned:
 
@@ -142,13 +142,13 @@ Secondary legislation holds the same authority as any other Act of Parliament. H
 
 > AI systems must also follow any secondary legislation that applies to the context it is being used, or data it is using.
 
-## Government-wide **standards and guidance** provide all-of-Government best practice in particular areas
+## 1.4 Government-wide **standards and guidance** provide all-of-Government best practice in particular areas {#s1-4}
 
 The Public Service Act 2020 enables the designation of a specific agency as a system leader to “lead and co-ordinate best practice in a particular subject matter area” across all government sectors. This leadership is realised through setting standards or guidance in such areas. Standards are applicable to public service agencies, while guidance applies to any Crown organisation. These standards and guidance were issued before the 2020 act, with varying levels of enforceability. Some are mandated by Cabinet directives or ministerial instructions; others are voluntary best practice. The following section describes relevant system leaders whose guidance influences the use of AI systems as of December 2025.
 
 
 <div class="box" id="box-1-4-1">
-<div class="box__header"><span class="box__number">Box 1.4.1</span><h3 class="box__title">Government Chief Digital Officer (GCDO)</h3></div>
+<div class="box__header"><span class="box__number">Box 1.4.1</span><h3 class="box__title" id="box-1-4-1-h">Government Chief Digital Officer (GCDO)</h3></div>
 <div class="box__body" markdown="1">
 
 Coordinates the development, procurement, assurance and use of digital systems across government. Operated out of the Department of Internal Affairs until April 2026.
@@ -174,7 +174,7 @@ The GCDO is the key leader responsible for standards and guidance in AI systems 
 
 
 <div class="box" id="box-1-4-2">
-<div class="box__header"><span class="box__number">Box 1.4.2</span><h3 class="box__title">Government Chief Information Security Officer (GCISO)</h3></div>
+<div class="box__header"><span class="box__number">Box 1.4.2</span><h3 class="box__title" id="box-1-4-2-h">Government Chief Information Security Officer (GCISO)</h3></div>
 <div class="box__body" markdown="1">
 
 Issues mandatory security requirements to government agencies. These functions are hosted by the National Cyber Security Centre (NCSC) which provides guidance and intelligence for cybersecurity threats to public and private organisations. Both are operated out of the Government Communications Security Bureau.
@@ -194,7 +194,7 @@ The GCISO’s security mandates necessarily applies to any government AI model o
 
 
 <div class="box" id="box-1-4-3">
-<div class="box__header"><span class="box__number">Box 1.4.3</span><h3 class="box__title">Government Chief Data Steward (GCDS)</h3></div>
+<div class="box__header"><span class="box__number">Box 1.4.3</span><h3 class="box__title" id="box-1-4-3-h">Government Chief Data Steward (GCDS)</h3></div>
 <div class="box__body" markdown="1">
 
 Promotes accessibility, reliability and ethical use of data in government. Operated out of Statistics New Zealand.
@@ -211,13 +211,15 @@ The GCDS provides voluntary guidance for the trustworthy, ethical and culturally
 </div>
 </div>
 
-## Government agencies use international standard risk methodologies, and new standards are emerging to facilitate AI system risk management
+## 1.5 Government agencies use international standard risk methodologies, and new standards are emerging to facilitate AI system risk management {#s1-5}
 
 The PSR requires agencies follow ISO 31000 to manage risk, a widely practiced international standard. ISO 31000 does not impose a checklist exercise, but rather actively engages an organisation in identifying the specific risks within an agency, analysing its impact, evaluating the acceptability of risk, then deciding how to approach it (accept, transfer, mitigate, avoid).
 
-The PSR also references the ISO 27000 family of standards, which provides specific guidance for managing risk in information systems and is usually already implemented by government agencies. A new family of ISO standards is emerging for the governance and risk management of AI systems that mirrors the structure of the ISO 27000 family. There are gaps, as shown in Table 1, but all listed AI system standards are officially published with full consensus from ISO.
+The PSR also references the ISO 27000 family of standards, which provides specific guidance for managing risk in information systems and is usually already implemented by government agencies. A new family of ISO standards is emerging for the governance and risk management of AI systems that mirrors the structure of the ISO 27000 family. There are gaps, as shown in [Table 1](#table-1), but all listed AI system standards are officially published with full consensus from ISO.
 
 Notably, early-adopter government agencies like ACC have opted to use the American federal government’s standard for AI risk management, given their use of American cybersecurity and privacy standards.
+
+<a id="table-1"></a>
 
 | Function of standard | ISO 2700x Information system standards | ISO AI system standards |
 | --- | --- | --- |
@@ -232,9 +234,11 @@ Notably, early-adopter government agencies like ACC have opted to use the Americ
 
 > Mandatory security requirements are largely based on international standards. Agencies can adopt emerging recognised international standards for AI risk management with the confidence that future mandatory requirements are likely to closely align with them.
 
-## Frameworks help affirm Māori **sovereignty over their data, and algorithms** developed from their data
+## 1.6 Frameworks help affirm Māori **sovereignty over their data, and algorithms** developed from their data {#s1-6}
 
-Iwi Māori retain tino rangatiratanga over all their taonga, as guaranteed in Article 2 of Te Tiriti o Waitangi. This rangatiratanga extends to any data about or from Māori people and culture, as outlined in Wai 2522[^2]. Te Mana Raraunga, a network of Māori experts in data, have devised principles (which are currently not mandated across government) to promote practices that affirm Māori data sovereignty, as outlined in <u>Table 2</u>.
+Iwi Māori retain tino rangatiratanga over all their taonga, as guaranteed in Article 2 of Te Tiriti o Waitangi. This rangatiratanga extends to any data about or from Māori people and culture, as outlined in Wai 2522[^2]. Te Mana Raraunga, a network of Māori experts in data, have devised principles (which are currently not mandated across government) to promote practices that affirm Māori data sovereignty, as outlined in [Table 2](#table-2).
+
+<a id="table-2"></a>
 
 | **Rangatiratanga**: Right to control and access Māori data and data ecosystems, storing data here enhances control | **Whakapapa**: Metadata should be accessible to provide context, origin, provenance. Methodologies should prioritise Māori aspirations | **Whanaungatanga:** Individual rights to data and privacy are balanced with those of the collective |
 | --- | --- | --- |
@@ -243,7 +247,9 @@ Iwi Māori retain tino rangatiratanga over all their taonga, as guaranteed in Ar
 
 > _Table 2: Principles of Māori Data Sovereignty. From Te Mana Raraunga, October 2018. [https://www.temanararaunga.maori.nz/principles-of-maori-data-sovereignty](https://www.temanararaunga.maori.nz/principles-of-maori-data-sovereignty)_
 
-This framework was extended by Brown et al. (2024) to promote sovereignty of algorithmic systems (not just the algorithm itself, but the inputs, output interpretation, design and ongoing management) informed by data about or from Māori. In addition to the obligations above on data used by algorithms, their framework also offers further algorithm-specific guidance around each of the principles, as outlined in <u>Table 3</u>.
+This framework was extended by Brown et al. (2024) to promote sovereignty of algorithmic systems (not just the algorithm itself, but the inputs, output interpretation, design and ongoing management) informed by data about or from Māori. In addition to the obligations above on data used by algorithms, their framework also offers further algorithm-specific guidance around each of the principles, as outlined in [Table 3](#table-3).
+
+<a id="table-3"></a>
 
 | **Rangatiratanga**: Right to control development and use of algorithmic systems | **Whakapapa**: Māori understand of all aspects of the algorithm system | **Whanaungatanga:** Right to challenge its output or outcome, system owners are accountable to Māori |
 | --- | --- | --- |
@@ -252,7 +258,9 @@ This framework was extended by Brown et al. (2024) to promote sovereignty of alg
 
 > _Table 3: Principles of Māori Algorithmic Sovereignty. From _Paul T. Brown, Daniel Wilson, Kiri West, Kirita-Rose Escott, Kiya Basabas, Ben Ritchie, Danielle Lucas, Ivy Taia, Natalie Kusabs, Te Taka Keegan, April 2024. Māori Algorithmic Sovereignty: Idea, Principles, and Use._ [https://datascience.codata.org/articles/10.5334/dsj-2024-015](https://datascience.codata.org/articles/10.5334/dsj-2024-015)_
 
-Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devised Māori Data and AI Governance frameworks for use within the public service. The Māori Data Governance model implements the six principles from Te Mana Raraunga. Five values frame the directives under the eight pou which categorise actions that give effect to the values, as shown in <u>Table 4</u>.
+Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devised Māori Data and AI Governance frameworks for use within the public service. The Māori Data Governance model implements the six principles from Te Mana Raraunga. Five values frame the directives under the eight pou which categorise actions that give effect to the values, as shown in [Table 4](#table-4).
+
+<a id="table-4"></a>
 
 | **Vision:** Tuia te korowai o Hine-Raraunga / Data for self-determination |  |  |  |  |
 | --- | --- | --- | --- | --- |
@@ -268,7 +276,7 @@ Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devi
 
 > Much like the NZISM outlines how to comply with the PSR’s principles, the Māori Data and AI Governance Models outline requirements that affirm the principles of Māori data sovereignty that arise from Te Tiriti o Waitangi.
 
-## Agencies set their own **departmental policies and procedures** to clearly establish accountability for following laws, standards and guidance
+## 1.7 Agencies set their own **departmental policies and procedures** to clearly establish accountability for following laws, standards and guidance {#s1-7}
 
 These laws, standards and guidance ultimately achieve operational effect when embedded in an agency’s policies and procedures. These policies are enforced through the authority of their chief executive, with breaches addressed primarily through internal managerial consequences. Departmental policies outline legal obligations and give a mandate to government-wide standards and guidance by defining expectations for staff – tailored to its operating environment. Thus, departmental policies are the most effective mechanism for giving practical effect to, and enabling accountability for, laws, standards and guidance within agencies.
 
@@ -288,7 +296,7 @@ Agencies that have published departmental policies for AI use include:
 
 > Departmental policies are ultimately how standards and guidance are given effect: as expectations on staff relying on internal accountability. They are also an opportunity to tailor policy around what agencies do and how they operate.
 
-## Action: Establish a New Zealand Artificial Intelligence Manual (NZAIM) to unify technical guidance in implementing trustworthy government AI systems
+## 1.8 Action: Establish a New Zealand Artificial Intelligence Manual (NZAIM) to unify technical guidance in implementing trustworthy government AI systems {#s1-8}
 
 The right rules, principles and objectives for promoting trustworthy AI system delivery are already in place. The OIA’s transparency requirements effectively bind agencies to thoroughly consider best practice – offered but not mandated by other guidance instruments – in designing transparent AI systems trusted in independently making decisions. Other best practice around fairness and non-discrimination are promoted through recognising the ex post risk of an investigation finding AI decisions to be unlawful, mistaken or discriminatory.
 

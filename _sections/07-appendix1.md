@@ -5,10 +5,14 @@ short_title: Appendix 1
 section_number: Appendix 1
 description: Matrix of build, process and use challenges across algorithm and AI technique categories.
 ---
-# Appendix 1: Summary of challenges identified in each technical (Section 4) category
+# Appendix 1: Summary of challenges identified in each technical ([Section 4](../04-section4/)) category
+
+<a id="table-6"></a>
 
 | **Legend** | Not applicable | Dependent | Manageable | Difficult |
 | --- | --- | --- | --- | --- |
+
+<a id="table-7"></a>
 
 | ***Build: Challenges addressed during the design and training (if data-driven) of the system*** |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- |

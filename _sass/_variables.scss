@@ -1,5 +1,5 @@
 // ─── Colour palette (from whitepaper docx) ───────────────────────────────────
-$navy:        #222085;
+$navy:        #222686;
 $navy-dark:   #0E2841;
 $blue:        #0078BB;
 $teal:        #228FA9;
@@ -13,7 +13,7 @@ $grey-light:  #E8E8E8;
 $white:       #FFFFFF;
 $grey-mid:    #BCBCBC;
 $grey-dark:   #4A4A4A;
-$text:        #1A1A2E;       // near-black with navy undertone
+$text:        $navy-dark;     // body text
 $text-light:  #5A5A72;
 $border:      #D0D0DC;
 $surface:     #F7F7FB;       // very light navy-tinted background

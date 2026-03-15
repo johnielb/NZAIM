@@ -11,9 +11,9 @@ All-of-Government stocktakes in 2018[^26] and 2024[^27] have illustrated the wid
 
 Six years later, the 2024 cross-agency survey of AI use cases applied a different theming of use cases rather than the previous systematic taxonomy. While this theming was useful to illustrate the different uses of AI in the public sector, it is not scalable given its focus on specific objectives, such as “boosting productivity and efficiency” and “enhancing customer experience”.
 
-The 2024 survey also did not prompt agencies to consider different types of techniques, only prompting agencies to report on “AI use cases”. This oversight in survey design has led to agencies under-reporting what AI they use. For example, only one AI use case was identified by StatsNZ in the survey. However, traditional ML modelling has been used for official statistics like the International Migration provisional dataset since 2018, producing highly publicised metrics for policy impact like net migration. Use cases in ACC identified in Section 4 recognised in the 2018 survey were not disclosed in the 2024 survey. Its inclusion would have promoted an AI use case that has demonstrably financially benefitted ACC, improved the experience of injured people navigating the ACC system, and follows best practice[^28]. A better systematic definition of AI can improve coverage of all kinds of AI use cases in government and shine a light on low residual risk – but high impact – exemplars already embedded in agencies’ BAU.
+The 2024 survey also did not prompt agencies to consider different types of techniques, only prompting agencies to report on “AI use cases”. This oversight in survey design has led to agencies under-reporting what AI they use. For example, only one AI use case was identified by StatsNZ in the survey. However, traditional ML modelling has been used for official statistics like the International Migration provisional dataset since 2018, producing highly publicised metrics for policy impact like net migration. Use cases in ACC identified in [Section 4](../04-section4/) recognised in the 2018 survey were not disclosed in the 2024 survey. Its inclusion would have promoted an AI use case that has demonstrably financially benefitted ACC, improved the experience of injured people navigating the ACC system, and follows best practice[^28]. A better systematic definition of AI can improve coverage of all kinds of AI use cases in government and shine a light on low residual risk – but high impact – exemplars already embedded in agencies’ BAU.
 
-## Action: A new taxonomy should differentiate between the different legal obligations associated with different use cases
+## 5.2 Action: A new taxonomy should differentiate between the different legal obligations associated with different use cases {#s5-2}
 
 A systematic taxonomy can ground AI standards and guidance to the specific considerations of the specific context which an AI used. Below, I propose a new taxonomy that builds on the 2018 categorisation to accommodate technologies that have emerged since then.
 
@@ -31,7 +31,7 @@ Like the previous section, I propose new definitions for these three categories 
 
 
 <div class="box" id="box-5-2-1">
-<div class="box__header"><span class="box__number">Box 5.2.1</span><h3 class="box__title">Front-line</h3></div>
+<div class="box__header"><span class="box__number">Box 5.2.1</span><h3 class="box__title" id="box-5-2-1-h">Front-line</h3></div>
 <div class="box__body" markdown="1">
 
 Algorithms and AI with its own set of rules that make decisions or recommendations about individuals (including corporations) that affect their rights or interests. Users have specific official information rights to the reasons behind these decisions. Fully automated decision-making and human-in-the-loop algorithms are included as there is no legal distinction between the two in the OIA. However, this category only includes GenAI systems that independently forms its own evaluative conclusions. GenAI systems that collate and summarise evidence to support a human decision maker is administrative.
@@ -52,7 +52,7 @@ Algorithms and AI with its own set of rules that make decisions or recommendatio
 
 
 <div class="box" id="box-5-2-2">
-<div class="box__header"><span class="box__number">Box 5.2.2</span><h3 class="box__title">Research</h3></div>
+<div class="box__header"><span class="box__number">Box 5.2.2</span><h3 class="box__title" id="box-5-2-2-h">Research</h3></div>
 <div class="box__body" markdown="1">
 
 Algorithms and AI that generate data that support decision-making at the system level or are involved in intervention development itself. These models do not need to be tied to a specific intervention; this category includes models generating routine data that measures the general impact of policy. This category also excludes the use of AI tools outside of evidence generation. For example, using generative AI for the general collation of research automates part of the routine operations of staff, and is thus administrative in nature.
@@ -70,14 +70,14 @@ Outputs of these systems form part of the evidence base for system-level decisio
 
 **Challenges**:
 - **Transparency of models:** Requests for this information are handled by the more general section 12, where information can be withheld by any exemption. Objective data and evidence generally are not withheld to the same extent as advice and opinion.
-- **Trustworthy policymaking**: The subject matter surrounding research AI may be conceptually inaccessible to the public, if not inaccessible due to conclusive or good withholding grounds. Citizens, and accountable decision-makers who also may not have the same degree of expertise, place a unique trust in these specialists to provide “comprehensive, objective and balanced” policy advice (as characterised by DPMC). Given the reduced accessibility, increased breadth of impact, and the presence of context-agnostic technical challenges from Section 4, fostering public trust in research AI should still be sought through robust quality assurance processes and disclosure.
+- **Trustworthy policymaking**: The subject matter surrounding research AI may be conceptually inaccessible to the public, if not inaccessible due to conclusive or good withholding grounds. Citizens, and accountable decision-makers who also may not have the same degree of expertise, place a unique trust in these specialists to provide “comprehensive, objective and balanced” policy advice (as characterised by DPMC). Given the reduced accessibility, increased breadth of impact, and the presence of context-agnostic technical challenges from [Section 4](../04-section4/), fostering public trust in research AI should still be sought through robust quality assurance processes and disclosure.
 
 </div>
 </div>
 
 
 <div class="box" id="box-5-2-3">
-<div class="box__header"><span class="box__number">Box 5.2.3</span><h3 class="box__title">Administration</h3></div>
+<div class="box__header"><span class="box__number">Box 5.2.3</span><h3 class="box__title" id="box-5-2-3-h">Administration</h3></div>
 <div class="box__body" markdown="1">
 
 Algorithms and AI that automate (or otherwise significantly support) core functions of government staff in routine operations that does not otherwise have a direct effect on individual’s rights or interests. The execution of administrative systems is still critical to operational integrity and requires performance monitoring to minimise risk. A function is only considered ‘core’ if its performance is fundamental to the output of a human-equivalent role. For example, a legal advisor may require performance improvement if they are consistently unable to correctly identify, interpret and summarise facts and case law, but will not for incidental issues like spelling mistakes, poor meeting transcripts, or unengaging presentation visuals. Reapplying this analogy brings document summarisation in scope, but spell check, meeting transcription and media generation out. This definition is fundamentally risk-based and self-assessed; it is up to agencies and their risk appetite to determine whether a system is worth monitoring.
@@ -93,15 +93,15 @@ Algorithms and AI that automate (or otherwise significantly support) core functi
 </div>
 </div>
 
-## Action: Overlay the technical and contextual categorisation to refine algorithm and AI guidance
+## 5.3 Action: Overlay the technical and contextual categorisation to refine algorithm and AI guidance {#s5-3}
 
 Other jurisdictions like the EU and Canada, as well as the current Algorithm Charter, take a risk-based approach to classifying algorithms and AI. New Zealand’s approach has been criticised as being too flexible to be useful, relying on agencies to self-rate the material impact of algorithms while providing little guidance in terms of precedent. More useful taxonomies have been developed by organisations like the OECD. Their Framework for the Classification of AI Systems[^29] provides 31 different criteria for classifying AI systems grouped into 5 dimensions. While this may be appropriate in the international, sector-cutting environment the OECD operates in, much of the criteria can be answered similarly – some not even relevant – for any application in government.
 
-{% include diagrams/figure3-4-matrix.html %}
+<div id="figure-3">{% include diagrams/figure3-4-matrix.html %}</div>
 
-> _Figure 4: Diagram overlaying the technical categories outlined in Section 4 (symbolic AI, supervised learning, unsupervised learning, goal-driven optimisation and generative AI) with the contextual categories outlined in Section 5 (front-line, research, and administration)_
+> _Figure 4: Diagram overlaying the technical categories outlined in [Section 4](../04-section4/) (symbolic AI, supervised learning, unsupervised learning, goal-driven optimisation and generative AI) with the contextual categories outlined in Section 5 (front-line, research, and administration)_
 
-A two-way technical-contextual taxonomy, as illustrated by Figure 3, provides enough practical specificity relevant for monitoring and governance in the New Zealand context. One axis dives into just enough technical detail such that similar monitoring and evaluation approaches exist within a category. The other axis is rooted in the legislative context that the system will operate in. When new technologies emerge, guidance across the contextual axis should already exist to help agencies navigate their existing legal obligations, creating an environment where agencies can safely innovate. Appendix 2 illustrates how this taxonomy can be used to categorise existing and potential AI use cases, providing a visual way to conceptualise how AI is and can be used in Government.
+A two-way technical-contextual taxonomy, as illustrated by [Figure 3](#figure-3), provides enough practical specificity relevant for monitoring and governance in the New Zealand context. One axis dives into just enough technical detail such that similar monitoring and evaluation approaches exist within a category. The other axis is rooted in the legislative context that the system will operate in. When new technologies emerge, guidance across the contextual axis should already exist to help agencies navigate their existing legal obligations, creating an environment where agencies can safely innovate. Appendix 2 illustrates how this taxonomy can be used to categorise existing and potential AI use cases, providing a visual way to conceptualise how AI is and can be used in Government.
 
 
 ## References

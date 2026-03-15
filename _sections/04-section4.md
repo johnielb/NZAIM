@@ -17,15 +17,15 @@ If a claim is successfully coded by these rules, ACC immediately processes the c
 
 Any accepted claimant with more complex needs may need to contact ACC over the phone. Their [calls will likely be transcribed](https://www.acc.co.nz/assets/corporate-documents/Privacy-Impact-Assessment-Agent-Copilot.pdf)[^21] by a **generative AI model** with millions to billions of times more complexity than the previously mentioned algorithms. The open-ended nature of generative AI makes it harder to empirically measure performance in the context it is deployed in, as is the case for non-generative AI. Instead, evaluation relies on expert and user acceptance of sample answers for a defined use case. ACC can increase the system’s flexibility and utility, such as augmenting the call transcript with their knowledge base, or changing to a different model architecture with improved language translation, but the evaluation methods remain the same. To remain flexible to technological developments, guidance should not descend into finer technical distinctions beyond the evaluation method.
 
-## Action: Adopt a taxonomy that recognises commonalities between algorithms, traditional and generative AI
+## 4.1 Action: Adopt a taxonomy that recognises commonalities between algorithms, traditional and generative AI {#s4-1}
 
 Given this common controls across algorithms and AI, I recommend that AI system guidance cover traditional algorithms, which is not evident in existing AI-specific guidance. This distinction is not solely a matter of academic precision, but a practical safeguard. Traditional automations outside the modern understanding of AI still have the same potential for beneficence (e.g. freeing up workers from menial, repetitive tasks, standardising and de-biasing process) and maleficence (e.g. Robodebt[^22], Dutch childcare benefits scandal[^23]) as AI. Promoting this understanding ensures that governance and monitoring efforts appropriately cover all systems with the potential for material impact, not only those labelled as AI. Furthermore, the same legal obligations apply to any impactful decision-making system, regardless of whether the system is a traditional algorithm or AI.
 
-A similar risk arises when conflating AI with generative AI. AI systems have long been deployed across government in the form of traditional predictive techniques, as outlined in Section 5. Focusing efforts on newer generative AI systems, currently limited to low-impact administrative uses, while ignoring the monitoring of established predictive AI systems risks diverting oversight away from systems that already make consequential decisions about users of government services.
+A similar risk arises when conflating AI with generative AI. AI systems have long been deployed across government in the form of traditional predictive techniques, as outlined in [Section 5](../05-section5/). Focusing efforts on newer generative AI systems, currently limited to low-impact administrative uses, while ignoring the monitoring of established predictive AI systems risks diverting oversight away from systems that already make consequential decisions about users of government services.
 
-<u>Figure 2</u> illustrates a categorisation that recognises the similarities and differences of these evaluation paradigms, visualising the nesting and overlaps between each category. Below, I propose definitions for key categories of algorithms and AI, and discuss:
+[Figure 2](#figure-2) illustrates a categorisation that recognises the similarities and differences of these evaluation paradigms, visualising the nesting and overlaps between each category. Below, I propose definitions for key categories of algorithms and AI, and discuss:
 
-{% include diagrams/figure2-ai-taxonomy.html %}
+<div id="figure-2">{% include diagrams/figure2-ai-taxonomy.html %}</div>
 
 - what other categories of techniques fall into that category (**subsets**)
 
@@ -37,11 +37,11 @@ A similar risk arises when conflating AI with generative AI. AI systems have lon
 
 - **challenges** universally associated with designing the systems included within that category. Subcategories inherit the challenges of their parent category. For example, the issues identified for algorithms (automation bias, auditability, monitoring and evaluation) extend to all techniques mentioned in this paper.
 
-> **Figure 2**: Overview of relevant categories for algorithmic and AI techniques with distinct evaluation and interpretation considerations. Algorithms form the superset of all relevant analytical techniques discussed in this paper, of which AI is a subset. Two of the most relevant paradigms in AI are shown: machine learning (ML), the main set of the most used AI techniques, and evolutionary computation (EC), a distinct type of AI used for optimisation and simulation. Relevant types of ML are also broken out: supervised learning, unsupervised learning, reinforcement learning. Two other categories employ a mix of those three techniques in an advanced, novel manner: deep learning (which itself is not an evaluation paradigm but a type of model), and generative AI. Goal-driven optimisation is a distinct evaluation paradigm, which can also be used to train generative AI models.
+> **[Figure 2](#figure-2)**: Overview of relevant categories for algorithmic and AI techniques with distinct evaluation and interpretation considerations. Algorithms form the superset of all relevant analytical techniques discussed in this paper, of which AI is a subset. Two of the most relevant paradigms in AI are shown: machine learning (ML), the main set of the most used AI techniques, and evolutionary computation (EC), a distinct type of AI used for optimisation and simulation. Relevant types of ML are also broken out: supervised learning, unsupervised learning, reinforcement learning. Two other categories employ a mix of those three techniques in an advanced, novel manner: deep learning (which itself is not an evaluation paradigm but a type of model), and generative AI. Goal-driven optimisation is a distinct evaluation paradigm, which can also be used to train generative AI models.
 
 
 <div class="box" id="box-4-1-1">
-<div class="box__header"><span class="box__number">Box 4.1.1</span><h3 class="box__title">Algorithms</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.1</span><h3 class="box__title" id="box-4-1-1-h">Algorithms</h3></div>
 <div class="box__body" markdown="1">
 
 Methodical set of instructions that can be executed by a machine. Algorithms are typically authored by humans but increasingly can be written by generative AI.
@@ -65,7 +65,7 @@ Methodical set of instructions that can be executed by a machine. Algorithms are
 
 
 <div class="box" id="box-4-1-2">
-<div class="box__header"><span class="box__number">Box 4.1.2</span><h3 class="box__title">Predesigned / handcrafted algorithms</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.2</span><h3 class="box__title" id="box-4-1-2-h">Predesigned / handcrafted algorithms</h3></div>
 <div class="box__body" markdown="1">
 
 Algorithms consisting of predefined logic, rules or ‘symbols’ (as in the traditional category of symbolic AI) for reaching an output. These algorithms are typically manually designed by humans but may be designed by large language models through linguistic likelihood, rather than mathematical derivation. This category excludes data-derived systems that may itself consist of rules or symbols, such as decision tree classifiers.
@@ -81,12 +81,12 @@ Algorithms consisting of predefined logic, rules or ‘symbols’ (as in the tra
 
 
 <div class="box" id="box-4-1-3">
-<div class="box__header"><span class="box__number">Box 4.1.3</span><h3 class="box__title">Goal-driven optimisation (GDO)</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.3</span><h3 class="box__title" id="box-4-1-3-h">Goal-driven optimisation (GDO)</h3></div>
 <div class="box__body" markdown="1">
 
 Algorithms that search for the best solution to a defined problem, which becomes exponentially difficult when attempted exhaustively. They typically use simulations to model a solution’s interaction with its environment. The “best solution” may be the end intervention itself, such as a set of school bus routes that maximise coverage and minimise resource use. It may also be the best strategy for how actors behave and react to an intervention.
 
-Actors[^24] optimise their behaviour based on their own motivation (e.g. economic gain, travel time minimisation, personal health) reaching equilibrium against others in the simulation. _[Continues next page]_
+Actors[^24] optimise their behaviour based on their own motivation (e.g. economic gain, travel time minimisation, personal health) reaching equilibrium against others in the simulation.
 
 **Subsets:** reinforcement learning, evolutionary computation.
 
@@ -104,7 +104,7 @@ Actors[^24] optimise their behaviour based on their own motivation (e.g. economi
 
 
 <div class="box" id="box-4-1-4">
-<div class="box__header"><span class="box__number">Box 4.1.4</span><h3 class="box__title">Artificial intelligence (AI)</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.4</span><h3 class="box__title" id="box-4-1-4-h">Artificial intelligence (AI)</h3></div>
 <div class="box__body" markdown="1">
 
 Machine-based systems that infer (based on implicit or explicit objectives) from the input it receives how to generate outputs (predictions, content, recommendations, decisions, actions).
@@ -120,7 +120,7 @@ Machine-based systems that infer (based on implicit or explicit objectives) from
 
 
 <div class="box" id="box-4-1-5">
-<div class="box__header"><span class="box__number">Box 4.1.5</span><h3 class="box__title">Machine learning (ML)</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.5</span><h3 class="box__title" id="box-4-1-5-h">Machine learning (ML)</h3></div>
 <div class="box__body" markdown="1">
 
 AI models that are automatically developed using existing observations, understanding and approximating how that data contributes to an output.
@@ -141,7 +141,7 @@ AI models that are automatically developed using existing observations, understa
 
 
 <div class="box" id="box-4-1-6">
-<div class="box__header"><span class="box__number">Box 4.1.6</span><h3 class="box__title">Supervised learning</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.6</span><h3 class="box__title" id="box-4-1-6-h">Supervised learning</h3></div>
 <div class="box__body" markdown="1">
 
 ML models that infer how to generate outputs based on the relationship of previously observed inputs with an associated output.
@@ -162,7 +162,7 @@ ML models that infer how to generate outputs based on the relationship of previo
 
 
 <div class="box" id="box-4-1-7">
-<div class="box__header"><span class="box__number">Box 4.1.7</span><h3 class="box__title">Unsupervised learning[^25]</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.7</span><h3 class="box__title" id="box-4-1-7-h">Unsupervised learning[^25]</h3></div>
 <div class="box__body" markdown="1">
 
 ML models that infers how to generate outputs from the input it receives without explicitly knowing what outputs to generate (from past examples), based only on underlying patterns in the input data.
@@ -182,7 +182,7 @@ ML models that infers how to generate outputs from the input it receives without
 
 
 <div class="box" id="box-4-1-8">
-<div class="box__header"><span class="box__number">Box 4.1.8</span><h3 class="box__title">Self-supervised learning</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.8</span><h3 class="box__title" id="box-4-1-8-h">Self-supervised learning</h3></div>
 <div class="box__body" markdown="1">
 
 ML models that infer how to generate outputs through reproducing input data rather than relying on an independently provided target. As the target output comes from the input data itself, this ML paradigm combines the verifiability of supervised learning (withheld data can be used as ground truth) and the scalability of unsupervised learning (no manual labelling and eliminates bias from proxy labels).
@@ -198,7 +198,7 @@ ML models that infer how to generate outputs through reproducing input data rath
 
 
 <div class="box" id="box-4-1-9">
-<div class="box__header"><span class="box__number">Box 4.1.9</span><h3 class="box__title">Generative AI (GenAI)</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.9</span><h3 class="box__title" id="box-4-1-9-h">Generative AI (GenAI)</h3></div>
 <div class="box__body" markdown="1">
 
 DL models that create new data (text, images, video, music, speech) by learning and mimicking the underlying patterns within existing data.
@@ -216,7 +216,6 @@ DL models that create new data (text, images, video, music, speech) by learning 
     - protected mātauranga Māori (e.g. language, art, knowledge) as permission must be sought from the authors or kaitiaki of such materials
     - tapu materials which should never be used to create new outputs
 
-_[Challenges continues next page]_
 - _generation of dangerous content –_ including dangerous weapons; dangerous, violent or hateful content; misinformation and disinformation; offensive cyber-attacks; obscene harmful imagery
 - _unauthorised data integration or deanonymisation –_ leakage of sensitive information from training data or inputs, both explicitly (e.g. publicly available social media profiles) and implicitly (e.g. semantic cues that imply personal attributes)
 - _content attribution –_ as part of the general challenge of auditability and recordkeeping.
@@ -227,7 +226,7 @@ _[Challenges continues next page]_
 
 
 <div class="box" id="box-4-1-10">
-<div class="box__header"><span class="box__number">Box 4.1.10</span><h3 class="box__title">Reinforcement learning (RL)</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.10</span><h3 class="box__title" id="box-4-1-10-h">Reinforcement learning (RL)</h3></div>
 <div class="box__body" markdown="1">
 
 AI models that learn how actors in an environment should effectively act (known as an actor’s policy, e.g. writing the next best word, perform the next best economic transaction, wait or administer a medical treatment) rather than training on past examples.
@@ -241,7 +240,7 @@ AI models that learn how actors in an environment should effectively act (known 
 
 
 <div class="box" id="box-4-1-11">
-<div class="box__header"><span class="box__number">Box 4.1.11</span><h3 class="box__title">Evolutionary computation (EC)</h3></div>
+<div class="box__header"><span class="box__number">Box 4.1.11</span><h3 class="box__title" id="box-4-1-11-h">Evolutionary computation (EC)</h3></div>
 <div class="box__body" markdown="1">
 
 AI models that mimic the trial-and-error and survival-of-the-fittest nature of biological evolution. These methods are different from ML which primarily optimise solutions mathematically, evolutionary computation randomly adjusts solutions and retains a certain number of the best ones. These methods may prove beneficial when traditional ML reaches a dead end and can’t find a mathematical way to improve a solution, or when there isn’t a mathematical way to directly define how to improve a solution. EC retains a set of potentially effective candidates and uses externally defined evaluation measures (a solution’s “fitness”) that is not dependent on the constraints of the solution.
@@ -253,7 +252,7 @@ AI models that mimic the trial-and-error and survival-of-the-fittest nature of b
 </div>
 </div>
 
-## Action: A new NZAIM should recognise the different technical challenges of different AI paradigms
+## 4.2 Action: A new NZAIM should recognise the different technical challenges of different AI paradigms {#s4-2}
 
 Evidently, there are common challenges and considerations that apply to all algorithmic and AI techniques. For example, the risk of automation bias, concept drift and output-outcome misalignment can be realised for any algorithm regardless of the technique used. They are all risks rooted in the wider system and environment these algorithms operate in, rather than the algorithms themselves. However, these challenges often manifest and are addressed differently depending on the technique. For example, automation bias is relatively simple to address for a single prediction derived from supervised learning when compared to the active thought required to critically assess the open-ended output of generative AI.
 
@@ -261,7 +260,7 @@ These nuances necessitate more granular technical guidance than current one-size
 
 > Like the NZISM, the NZAIM should firstly provide broadly applicable controls to all systems, then prescribe controls based on the risks unique to the evaluation paradigm used by an AI model.
 
-## Action: Consider how to promote trustworthy AI use in simulations and goal-driven optimisation
+## 4.3 Action: Consider how to promote trustworthy AI use in simulations and goal-driven optimisation {#s4-3}
 
 Using this more precise taxonomy reveals an opportunity around the role goal-driven optimisation can play in improving the rigour of intervention appraisals and evaluations to inform robust policy decisions, if not the rigour of intervention design itself. Instead of recreating past responses to interventions (as in supervised learning) or hypothesising policy impacts from emergent linguistic patterns (as in large language models), GDO models directly calculate the effects of an intervention in a virtual environment.
 
@@ -284,5 +283,5 @@ Promoting effective and trustworthy AI use and decision-making with GDO requires
 [^21]: ACC, March 2025. ACC Privacy Impact Assessment (PIA) - Agent Copilot. [https://www.acc.co.nz/assets/corporate-documents/Privacy-Impact-Assessment-Agent-Copilot.pdf](https://www.acc.co.nz/assets/corporate-documents/Privacy-Impact-Assessment-Agent-Copilot.pdf)
 [^22]: Australian federal government data matching algorithm between one’s declared income to the social service agency and actual income known to the tax agency to calculate welfare overpayments. This algorithm made invalid assumptions about income, and its validity was never tested. This scheme triggered parliamentary inquiries and a Royal Commission report, which became a political issue in the election where the responsible government lost.
 [^23]: Dutch government risk-scoring algorithm to determine the risk of childcare benefit fraud. Rules were manually developed by humans, factoring in protected attributes like dual nationality. Rules and outputs were not made available to flagged households, and decisions could not be contested. Staff succumbed to automation bias, treating the outputs as evidence of fraud rather than a signal to investigate actual evidence of fraud. Consequently, parliamentary opposition moved a motion of no confidence in the government, forcing the serving government to resign.
-[^24]: I avoid using the term ‘agents’ and defining ‘agentic AI’ as a category. Agency describes a philosophical capacity to act with intention, rather than a description of technical evaluation. This taxonomy instead distinguishes between orchestrating LLMs and GDO models. LLM-orchestrated ‘AI agents’ (such as Microsoft Copilot Researcher or Github Copilot) only reason the next likely action based on probabilistic likelihood, as explained in Box 4.1.9. Even though they can perform actions, orchestrating LLMs lack the independent intent to measure and satisfy a goal beyond prompt completion. In contrast, GDO models learn how to act within an environment, real or virtual, guided by a defined mathematical objective. For example, if an ‘agent’ is tasked with devising an individual’s unique injury rehabilitation plan, an orchestrating LLM would generate a plan mimicking prior examples with similar circumstances. A GDO model would simulate the patient’s unique biomedical, psychological and social risk factors and calculate how specific treatments and programmes optimise the probability of returning to independence. Either approach is valuable in different situations: LLM orchestration provides a user-friendly natural language interface that draws on historical patterns, while GDO provides systemic mathematical fidelity that models the actual effect of a plan.
+[^24]: I avoid using the term ‘agents’ and defining ‘agentic AI’ as a category. Agency describes a philosophical capacity to act with intention, rather than a description of technical evaluation. This taxonomy instead distinguishes between orchestrating LLMs and GDO models. LLM-orchestrated ‘AI agents’ (such as Microsoft Copilot Researcher or Github Copilot) only reason the next likely action based on probabilistic likelihood, as explained in [Box 4.1.9](#box-4-1-9). Even though they can perform actions, orchestrating LLMs lack the independent intent to measure and satisfy a goal beyond prompt completion. In contrast, GDO models learn how to act within an environment, real or virtual, guided by a defined mathematical objective. For example, if an ‘agent’ is tasked with devising an individual’s unique injury rehabilitation plan, an orchestrating LLM would generate a plan mimicking prior examples with similar circumstances. A GDO model would simulate the patient’s unique biomedical, psychological and social risk factors and calculate how specific treatments and programmes optimise the probability of returning to independence. Either approach is valuable in different situations: LLM orchestration provides a user-friendly natural language interface that draws on historical patterns, while GDO provides systemic mathematical fidelity that models the actual effect of a plan.
 [^25]: This framework differentiates between supervised and unsupervised learning models to recognise the findings of a review by the Australian National Audit Office (ANAO) into the Australian Tax Office’s (ATO) use of AI. The ATO’s use of AI comprised 71% unsupervised learning models, by virtue of their role in identifying non-compliance where patterns of concern may be hard to detect, poorly defined, or emerge from novel, unanticipated behaviour. Presumably due to the challenges of measuring these models’ performance, the ATO did not develop ways to measure any of the models’ performance. Adaptive identification of non-compliance will be desirable for – if not already used by – many government agencies here. Therefore, standard guidance should recognise the increased risk around the development of unsupervised non-compliance models.
