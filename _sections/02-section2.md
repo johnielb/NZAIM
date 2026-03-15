@@ -100,6 +100,12 @@ A consolidation of GCDS policy also provides an opportunity to consider other pe
 
 - Consolidating practical advice on Māori engagement and citizen participation, building on existing all-of-government initiatives like the DPMC’s Policy Project[^14], and previous technology-specific research by Toi Āria[^15] and Te Kāhui Raraunga[^16].
 
+- How compliance with GCDS guidance is assessed within implementing agencies, in lieu of legislative, Cabinet or voluntary enforcement. Another potential mechanism is a standardised data maturity assessment, through which agencies are evaluated, directly associating a trustworthy, respectful data culture with high performance. It is unclear how or if the GCDS currently assesses organisational data maturity.
+
+After streamlining normative commitments, what remains of the Algorithm Charter comprises operational obligations that are already mandated by legislation and standards and thus are best clarified in the NZAIM. Transparency around algorithmic decision-making is largely compulsory under the OIA. Failing to ensure and regularly review the fitness of data and algorithms constitutes poor professional practice and exposes agencies to material risk. Privacy and the human right to non-discrimination (through bias mitigation) are safeguarded by existing laws. Accordingly, these residual commitments are largely addressable through technical controls rather than requiring standalone normative commitments.
+
+> The GCDS maintains a range of normative best practice on specific systems (algorithms, IDI) which are largely applicable to any data use. All guidance promoting a trustworthy, respectful data culture can be consolidated into DPUP.
+
 
 ## References
 
