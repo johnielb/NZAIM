@@ -1,0 +1,636 @@
+// ─── Headings ────────────────────────────────────────────────────────────────
+.content {
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-display;
+    font-weight: 500;
+    line-height: $leading-snug;
+    color: $navy;
+    scroll-margin-top: calc(var(--topbar-h, 52px) + #{$sp-4});
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: $text-2xl;
+    margin-top: $sp-12;
+    margin-bottom: $sp-6;
+    padding-bottom: $sp-4;
+    border-bottom: 2px solid $grey-light;
+
+    // Gradient fill: navy → teal left to right
+    background: linear-gradient(90deg, $navy 0%, $teal 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    // First H1 on a page needs less top margin
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    font-size: $text-xl;
+    margin-top: $sp-10;
+    margin-bottom: $sp-4;
+    color: $navy;
+
+    // ── Action: heading — the paper's core recommendation markers ──────────
+    &[id^="action"] {
+      color: darken($lime, 15%);
+      padding: $sp-3 $sp-4;
+      margin-left: -$sp-4;
+      margin-right: -$sp-4;
+      background: $action-bg;
+      border-left: 4px solid $lime;
+      border-radius: 0 $border-radius $border-radius 0;
+
+    }
+  }
+
+  h3 {
+    font-size: $text-lg;
+    margin-top: $sp-8;
+    margin-bottom: $sp-3;
+    color: $navy;
+  }
+
+  h4 {
+    font-size: $text-md;
+    margin-top: $sp-6;
+    margin-bottom: $sp-2;
+    color: $text;
+  }
+
+  // ─── Body text ─────────────────────────────────────────────────────────────
+  p {
+    margin-bottom: $sp-5;
+    max-width: $content-max;
+  }
+
+  // ─── Lists ─────────────────────────────────────────────────────────────────
+  ul, ol {
+    margin: 0 0 $sp-5 $sp-6;
+    max-width: $content-max;
+
+    li {
+      margin-bottom: $sp-2;
+      line-height: $leading-normal;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: $sp-5;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $teal;
+      }
+
+      // Nested lists
+      ul li::before {
+        background: $blue;
+        width: 5px;
+        height: 5px;
+      }
+    }
+  }
+
+  ol {
+    list-style: decimal;
+    padding-left: $sp-6;
+  }
+
+  // ─── Blockquote — used for captions and callout notes ─────────────────────
+  blockquote {
+    margin: $sp-6 0;
+    padding: $sp-4 $sp-6;
+    background: $surface;
+    border-left: 4px solid $teal;
+    border-radius: 0 $border-radius $border-radius 0;
+    max-width: $content-max;
+
+    p {
+      margin-bottom: $sp-2;
+      color: $text-light;
+      font-size: $text-sm;
+      line-height: $leading-normal;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Figure captions (italics inside blockquote)
+    em, i {
+      font-style: italic;
+      color: $text-light;
+    }
+  }
+
+  // ─── Takeaway blockquote ────────────────────────────────────────────────────
+  // Single-paragraph, non-italic blockquotes = section takeaways.
+  // Excludes figure captions (p > em:only-child) and legislation cards (p + p).
+  blockquote:not(:has(p > em:only-child)):not(:has(p + p)) {
+    display: flex;
+    align-items: center;
+    gap: $sp-5;
+    padding: $sp-6 $sp-8 $sp-6 $sp-5;
+    background: rgba($teal, 0.06);
+    border-left: 4px solid $teal;
+    border-radius: 0 $border-radius-lg $border-radius-lg 0;
+    max-width: 100%;
+    margin: $sp-8 0;
+
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background-color: $teal;
+      -webkit-mask-image: url('/whitepaper/assets/images/image8.svg');
+      mask-image: url('/whitepaper/assets/images/image8.svg');
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+
+    p {
+      font-size: $text-md;
+      font-weight: 500;
+      color: $navy;
+      line-height: $leading-normal;
+      margin-bottom: 0;
+      max-width: none;
+    }
+  }
+
+  // ─── Tables ────────────────────────────────────────────────────────────────
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $text-sm;
+    margin: $sp-6 0;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+
+    // Scrollable on small screens
+    @supports (overflow-x: auto) {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  thead {
+    background: $navy;
+    color: $white;
+
+    th {
+      padding: $sp-3 $sp-4;
+      text-align: left;
+      font-weight: 600;
+      font-size: $text-xs;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $border;
+      transition: background $transition-fast;
+
+      &:hover {
+        background: $surface;
+      }
+
+      &:nth-child(even) {
+        background: rgba($grey-light, 0.4);
+
+        &:hover {
+          background: $surface;
+        }
+      }
+    }
+
+    td {
+      padding: $sp-3 $sp-4;
+      vertical-align: top;
+      line-height: $leading-normal;
+    }
+  }
+
+  // ─── Plain table (no header styling, equal column widths, no overflow) ────
+  table.table-plain {
+    table-layout: fixed;
+    display: table;
+    overflow-x: visible;
+
+    @supports (overflow-x: auto) {
+      display: table;
+      overflow-x: visible;
+    }
+
+    thead {
+      background: rgba($grey-light, 0.4);
+      color: $text;
+
+      th {
+        font-weight: 400;
+        color: $text;
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: $text-sm;
+        white-space: normal;
+        vertical-align: top;
+        line-height: $leading-normal;
+      }
+    }
+  }
+
+  // ─── Status table (narrow first col, equal last two cols) ──────────────────
+  table.table-status {
+    table-layout: fixed;
+    display: table;
+    overflow-x: visible;
+
+    @supports (overflow-x: auto) {
+      display: table;
+      overflow-x: visible;
+    }
+
+    thead th {
+      white-space: normal;
+      vertical-align: top;
+    }
+
+    // Narrow status indicator column; remaining columns share space equally
+    th:first-child,
+    td:first-child {
+      width: 64px;
+      text-align: center;
+    }
+  }
+
+  // ─── Inline code / pre ─────────────────────────────────────────────────────
+  code {
+    font-family: $font-mono;
+    font-size: 0.875em;
+    background: $grey-light;
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    color: $navy;
+  }
+
+  pre {
+    background: $navy;
+    color: rgba(255,255,255,0.9);
+    padding: $sp-5 $sp-6;
+    border-radius: $border-radius;
+    overflow-x: auto;
+    margin: $sp-6 0;
+    font-size: $text-sm;
+
+    code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+  }
+
+  // ─── Horizontal rule ───────────────────────────────────────────────────────
+  hr {
+    border: none;
+    border-top: 1px solid $border;
+    margin: $sp-10 0;
+  }
+
+  // ─── Footnote references with tooltip ─────────────────────────────────────
+  sup[id^="fnref:"] {
+    display: inline-block;
+    vertical-align: super;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.4em;
+      margin-left: 0.4em;
+      padding: 0 0.4em;
+      height: 1.4em;
+      background: $grey-light;
+      color: $text-light;
+      border-radius: 3px;
+      font-size: .7rem;
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1;
+      vertical-align: baseline;
+      transition: background $transition-fast, color $transition-fast;
+
+      &:hover {
+        background: $navy;
+        color: $white;
+      }
+    }
+
+    // Tooltip bubble — JS-injected .fn-tip div (enables autoscroll on overflow)
+    position: relative;
+
+    .fn-tip {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      max-height: 22rem;
+      overflow: hidden;
+      background: $navy-dark;
+      border-radius: $border-radius;
+      box-shadow: $shadow-md;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity $transition-fast;
+      z-index: 500;
+
+      // Arrow (default: below the bubble, pointing down toward the citation)
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: $navy-dark;
+      }
+
+      // Flip below the citation when it would overflow the top of the viewport
+      &--below {
+        bottom: auto;
+        top: calc(100% + 8px);
+
+        &::after {
+          top: auto;
+          bottom: 100%;
+          border-top-color: transparent;
+          border-bottom-color: $navy-dark;
+        }
+      }
+    }
+
+    &:hover .fn-tip {
+      opacity: 1;
+    }
+
+    .fn-tip__inner {
+      display: block;
+      color: $white;
+      font-size: $text-sm;
+      font-weight: 400;
+      line-height: $leading-normal;
+      padding: $sp-3 $sp-4;
+      white-space: normal;
+      text-align: left;
+
+      // Autoscroll animation — applied by JS when content overflows
+      &.is-scrolling {
+        animation: fn-tip-scroll var(--tip-dur, 4s) linear var(--tip-delay, 5s) forwards;
+      }
+    }
+  }
+
+  // ─── Strong / em ───────────────────────────────────────────────────────────
+  strong, b {
+    font-weight: 700;
+    color: $navy-dark;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  // ─── Links ─────────────────────────────────────────────────────────────────
+  a {
+    color: $blue;
+    text-decoration: underline;
+    text-decoration-color: rgba($blue, 0.35);
+    text-underline-offset: 2px;
+    transition: color $transition-fast, text-decoration-color $transition-fast;
+
+    &:hover {
+      color: $navy;
+      text-decoration-color: $navy;
+    }
+  }
+
+  // ─── Section intro paragraph (first p after h1) ────────────────────────────
+  h1 + p {
+    // font-size: $text-md;
+    color: $text-light;
+    line-height: $leading-loose;
+  }
+}
+
+@keyframes fn-tip-scroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(var(--tip-dist, 0)); }
+}
+
+// ─── Section header block (above content) ────────────────────────────────────
+.section-header {
+  padding: $sp-10 $sp-10 $sp-6;
+  background: linear-gradient(135deg, $navy 0%, darken($navy, 5%) 100%);
+  color: $white;
+  margin-bottom: 0;
+
+  &__number {
+    font-size: $text-sm;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $lime;
+    margin-bottom: $sp-3;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    line-height: $leading-snug;
+    color: $white;
+    max-width: 680px;
+  }
+}
+
+// ─── Callout / note cards ─────────────────────────────────────────────────────
+// These are rendered from blockquotes with multiple paragraphs (legislation cards)
+.content blockquote:has(p + p + p) {
+  border-left-color: $blue;
+  background: rgba($blue, 0.04);
+
+  p:first-child {
+    font-weight: 700;
+    color: $navy;
+    font-size: $text-base;
+  }
+}
+
+// ─── Breakout boxes (Box 1.1.1 etc.) ─────────────────────────────────────────
+// Rendered as <div class="box"> HTML blocks from the extraction script.
+// markdown="1" on .box__body lets kramdown process inner content.
+.box {
+  margin: $sp-8 0;
+  border: 1px solid $border;
+  border-radius: $border-radius-lg;
+  // overflow: visible so absolutely-positioned tooltips inside aren't clipped
+  box-shadow: $shadow-sm;
+  max-width: $content-max;
+
+  & + .box {
+    margin-top: $sp-6;
+  }
+}
+
+.box__header {
+  display: flex;
+  align-items: center;
+  gap: $sp-3;
+  padding: $sp-5 $sp-6;
+  background: $teal;
+  color: $white;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+}
+
+.box__number {
+  font-family: $font-display;
+  font-size: $text-xs;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $white;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.box__header .box__title {
+  font-family: $font-display;
+  font-size: $text-base;
+  font-weight: 700;
+  color: $white !important;
+  line-height: $leading-snug;
+  margin: 0;
+}
+
+.box__body {
+  padding: $sp-5 $sp-6;
+  background: rgba($navy, 0.02);
+  font-size: $text-sm;
+  line-height: $leading-normal;
+
+  // Override .content styles scoped inside box
+  p {
+    margin-bottom: $sp-3;
+    max-width: none;
+    color: $text;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  ul {
+    margin: 0 0 $sp-3 $sp-5;
+
+    li {
+      margin-bottom: $sp-1;
+
+      &::before {
+        background: $blue;
+        width: 5px;
+        height: 5px;
+      }
+    }
+
+    ul {                      // nested bullets
+      margin-top: $sp-1;
+      margin-bottom: $sp-1;
+      margin-left: $sp-4;
+
+      li::before {
+        background: $teal;
+        width: 4px;
+        height: 4px;
+      }
+    }
+  }
+
+  // "Further reading:" note at end of box
+  p:last-child:has(a) {
+    margin-top: $sp-3;
+    padding-top: $sp-3;
+    border-top: 1px solid $border;
+    font-size: $text-xs;
+    color: $text-light;
+  }
+
+  // Takeaway blockquote — rendered as > text by extract script
+  blockquote {
+    display: flex;
+    align-items: center;
+    gap: $sp-4;
+    padding: $sp-4 $sp-5 $sp-4 $sp-4;
+    margin: $sp-5 0 0;
+    background: rgba($teal, 0.06);
+    border-left: 4px solid $teal;
+    border-radius: 0 $border-radius $border-radius 0;
+    max-width: none;
+
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background-color: $teal;
+      -webkit-mask-image: url('/whitepaper/assets/images/image8.svg');
+      mask-image: url('/whitepaper/assets/images/image8.svg');
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+
+    p {
+      font-size: $text-sm;
+      font-weight: 500;
+      color: $navy;
+      line-height: $leading-normal;
+      margin-bottom: 0;
+      max-width: none;
+    }
+  }
+}

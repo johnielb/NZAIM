@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.short_title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- DM Sans from Google Fonts (fallback for Founders Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- Favicon: lime square for quick brand recognition -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230E2841'/%3E%3Crect x='4' y='4' width='24' height='4' rx='2' fill='%2378BD00'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<div class="site">
+  <!-- Left sidebar navigation -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Site navigation">
+    {% include nav.html %}
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Main content region -->
+  <div class="main" id="main-content">
+
+    <!-- Top bar: mobile toggle + breadcrumb -->
+    <header class="topbar">
+      <button class="topbar__toggle" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation">
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 5A.75.75 0 012.75 9h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 9.75zm0 5A.75.75 0 012.75 14h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 14.75z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <div class="topbar__breadcrumb">
+        <a href="{{ '/' | relative_url }}" style="color:inherit;text-decoration:none;">Whitepaper</a>
+        {% if page.title %}
+          &nbsp;›&nbsp;<span>
+            {% if page.section_number %}{{ page.section_number }}. {% endif %}
+            {{ page.title }}</span>
+        {% endif %}
+      </div>
+    </header>
+
+    {{ content }}
+
+  </div><!-- /.main -->
+</div><!-- /.site -->
+
+<script>
+(function () {
+  var toggle   = document.getElementById('sidebar-toggle');
+  var sidebar  = document.getElementById('sidebar');
+  var overlay  = document.getElementById('sidebar-overlay');
+  var topbar   = document.querySelector('.topbar');
+
+  function setTopbarHeight() {
+    document.documentElement.style.setProperty('--topbar-h', topbar.offsetHeight + 'px');
+  }
+  setTopbarHeight();
+  window.addEventListener('resize', setTopbarHeight);
+
+  function openNav() {
+    sidebar.classList.add('is-open');
+    overlay.classList.add('is-visible');
+    toggle.setAttribute('aria-expanded', 'true');
+    overlay.removeAttribute('aria-hidden');
+  }
+
+  function closeNav() {
+    sidebar.classList.remove('is-open');
+    overlay.classList.remove('is-visible');
+    toggle.setAttribute('aria-expanded', 'false');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  toggle.addEventListener('click', function () {
+    sidebar.classList.contains('is-open') ? closeNav() : openNav();
+  });
+
+  overlay.addEventListener('click', closeNav);
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('is-open')) closeNav();
+  });
+
+  // ── Footnote tooltips with overflow autoscroll ─────────────────────────────
+  document.querySelectorAll('sup[id^="fnref:"] a[href^="#fn:"]').forEach(function (link) {
+    var fnId = link.getAttribute('href').slice(1);
+    var fnEl = document.getElementById(fnId);
+    if (!fnEl) return;
+    var clone = fnEl.cloneNode(true);
+    var backref = clone.querySelector('.reversefootnote');
+    if (backref) backref.parentNode.removeChild(backref);
+    var text = (clone.textContent || clone.innerText || '').trim().replace(/\s+/g, ' ');
+    if (!text) return;
+
+    var sup = link.parentElement;
+
+    // Build tooltip DOM: .fn-tip > .fn-tip__inner (div so block layout is reliable)
+    var tip = document.createElement('div');
+    tip.className = 'fn-tip';
+    var inner = document.createElement('div');
+    inner.className = 'fn-tip__inner';
+    inner.textContent = text;
+    tip.appendChild(inner);
+    sup.appendChild(tip);
+
+    sup.addEventListener('mouseenter', function () {
+      // Reset state
+      inner.classList.remove('is-scrolling');
+      inner.style.removeProperty('--tip-dist');
+      inner.style.removeProperty('--tip-dur');
+      tip.classList.remove('fn-tip--below');
+
+      setTimeout(function () {
+        // Flip below if tooltip goes above the topbar
+        var topbarH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--topbar-h')) || 52;
+        var rect = tip.getBoundingClientRect();
+        if (rect.top < topbarH) {
+          tip.classList.add('fn-tip--below');
+        }
+
+        // Autoscroll if content overflows max-height
+        var overflow = tip.scrollHeight - tip.clientHeight;
+        if (overflow > 0) {
+          inner.style.setProperty('--tip-dist', '-' + overflow + 'px');
+          inner.style.setProperty('--tip-dur', (overflow / 15).toFixed(1) + 's');
+          inner.classList.add('is-scrolling');
+        }
+      }, 0);
+    });
+
+    sup.addEventListener('mouseleave', function () {
+      inner.classList.remove('is-scrolling');
+      tip.classList.remove('fn-tip--below');
+    });
+  });
+
+  // ── Active section highlighting in page-toc ─────────────────────────────
+  var tocLinks = document.querySelectorAll('.page-toc__list a');
+  if (tocLinks.length) {
+    var headings = Array.from(document.querySelectorAll('.content h1, .content h2'));
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(function (l) { l.classList.remove('active'); });
+          var id = entry.target.id;
+          var activeLink = document.querySelector('.page-toc__list a[href="#' + id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-52px 0px -60% 0px' });
+
+    headings.forEach(function (h) { observer.observe(h); });
+  }
+})();
+</script>
+
+</body>
+</html>

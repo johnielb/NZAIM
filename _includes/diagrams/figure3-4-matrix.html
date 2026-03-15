@@ -1,0 +1,424 @@
+<div class="fig34-wrap" id="fig-matrix">
+<style>
+.fig34-wrap { font-family: inherit; margin: 2rem 0; }
+.fig34-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.fig34-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #182549;
+  background: #f0f4ff;
+  border: 1.5px solid #182549;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  transition: background 0.15s;
+}
+.fig34-toggle:hover { background: #dde4f0; }
+.fig34-toggle.active { background: #182549; color: #fff; }
+.fig34-toggle-icon { font-size: 1rem; }
+.fig34-matrix-wrap { overflow-x: auto; }
+.fig34-matrix {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.fig34-matrix th {
+  background: #182549;
+  color: #fff;
+  padding: 0.6rem 0.75rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid #111b35;
+  line-height: 1.3;
+}
+.fig34-matrix th.row-header {
+  text-align: left;
+  min-width: 150px;
+  background: #111b35;
+}
+.fig34-matrix td {
+  border: 1px solid #d0d8e8;
+  padding: 0;
+  vertical-align: top;
+  min-width: 140px;
+  background: #fafbff;
+  position: relative;
+}
+.fig34-matrix td.high-risk {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.fig34-matrix td.row-label {
+  background: #eef2fa;
+  padding: 0.6rem 0.75rem;
+  font-weight: 700;
+  color: #182549;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  border-color: #c0cce0;
+}
+.fig34-matrix td.row-label .row-sub {
+  font-weight: 400;
+  color: #555;
+  font-size: 0.72rem;
+  display: block;
+  margin-top: 0.15rem;
+}
+.fig34-cell-inner {
+  padding: 0.5rem 0.6rem;
+  height: 100%;
+  min-height: 70px;
+}
+.fig34-cell-challenges {
+  font-size: 0.72rem;
+  color: #444;
+  line-height: 1.45;
+  margin-bottom: 0.4rem;
+}
+.fig34-cell-risk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.68rem;
+  color: #b91c1c;
+  font-weight: 600;
+  background: rgba(239,68,68,0.1);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+}
+.fig34-examples-section {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #c0d0e8;
+}
+.fig34-examples-section[hidden] { display: none; }
+.fig34-example-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #182549;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  margin: 0.15rem 0.15rem 0 0;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.fig34-example-chip:hover { background: #2a3a6a; }
+.fig34-example-chip.lime { background: #3a7d00; }
+.fig34-chip-agency { font-weight: 400; opacity: 0.85; }
+.fig34-detail-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.fig34-detail-overlay.open { display: flex; }
+.fig34-detail-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 480px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.fig34-detail-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+}
+.fig34-detail-card h3 { margin: 0 0 0.25rem; font-size: 1rem; color: #182549; }
+.fig34-detail-card .agency { font-size: 0.78rem; color: #555; margin-bottom: 0.75rem; }
+.fig34-detail-card .desc { font-size: 0.85rem; line-height: 1.55; color: #333; }
+.fig34-detail-card .tags {
+  display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem;
+}
+.fig34-detail-card .tag {
+  background: #eef2fa; color: #182549; font-size: 0.72rem; font-weight: 600;
+  border-radius: 4px; padding: 0.15rem 0.5rem;
+}
+.fig34-caption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 0.75rem;
+}
+.fig34-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+}
+.fig34-legend-item { display: flex; align-items: center; gap: 0.35rem; }
+.fig34-legend-swatch { width: 16px; height: 16px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.1); }
+</style>
+
+<div class="fig34-controls">
+  <button class="fig34-toggle" id="fig34-toggle-examples" aria-pressed="false">
+    <span class="fig34-toggle-icon">🔍</span>
+    Show NZ Examples
+  </button>
+  <span style="font-size:0.78rem;color:#555;">Click any cell or example chip for details</span>
+</div>
+
+<div class="fig34-matrix-wrap">
+<table class="fig34-matrix" role="grid"
+       aria-label="Technical and contextual categories matrix for NZ government AI">
+<thead>
+  <tr>
+    <th class="row-header" scope="col">Technical Category</th>
+    <th scope="col">Non-Core<br><span style="font-weight:400;font-size:0.68em;text-transform:none;letter-spacing:0;">Internal operations</span></th>
+    <th scope="col">Administration<br><span style="font-weight:400;font-size:0.68em;text-transform:none;letter-spacing:0;">Citizen-facing, structured</span></th>
+    <th scope="col">Frontline<br><span style="font-weight:400;font-size:0.68em;text-transform:none;letter-spacing:0;">Direct decision impact</span></th>
+    <th scope="col">Research<br><span style="font-weight:400;font-size:0.68em;text-transform:none;letter-spacing:0;">Policy &amp; evidence</span></th>
+  </tr>
+</thead>
+<tbody id="fig34-tbody">
+</tbody>
+</table>
+</div>
+
+<div class="fig34-legend">
+  <span style="font-weight:700;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:#666;">Legend:</span>
+  <span class="fig34-legend-item"><span class="fig34-legend-swatch" style="background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.3);"></span>Legally high-risk cell</span>
+  <span class="fig34-legend-item"><span class="fig34-legend-swatch" style="background:#182549;border-color:#182549;"></span>NZ government example</span>
+  <span class="fig34-legend-item"><span class="fig34-legend-swatch" style="background:#3a7d00;border-color:#3a7d00;"></span>Cross-cutting example</span>
+</div>
+
+<p class="fig34-caption">
+  Figure 4: Matrix overlaying technical AI categories with contextual deployment categories. Red-shaded cells
+  indicate legally high-risk combinations requiring elevated governance. Toggle "Show NZ Examples" to overlay
+  known NZ government deployments. Click any example chip for details.
+</p>
+
+<!-- Modal overlay -->
+<div class="fig34-detail-overlay" id="fig34-overlay" role="dialog" aria-modal="true" aria-label="Example details">
+  <div class="fig34-detail-card">
+    <button class="fig34-detail-close" id="fig34-overlay-close" aria-label="Close">×</button>
+    <h3 id="fig34-ex-name"></h3>
+    <div class="agency" id="fig34-ex-agency"></div>
+    <div class="desc" id="fig34-ex-desc"></div>
+    <div class="tags" id="fig34-ex-tags"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Matrix data
+  const ROWS = [
+    {
+      id:'handcrafted',
+      label:'Handcrafted / Rule-Based',
+      sub:'Decision rules, expert systems, BRMS',
+      cells:{
+        'non-core': { challenges:'Low explainability risk. Primary concerns: rule maintenance burden, version control, and audit trails for logic changes.', risk:false },
+        'admin':    { challenges:'Rules must reflect current legislation. Change management and testing requirements are significant.', risk:false },
+        'frontline':{ challenges:'Must be transparent to affected individuals. Rule basis makes this achievable — but requires plain-language documentation.', risk:false },
+        'research': { challenges:'Useful for policy simulation. Risk of oversimplification; model assumptions must be documented.', risk:false },
+      }
+    },
+    {
+      id:'supervised',
+      label:'Supervised Learning',
+      sub:'Classification, regression, prediction',
+      cells:{
+        'non-core': { challenges:'Training data governance, model card requirements, retraining schedules.', risk:false },
+        'admin':    { challenges:'Bias in training data can produce discriminatory outputs. Requires demographic fairness testing.', risk:false },
+        'frontline':{ challenges:'High accountability demand. Explainability requirements under NZBOA, potential rights implications.', risk:true, riskNote:'High rights-impact risk' },
+        'research': { challenges:'Dataset representativeness, selection bias, reproducibility of findings.', risk:false },
+      }
+    },
+    {
+      id:'unsupervised',
+      label:'Unsupervised Learning',
+      sub:'Clustering, anomaly detection, dimensionality reduction',
+      cells:{
+        'non-core': { challenges:'Results can be arbitrary without validation. Needs human review of cluster interpretations.', risk:false },
+        'admin':    { challenges:'Citizen grouping for targeted services raises Privacy Act obligations and potential discrimination risks.', risk:true, riskNote:'Privacy Act risk — segmentation' },
+        'frontline':{ challenges:'Using clusters to inform individual decisions is high-risk — outputs not individually explainable.', risk:true, riskNote:'Legally high-risk: individual decisions from group patterns' },
+        'research': { challenges:'Exploratory power is high. Must distinguish correlation from causation in policy advice.', risk:false },
+      }
+    },
+    {
+      id:'genai',
+      label:'Generative AI',
+      sub:'LLMs, diffusion models, multimodal',
+      cells:{
+        'non-core': { challenges:'IP, copyright, data leakage in prompts. Acceptable use policies required.', risk:false },
+        'admin':    { challenges:'Hallucination risks in citizen-facing content. Must have human review for official outputs.', risk:true, riskNote:'Accuracy liability; potential misinformation' },
+        'frontline':{ challenges:'Cannot be sole basis for individual decisions. Hallucination + bias = highest risk combination.', risk:true, riskNote:'Highest risk: unreliable + high-stakes decisions' },
+        'research': { challenges:'Synthetic data generation risks, attribution, and reproducibility. Useful for literature synthesis with caveats.', risk:false },
+      }
+    },
+    {
+      id:'gdo',
+      label:'Goal-Driven Optimisation',
+      sub:'Reinforcement learning, scheduling, routing',
+      cells:{
+        'non-core': { challenges:'Resource allocation must be explainable to auditors. Reward function design is critical.', risk:false },
+        'admin':    { challenges:'Optimising queues or resource allocation may inadvertently disadvantage particular groups.', risk:false },
+        'frontline':{ challenges:'RL policies optimising individual case outcomes are very hard to audit or appeal. High legal risk.', risk:true, riskNote:'Policy decisions from RL: audit and appeal challenges' },
+        'research': { challenges:'Useful for policy scenario modelling. Robust to distributional shift? Must be validated.', risk:false },
+      }
+    },
+  ];
+
+  const EXAMPLES = {
+    'supervised|frontline': [
+      { id:'acc', name:'ACC Injury Probability Score', agency:'ACC', desc:'A supervised learning model that predicts the probability of a claimant accepting a settlement offer. Used to prioritise case management resources. Raised transparency and bias concerns — are claimants discriminated against by predicted behaviour?', tags:['Supervised','Frontline','Benefits/Insurance','Algorithm Charter signatory'] },
+      { id:'corrections-roc', name:'Corrections RoC*RoI', agency:'Dept. of Corrections', desc:'Risk-of-Custody × Risk-of-Reimprisonment model used in parole and sentencing reports. A logistic regression trained on historical offending data. High profile due to concerns about racial bias amplification from historically biased data.', tags:['Supervised','Frontline','Criminal Justice','Algorithm Charter signatory'] },
+    ],
+    'supervised|admin': [
+      { id:'winz-debt', name:'Debt Identification Model', agency:'Work and Income NZ', desc:'Machine learning model used to identify beneficiaries likely to have accumulated debt, enabling proactive outreach. Raised questions about bias toward Māori and Pasifika claimants.', tags:['Supervised','Administration','Social Welfare'] },
+    ],
+    'unsupervised|admin': [
+      { id:'stats-migration', name:'Census Migration Estimation', agency:'Stats NZ', desc:'Uses unsupervised clustering of administrative data sources (tax, benefits, visa records) to estimate internal and international migration flows between census years.', tags:['Unsupervised','Administration','Statistical','Stats NZ'] },
+    ],
+    'gdo|admin': [
+      { id:'moe-routes', name:'MONTY School Route Optimisation', agency:'Ministry of Transport / MoE', desc:'Goal-driven optimisation model used to optimise school bus routes, minimising travel time and cost. Uses constraint-based optimisation rather than RL. Demonstrates GDO in a low-stakes administrative context.', tags:['GDO','Administration','Transport','Routing'] },
+    ],
+    'genai|non-core': [
+      { id:'public-service-llm', name:'Public Service LLM Pilots', agency:'Multiple agencies', desc:'Several agencies (including DIA, Stats NZ) are piloting internal LLM tools for document drafting, summarisation, and code assistance. GCDO guidance (PSAIF/RAIG) applies to these deployments.', tags:['Generative AI','Non-Core','Internal Tools','PSAIF'] },
+    ],
+    'handcrafted|frontline': [
+      { id:'msd-rules', name:'Benefit Eligibility Rules Engine', agency:'Ministry of Social Development', desc:'A rules-based engine implementing the Social Security Act eligibility rules for benefit payments. Highly transparent by design — rules are directly derived from legislation — but maintenance burden is significant as policy changes.', tags:['Handcrafted','Frontline','Social Welfare','Legislation-aligned'] },
+    ],
+    'supervised|research': [
+      { id:'treasury-model', name:'Economic Forecasting Models', agency:'The Treasury', desc:'Econometric and ML models used for revenue forecasting and fiscal scenario modelling. Results inform Budget policy settings.', tags:['Supervised','Research','Economic Policy','Treasury'] },
+    ],
+    'gdo|research': [
+      { id:'niwa-climate', name:'Climate Scenario Optimisation', agency:'NIWA', desc:'Goal-driven models used to optimise resource allocation and simulate climate adaptation scenarios. Informs policy recommendations to government.', tags:['GDO','Research','Climate','NIWA'] },
+    ],
+  };
+
+  let showExamples = false;
+
+  function buildTable() {
+    const tbody = document.getElementById('fig34-tbody');
+    tbody.innerHTML = '';
+    const cols = ['non-core','admin','frontline','research'];
+
+    ROWS.forEach(row => {
+      const tr = document.createElement('tr');
+
+      // Row label
+      const tdLabel = document.createElement('td');
+      tdLabel.className = 'row-label';
+      tdLabel.setAttribute('scope', 'row');
+      tdLabel.innerHTML = row.label + '<span class="row-sub">' + row.sub + '</span>';
+      tr.appendChild(tdLabel);
+
+      cols.forEach(col => {
+        const cell = row.cells[col];
+        const td = document.createElement('td');
+        if (cell.risk) td.className = 'high-risk';
+
+        const inner = document.createElement('div');
+        inner.className = 'fig34-cell-inner';
+
+        const challenges = document.createElement('div');
+        challenges.className = 'fig34-cell-challenges';
+        challenges.textContent = cell.challenges;
+        inner.appendChild(challenges);
+
+        if (cell.risk) {
+          const badge = document.createElement('span');
+          badge.className = 'fig34-cell-risk';
+          badge.innerHTML = '⚠ ' + (cell.riskNote || 'High legal risk');
+          inner.appendChild(badge);
+        }
+
+        const exKey = row.id + '|' + col;
+        const examples = EXAMPLES[exKey];
+        if (examples && examples.length > 0) {
+          const exSection = document.createElement('div');
+          exSection.className = 'fig34-examples-section';
+          exSection.hidden = !showExamples;
+          examples.forEach(ex => {
+            const chip = document.createElement('span');
+            chip.className = 'fig34-example-chip';
+            chip.setAttribute('tabindex', '0');
+            chip.setAttribute('role', 'button');
+            chip.setAttribute('aria-label', ex.name + ' — ' + ex.agency);
+            chip.innerHTML = '<span>' + ex.name.split(' ').slice(0,3).join(' ') + '…</span><span class="fig34-chip-agency">(' + ex.agency + ')</span>';
+            chip.addEventListener('click', () => showDetail(ex));
+            chip.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); showDetail(ex); }});
+            exSection.appendChild(chip);
+          });
+          inner.appendChild(exSection);
+        }
+
+        td.appendChild(inner);
+        tr.appendChild(td);
+      });
+
+      tbody.appendChild(tr);
+    });
+  }
+
+  function showDetail(ex) {
+    document.getElementById('fig34-ex-name').textContent = ex.name;
+    document.getElementById('fig34-ex-agency').textContent = ex.agency;
+    document.getElementById('fig34-ex-desc').textContent = ex.desc;
+    const tagsEl = document.getElementById('fig34-ex-tags');
+    tagsEl.innerHTML = '';
+    ex.tags.forEach(t => {
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.textContent = t;
+      tagsEl.appendChild(span);
+    });
+    const overlay = document.getElementById('fig34-overlay');
+    overlay.classList.add('open');
+    document.getElementById('fig34-overlay-close').focus();
+  }
+
+  const toggleBtn = document.getElementById('fig34-toggle-examples');
+  toggleBtn.addEventListener('click', () => {
+    showExamples = !showExamples;
+    toggleBtn.classList.toggle('active', showExamples);
+    toggleBtn.setAttribute('aria-pressed', showExamples);
+    document.querySelectorAll('.fig34-examples-section').forEach(s => {
+      s.hidden = !showExamples;
+    });
+  });
+
+  const overlay = document.getElementById('fig34-overlay');
+  document.getElementById('fig34-overlay-close').addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key==='Escape') overlay.classList.remove('open'); });
+
+  buildTable();
+})();
+</script>
+</div>

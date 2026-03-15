@@ -1,0 +1,98 @@
+// ─── Colour palette (from whitepaper docx) ───────────────────────────────────
+$navy:        #222686;
+$navy-dark:   #0E2841;
+$blue:        #0078BB;
+$teal:        #228FA9;
+$green:       #009664;
+$lime:        #78BD00;
+$coral:       #DA5145;
+$purple:      #3B38E3;
+$grey-light:  #E8E8E8;
+
+// Derived UI colours
+$white:       #FFFFFF;
+$grey-mid:    #BCBCBC;
+$grey-dark:   #4A4A4A;
+$text:        $navy-dark;     // body text
+$text-light:  #5A5A72;
+$border:      #D0D0DC;
+$surface:     #F7F7FB;       // very light navy-tinted background
+$action-bg:   rgba($lime, 0.08);  // subtle tint behind Action headings
+
+// CSS custom properties (emitted to :root by main.scss)
+:root {
+  --navy:        #{$navy};
+  --navy-dark:   #{$navy-dark};
+  --blue:        #{$blue};
+  --teal:        #{$teal};
+  --green:       #{$green};
+  --lime:        #{$lime};
+  --coral:       #{$coral};
+  --purple:      #{$purple};
+  --grey-light:  #{$grey-light};
+
+  --text:        #{$text};
+  --text-light:  #{$text-light};
+  --surface:     #{$surface};
+  --border:      #{$border};
+}
+
+// ─── Typography ──────────────────────────────────────────────────────────────
+// Body: Founders Grotesk Text (commercial, matches docx) → DM Sans → system sans
+$font-body: "Founders Grotesk Text", "DM Sans", ui-sans-serif, system-ui,
+            -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+// Display / headings: slightly tighter, lean on Founders Grotesk if loaded
+$font-display: "Founders Grotesk", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+// Mono: code snippets (legislation references, etc.)
+$font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+// Type scale (major third: ×1.25)
+$text-xs:   0.75rem;    //  12px
+$text-sm:   0.875rem;   //  14px
+$text-base: 1rem;       //  16px
+$text-md:   1.125rem;   //  18px
+$text-lg:   1.25rem;    //  20px
+$text-xl:   1.5625rem;  //  25px
+$text-2xl:  1.953rem;   //  ~31px
+$text-3xl:  2.441rem;   //  ~39px
+$text-4xl:  3rem;       //  48px
+
+// Line heights
+$leading-tight:  1.2;
+$leading-snug:   1.35;
+$leading-normal: 1.6;
+$leading-loose:  1.8;
+
+// ─── Spacing ─────────────────────────────────────────────────────────────────
+$sp-1:  0.25rem;
+$sp-2:  0.5rem;
+$sp-3:  0.75rem;
+$sp-4:  1rem;
+$sp-5:  1.25rem;
+$sp-6:  1.5rem;
+$sp-8:  2rem;
+$sp-10: 2.5rem;
+$sp-12: 3rem;
+$sp-16: 4rem;
+$sp-20: 5rem;
+$sp-24: 6rem;
+
+// ─── Layout ──────────────────────────────────────────────────────────────────
+$sidebar-width:     280px;
+$sidebar-collapsed: 64px;
+$content-max:       760px;
+$page-max:          1200px;
+$border-radius:     6px;
+$border-radius-lg:  12px;
+
+// ─── Transitions ─────────────────────────────────────────────────────────────
+$transition-fast:   150ms ease;
+$transition-base:   250ms ease;
+$transition-slow:   400ms ease;
+
+// ─── Shadows ─────────────────────────────────────────────────────────────────
+$shadow-sm:  0 1px 3px rgba(14, 40, 65, 0.08);
+$shadow-md:  0 4px 12px rgba(14, 40, 65, 0.12);
+$shadow-lg:  0 8px 32px rgba(14, 40, 65, 0.16);

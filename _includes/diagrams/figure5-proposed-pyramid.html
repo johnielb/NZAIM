@@ -1,0 +1,532 @@
+<div class="fig5-wrap" id="fig-proposed-pyramid">
+<style>
+.fig5-wrap { font-family: inherit; margin: 2rem 0; }
+.fig5-inner { position: relative; }
+.fig5-inner svg { width: 100%; height: auto; display: block; }
+.fig5-pill { cursor: pointer; }
+.fig5-pill rect { transition: filter 0.15s; }
+.fig5-pill:hover rect.pill-bg { filter: brightness(1.15); }
+.fig5-pill:focus { outline: none; }
+.fig5-pill:focus rect.pill-bg { filter: brightness(1.2); }
+.fig5-callout {
+  cursor: pointer;
+  transition: transform 0.15s;
+  transform-origin: center;
+}
+.fig5-callout:hover { transform: scale(1.1); }
+.fig5-callout:focus { outline: none; }
+.fig5-callout:focus circle { stroke-width: 3; }
+.fig5-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #182549;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  max-width: 240px;
+  line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.fig5-tooltip.visible { opacity: 1; }
+.fig5-tt-title { display: block; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.2rem; }
+.fig5-tt-body { display: block; font-size: 0.72rem; opacity: 0.9; line-height: 1.4; }
+.fig5-detail {
+  margin-top: 1rem;
+  display: none;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid #78BD00;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.fig5-detail.open { display: block; }
+.fig5-detail-header {
+  background: #182549;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fig5-detail-section-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #78BD00;
+}
+.fig5-detail-title { font-size: 0.95rem; font-weight: 700; }
+.fig5-detail-close {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0;
+}
+.fig5-detail-close:hover { color: #fff; }
+.fig5-detail-body {
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #333;
+  background: #f8faff;
+}
+.fig5-detail-body p { margin: 0 0 0.5rem; }
+.fig5-detail-body p:last-child { margin-bottom: 0; }
+.fig5-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #444;
+}
+.fig5-legend-group { display: flex; align-items: center; gap: 0.75rem; }
+.fig5-legend-title { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #666; margin-right: 0.25rem; }
+.fig5-legend-item { display: flex; align-items: center; gap: 0.35rem; }
+.fig5-legend-swatch { width: 28px; height: 14px; border-radius: 7px; flex-shrink: 0; }
+.fig5-legend-callout {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #78BD00; color: #fff;
+  font-size: 0.65rem; font-weight: 700;
+  flex-shrink: 0;
+}
+.fig5-caption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 0.75rem;
+}
+</style>
+
+<div class="fig5-inner">
+  <svg id="fig5-svg" viewBox="0 0 920 580" role="img"
+       aria-label="Proposed state hierarchy of NZ government AI frameworks"
+       xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="fig5-shadow">
+        <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.18)"/>
+      </filter>
+      <filter id="fig5-callout-glow">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(120,189,0,0.4)"/>
+      </filter>
+    </defs>
+
+    <!-- Layer bands -->
+    <g id="fig5-bands"></g>
+    <g id="fig5-dividers"></g>
+    <g id="fig5-outline"></g>
+    <g id="fig5-layer-labels"></g>
+    <!-- Pills -->
+    <g id="fig5-pills" role="list"></g>
+    <!-- Annotation callouts -->
+    <g id="fig5-callouts" role="list"></g>
+  </svg>
+
+  <div class="fig5-tooltip" id="fig5-tooltip" role="tooltip" aria-hidden="true">
+    <strong class="fig5-tt-title"></strong>
+    <span class="fig5-tt-body"></span>
+  </div>
+</div>
+
+<div class="fig5-detail" id="fig5-detail" role="region" aria-label="Annotation detail">
+  <div class="fig5-detail-header">
+    <div>
+      <div class="fig5-detail-section-num" id="fig5-detail-section"></div>
+      <div class="fig5-detail-title" id="fig5-detail-title"></div>
+    </div>
+    <button class="fig5-detail-close" id="fig5-detail-close" aria-label="Close annotation">×</button>
+  </div>
+  <div class="fig5-detail-body" id="fig5-detail-body"></div>
+</div>
+
+<div class="fig5-legend">
+  <div class="fig5-legend-group">
+    <span class="fig5-legend-title">Type:</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-swatch" style="background:#B91C6E;"></span>Law</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-swatch" style="background:#6B3A9E;"></span>Standard</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-swatch" style="background:#C04080;"></span>Principle</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-swatch" style="background:#7040A8;"></span>Guidance</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-swatch" style="background:#D05580;"></span>Charter</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-swatch" style="background:#78BD00;"></span>Proposed</span>
+  </div>
+  <div class="fig5-legend-group">
+    <span class="fig5-legend-title">Callouts:</span>
+    <span class="fig5-legend-item"><span class="fig5-legend-callout">§</span>Click numbered callouts for whitepaper recommendations</span>
+  </div>
+</div>
+
+<p class="fig5-caption">
+  Figure 5: Proposed state for a streamlined NZ government AI guidance ecosystem.
+  The NZAIM (§1.8) consolidates technical guidance into a single framework.
+  DPUP+ (§2.2) expands data principles to cover algorithm-level obligations.
+  RAIG/PSAIF (§3.3) are unified under GCDO. The Algorithm Charter (§2.4) is strengthened with compliance mechanisms.
+  Click numbered callout badges to view the relevant whitepaper recommendation.
+</p>
+
+<script>
+(function(){
+  // Same pyramid geometry as figure 1 but with different colour scheme
+  const PY = { topY:40, botY:520, topLeft:360, topRight:560, botLeft:30, botRight:890 };
+  const H = PY.botY - PY.topY; // 480
+
+  function leftX(y)  { return PY.topLeft  + (y - PY.topY) / H * (PY.botLeft  - PY.topLeft);  }
+  function rightX(y) { return PY.topRight + (y - PY.topY) / H * (PY.botRight - PY.topRight); }
+
+  const LAYERS = [
+    { id:'benefits',   y1:40,  y2:136, name:'Benefits\nRealisation',   fill:'rgba(120,189,0,0.13)' },
+    { id:'ai-systems', y1:136, y2:232, name:'AI Systems',               fill:'rgba(24,37,73,0.07)'  },
+    { id:'algorithms', y1:232, y2:328, name:'Algorithms',               fill:'rgba(24,37,73,0.055)' },
+    { id:'it',         y1:328, y2:424, name:'Information Technology',   fill:'rgba(24,37,73,0.04)'  },
+    { id:'info',       y1:424, y2:520, name:'Information',              fill:'rgba(24,37,73,0.025)' },
+  ];
+
+  const TYPE_COLOR = {
+    law:      '#B91C6E',
+    standard: '#6B3A9E',
+    principle:'#C04080',
+    guidance: '#7040A8',
+    charter:  '#D05580',
+    proposed: '#78BD00',
+  };
+
+  // Proposed state nodes (streamlined vs current state)
+  const NODES = [
+    // Information layer
+    { id:'OIA',    abbr:'OIA',      type:'law',      maint:null,   layer:'info',       name:'Official Information Act 1982',         desc:'Unchanged from current state.' },
+    { id:'Privacy',abbr:'Privacy',  type:'law',      maint:null,   layer:'info',       name:'Privacy Act 2020',                      desc:'Unchanged from current state.' },
+    { id:'PRA',    abbr:'PRA',      type:'law',      maint:null,   layer:'info',       name:'Public Records Act 2005',               desc:'Unchanged from current state.' },
+    { id:'DPUP+',  abbr:'DPUP+',   type:'proposed', maint:'GCDS', layer:'info',       name:'Data Protection and Use Policy (Enhanced)', desc:'Proposed (§2.2): DPUP expanded to include obligations on algorithmic data use — transparency, fairness, and impact assessment requirements.' },
+    { id:'NTP',    abbr:'NTP',      type:'principle',maint:'GCDS', layer:'info',       name:'Ngā Tikanga Paihere',                   desc:'Retained, with strengthened reference in NZAIM.' },
+    { id:'IRMS',   abbr:'IRMS',     type:'standard', maint:'GCDS', layer:'info',       name:'Information & Records Management Standard', desc:'Retained, with NZAIM cross-reference.' },
+    { id:'MDSov',  abbr:'MDSov',    type:'principle',maint:null,   layer:'info',       name:'Māori Data Sovereignty Principles',     desc:'Retained; proposed to be formally incorporated into DPUP+.' },
+    // IT layer
+    { id:'NZISM',  abbr:'NZISM',    type:'standard', maint:'GCISO',layer:'it',         name:'NZ Information Security Manual',        desc:'Retained; NZAIM cross-references NZISM security controls for AI system infrastructure.' },
+    { id:'DSDS',   abbr:'DSDS',     type:'standard', maint:'GCDO', layer:'it',         name:'Digital Service Design Standard',       desc:'Retained; NZAIM references DSDS for user-facing AI system design.' },
+    { id:'GWS',    abbr:'GWS',      type:'standard', maint:'GCDO', layer:'it',         name:'Government Web Standards',              desc:'Retained for AI system UI/UX consistency.' },
+    { id:'ISO27k', abbr:'ISO 27k',  type:'standard', maint:null,   layer:'it',         name:'ISO 27000 Information Security',        desc:'Retained; referenced by NZISM.' },
+    // Algorithms layer
+    { id:'AC+',    abbr:'AC+',      type:'proposed', maint:null,   layer:'algorithms', name:'Algorithm Charter (Strengthened)',      desc:'Proposed (§2.4): The Algorithm Charter gains mandatory reporting requirements and is incorporated into public service performance frameworks.' },
+    { id:'AIA-TK', abbr:'AIA TK',  type:'guidance', maint:null,   layer:'algorithms', name:'Algorithmic Impact Assessment Toolkit', desc:'Retained; updated to align with NZAIM categories and mandatory AIA thresholds.' },
+    { id:'MASov',  abbr:'MASov',    type:'principle',maint:null,   layer:'algorithms', name:'Māori Algorithm Sovereignty',           desc:'Retained; NZAIM formally recognises Māori Algorithm Sovereignty as a governance principle.' },
+    // AI Systems layer
+    { id:'NZAIM',  abbr:'NZAIM',   type:'proposed', maint:'GCDO', layer:'ai-systems', name:'NZ AI Manual (Proposed)',               desc:'Proposed (§1.8): A unified technical manual for NZ government AI — consolidating PSAIF, RAIG, and sector-specific guidance into a single authoritative framework.' },
+    { id:'ISO42k', abbr:'ISO 42k+', type:'standard', maint:null,   layer:'ai-systems', name:'ISO 42001+ AI Management Systems',     desc:'Retained; NZAIM aligns with ISO 42001 where applicable, enabling international interoperability.' },
+  ];
+
+  // Annotation callouts: { id, label, cx, cy, section, title, body }
+  const CALLOUTS = [
+    {
+      id:'c1-8',
+      label:'1.8',
+      cx: 820, cy: 184,  // near AI Systems layer, right side
+      section: 'Section 1 · Action 1.8',
+      title: 'Create the New Zealand AI Manual (NZAIM)',
+      body: '<p>The GCDO, working with GCDS and GCISO, should commission a unified <strong>NZ AI Manual (NZAIM)</strong> — analogous to the NZISM for information security — that provides a single authoritative technical reference for all government agencies deploying algorithm and AI systems.</p><p>The NZAIM should be layered: mandatory controls for high-risk deployments, and recommended guidance for lower-risk use cases. It should draw on ISO 42001, PSAIF, RAIG, and international frameworks (EU AI Act, NIST AI RMF).</p>'
+    },
+    {
+      id:'c2-4',
+      label:'2.4',
+      cx: 820, cy: 280,  // near Algorithms layer
+      section: 'Section 2 · Action 2.4',
+      title: 'Strengthen the Algorithm Charter',
+      body: '<p>The Algorithm Charter should be strengthened from a voluntary commitment to a mandatory reporting requirement for all public service agencies. Agencies should be required to report annually on algorithmic systems in scope, impact assessments conducted, and outcomes of algorithm audits.</p><p>The Charter should be incorporated into agency performance frameworks and chief executive accountability, aligned with the Public Service Act 2020.</p>'
+    },
+    {
+      id:'c3-3',
+      label:'3.3',
+      cx: 820, cy: 184,  // near AI Systems, far right — slight offset
+      section: 'Section 3 · Action 3.3',
+      title: 'Unify RAIG and PSAIF under NZAIM',
+      body: '<p>The GCDO should restructure RAIG (Responsible AI Guidance) and PSAIF (Public Service AI Framework) as <em>supplementary chapters</em> of the NZAIM rather than standalone documents. This eliminates duplication and ensures a single source of truth for agencies.</p><p>The unified structure should distinguish between: (1) mandatory controls in NZAIM core, (2) contextual guidance in NZAIM chapters by deployment type, and (3) sector-specific annexes maintained by lead agencies.</p>'
+    },
+    {
+      id:'c2-2',
+      label:'2.2',
+      cx: 820, cy: 472,  // near Information layer
+      section: 'Section 2 · Action 2.2',
+      title: 'Expand DPUP to DPUP+',
+      body: '<p>The Government Chief Data Steward should expand the Data Protection and Use Policy (DPUP) to include explicit obligations on <strong>algorithmic data use</strong> — not just data collection and storage. DPUP+ should require agencies to document: (a) what data feeds into algorithmic systems, (b) what fairness testing has been conducted, and (c) how individuals can access explanations of algorithmic decisions that affect them.</p><p>DPUP+ should formally incorporate the Māori Data Sovereignty Principles as a required consideration in algorithmic data governance.</p>'
+    },
+  ];
+
+  const PILL_W = 72, PILL_H = 20, PILL_RX = 10, GAP_X = 10, GAP_Y = 30;
+
+  function layoutLayer(nodes, layerY1, layerY2) {
+    const cx = 440;
+    const topUsable = rightX(layerY1) - leftX(layerY1);
+    const perRow = Math.max(1, Math.floor((topUsable + GAP_X) / (PILL_W + GAP_X)));
+    const rows = [];
+    for (let i = 0; i < nodes.length; i += perRow) rows.push(nodes.slice(i, i + perRow));
+    const totalH = rows.length * PILL_H + (rows.length - 1) * (GAP_Y - PILL_H);
+    const startY = (layerY1 + layerY2) / 2 - totalH / 2 + PILL_H / 2;
+
+    return rows.flatMap((row, ri) => {
+      const rowW = row.length * PILL_W + (row.length - 1) * GAP_X;
+      const startX = cx - rowW / 2;
+      return row.map((node, ci) => ({
+        node,
+        x: startX + ci * (PILL_W + GAP_X),
+        y: startY + ri * GAP_Y,
+      }));
+    });
+  }
+
+  function svgEl(tag, attrs, text) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+
+  const MAINT_STROKE = {
+    GCDS:  { color:'#2563EB', dash:'none', w:2.5 },
+    GCISO: { color:'#059669', dash:'6,3',  w:2.5 },
+    GCDO:  { color:'#D97706', dash:'3,3',  w:3   },
+  };
+
+  function buildPyramid() {
+    const bands = document.getElementById('fig5-bands');
+    const dividers = document.getElementById('fig5-dividers');
+    const outline = document.getElementById('fig5-outline');
+    const layerLabels = document.getElementById('fig5-layer-labels');
+
+    LAYERS.forEach(layer => {
+      const { y1, y2, fill } = layer;
+      const pts = `${leftX(y1)},${y1} ${rightX(y1)},${y1} ${rightX(y2)},${y2} ${leftX(y2)},${y2}`;
+      bands.appendChild(svgEl('polygon', { points: pts, fill, 'stroke-width': 0 }));
+    });
+
+    [136, 232, 328, 424].forEach(y => {
+      dividers.appendChild(svgEl('line', {
+        x1: leftX(y), y1: y, x2: rightX(y), y2: y,
+        stroke: '#c0c0c0', 'stroke-width': 1, 'stroke-dasharray': '4,4'
+      }));
+    });
+
+    // Outline
+    const pts = `${PY.topLeft},${PY.topY} ${PY.topRight},${PY.topY} ${PY.botRight},${PY.botY} ${PY.botLeft},${PY.botY}`;
+    outline.appendChild(svgEl('polygon', { points: pts, fill:'none', stroke:'#888', 'stroke-width':1.5 }));
+    outline.appendChild(svgEl('line', { x1:PY.topLeft, y1:PY.topY, x2:PY.botLeft, y2:PY.botY, stroke:'#888', 'stroke-width':1.5 }));
+    outline.appendChild(svgEl('line', { x1:PY.topRight, y1:PY.topY, x2:PY.botRight, y2:PY.botY, stroke:'#888', 'stroke-width':1.5 }));
+
+    // Layer labels (left side)
+    [
+      { y1:40, y2:136, text:'Benefits\nRealisation' },
+      { y1:136, y2:232, text:'AI Systems' },
+      { y1:232, y2:328, text:'Algorithms' },
+      { y1:328, y2:424, text:'Information\nTechnology' },
+      { y1:424, y2:520, text:'Information' },
+    ].forEach(({ y1, y2, text }) => {
+      const cy = (y1 + y2) / 2;
+      const lx = leftX(cy) - 12;
+      const lines = text.split('\n');
+      const g = svgEl('g', {});
+      lines.forEach((line, i) => {
+        const lineY = cy + (i - (lines.length - 1) / 2) * 13;
+        g.appendChild(svgEl('text', {
+          x: lx, y: lineY, 'text-anchor':'end', 'dominant-baseline':'middle',
+          'font-size':'11', 'font-weight':'600', fill:'#444', 'font-family':'inherit',
+        }, line));
+      });
+      layerLabels.appendChild(g);
+    });
+
+    // Benefits apex
+    const bg = svgEl('g', {});
+    bg.appendChild(svgEl('text', {
+      x: 460, y: 78, 'text-anchor':'middle', 'dominant-baseline':'middle',
+      'font-size':'12', 'font-weight':'700', fill:'#3a7d00', 'font-family':'inherit',
+    }, '⭐ Benefits Realisation'));
+    layerLabels.appendChild(bg);
+  }
+
+  function buildPills() {
+    const pillsG = document.getElementById('fig5-pills');
+    const byLayer = {};
+    NODES.forEach(n => { (byLayer[n.layer] = byLayer[n.layer] || []).push(n); });
+
+    const layerBounds = {
+      'info':        { y1:424, y2:520 },
+      'it':          { y1:328, y2:424 },
+      'algorithms':  { y1:232, y2:328 },
+      'ai-systems':  { y1:136, y2:232 },
+    };
+
+    Object.entries(byLayer).forEach(([layerId, nodes]) => {
+      const bounds = layerBounds[layerId];
+      if (!bounds) return;
+      layoutLayer(nodes, bounds.y1, bounds.y2).forEach(({ node, x, y }) => {
+        const fill = TYPE_COLOR[node.type] || '#555';
+        const maint = node.maint ? MAINT_STROKE[node.maint] : null;
+        const g = svgEl('g', {
+          class:'fig5-pill', role:'listitem', tabindex:'0',
+          'aria-label': node.name, 'data-id': node.id,
+        });
+        if (maint) {
+          g.appendChild(svgEl('rect', {
+            x: x-3, y: y-PILL_H/2-3, width:PILL_W+6, height:PILL_H+6, rx:PILL_RX+3,
+            fill:'none', stroke:maint.color, 'stroke-width':maint.w,
+            'stroke-dasharray':maint.dash==='none' ? '' : maint.dash,
+          }));
+        }
+        g.appendChild(svgEl('rect', {
+          class:'pill-bg', x, y:y-PILL_H/2, width:PILL_W, height:PILL_H, rx:PILL_RX,
+          fill, filter:'url(#fig5-shadow)',
+        }));
+        // Proposed nodes get a small star badge
+        if (node.type === 'proposed') {
+          g.appendChild(svgEl('text', {
+            x: x+PILL_W-4, y: y-PILL_H/2+5,
+            'text-anchor':'middle', 'dominant-baseline':'middle',
+            'font-size':'8', fill:'#fff', 'font-family':'inherit', 'pointer-events':'none',
+          }, '★'));
+        }
+        g.appendChild(svgEl('text', {
+          x: x+PILL_W/2, y,
+          'text-anchor':'middle', 'dominant-baseline':'middle',
+          'font-size':'9.5', 'font-weight':'700', fill:'#fff',
+          'font-family':'inherit', 'pointer-events':'none',
+        }, node.abbr));
+        pillsG.appendChild(g);
+      });
+    });
+  }
+
+  function buildCallouts() {
+    const calloutsG = document.getElementById('fig5-callouts');
+    // Place callouts on the right side, with connecting lines to their layers
+    const positions = [
+      { id:'c1-8', cx:840, cy:184 },
+      { id:'c2-4', cx:840, cy:280 },
+      { id:'c3-3', cx:870, cy:184 },
+      { id:'c2-2', cx:840, cy:472 },
+    ];
+    // Override cx/cy from CALLOUTS data
+    CALLOUTS.forEach((c, i) => {
+      const pos = { cx: c.cx, cy: c.cy };
+      const g = svgEl('g', {
+        class:'fig5-callout', role:'button', tabindex:'0',
+        'aria-label': 'Action ' + c.label + ': ' + c.title,
+        'data-id': c.id,
+      });
+      // Connecting line from pyramid right edge to callout
+      const lineX = rightX(c.cy);
+      g.appendChild(svgEl('line', {
+        x1: lineX + 4, y1: c.cy, x2: pos.cx - 16, y2: c.cy,
+        stroke:'#78BD00', 'stroke-width':'1.5', 'stroke-dasharray':'4,3',
+        'pointer-events':'none',
+      }));
+      // Callout circle
+      g.appendChild(svgEl('circle', {
+        cx: pos.cx, cy: c.cy, r:'14',
+        fill:'#78BD00', stroke:'#fff', 'stroke-width':'2',
+        filter:'url(#fig5-callout-glow)',
+      }));
+      g.appendChild(svgEl('text', {
+        x: pos.cx, y: c.cy,
+        'text-anchor':'middle', 'dominant-baseline':'middle',
+        'font-size':'8', 'font-weight':'700', fill:'#fff', 'font-family':'inherit',
+        'pointer-events':'none',
+      }, '§' + c.label));
+      calloutsG.appendChild(g);
+    });
+  }
+
+  function setupInteractivity() {
+    const tooltip = document.getElementById('fig5-tooltip');
+    const ttTitle = tooltip.querySelector('.fig5-tt-title');
+    const ttBody = tooltip.querySelector('.fig5-tt-body');
+    const detail = document.getElementById('fig5-detail');
+    const svgRoot = document.getElementById('fig5-svg');
+    const wrap = svgRoot.closest('.fig5-inner');
+
+    const nodeMap = {};
+    NODES.forEach(n => { nodeMap[n.id] = n; });
+
+    const calloutMap = {};
+    CALLOUTS.forEach(c => { calloutMap[c.id] = c; });
+
+    function showTip(el, title, body) {
+      ttTitle.textContent = title;
+      ttBody.textContent = body;
+      const wrapRect = wrap.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      tooltip.style.left = Math.max(0, elRect.left - wrapRect.left - 110) + 'px';
+      const topSpace = elRect.top - wrapRect.top - 70;
+      tooltip.style.top = (topSpace < 0 ? elRect.bottom - wrapRect.top + 4 : topSpace) + 'px';
+      tooltip.setAttribute('aria-hidden', 'false');
+      tooltip.classList.add('visible');
+    }
+
+    function hideTip() {
+      tooltip.classList.remove('visible');
+      tooltip.setAttribute('aria-hidden', 'true');
+    }
+
+    // Pills
+    document.getElementById('fig5-pills').addEventListener('mouseover', e => {
+      const pill = e.target.closest('.fig5-pill');
+      if (!pill) return;
+      const node = nodeMap[pill.dataset.id];
+      if (node) showTip(pill, node.name, node.desc);
+    });
+    document.getElementById('fig5-pills').addEventListener('mouseout', e => {
+      const pill = e.target.closest('.fig5-pill');
+      if (!pill || !pill.contains(e.relatedTarget)) hideTip();
+    });
+
+    // Callouts
+    document.getElementById('fig5-callouts').addEventListener('mouseover', e => {
+      const c = e.target.closest('.fig5-callout');
+      if (!c) return;
+      const data = calloutMap[c.dataset.id];
+      if (data) showTip(c, data.section + ' — ' + data.title, 'Click to expand recommendation');
+    });
+    document.getElementById('fig5-callouts').addEventListener('mouseout', e => {
+      const c = e.target.closest('.fig5-callout');
+      if (!c || !c.contains(e.relatedTarget)) hideTip();
+    });
+    document.getElementById('fig5-callouts').addEventListener('click', e => {
+      const c = e.target.closest('.fig5-callout');
+      if (!c) return;
+      const data = calloutMap[c.dataset.id];
+      if (!data) return;
+      document.getElementById('fig5-detail-section').textContent = data.section;
+      document.getElementById('fig5-detail-title').textContent = data.title;
+      document.getElementById('fig5-detail-body').innerHTML = data.body;
+      detail.classList.add('open');
+      hideTip();
+    });
+    document.getElementById('fig5-callouts').addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      const c = e.target.closest('.fig5-callout');
+      if (!c) return;
+      const data = calloutMap[c.dataset.id];
+      if (!data) return;
+      document.getElementById('fig5-detail-section').textContent = data.section;
+      document.getElementById('fig5-detail-title').textContent = data.title;
+      document.getElementById('fig5-detail-body').innerHTML = data.body;
+      detail.classList.add('open');
+    });
+    document.getElementById('fig5-detail-close').addEventListener('click', () => {
+      detail.classList.remove('open');
+    });
+  }
+
+  buildPyramid();
+  buildPills();
+  buildCallouts();
+  setupInteractivity();
+})();
+</script>
+</div>

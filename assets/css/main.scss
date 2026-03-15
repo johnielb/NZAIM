@@ -1,0 +1,69 @@
+---
+# Jekyll front matter required for Sass processing
+---
+
+// ─── Import order matters ─────────────────────────────────────────────────────
+// 1. Variables first — everything else depends on them
+@import "variables";
+
+// 2. Layout — structural, no typography assumptions
+@import "layout";
+
+// 3. Typography — type styles within .content
+@import "typography";
+
+// 4. Figures — diagram/image containers
+@import "figures";
+
+// ─── Nav sidebar active-section H2 lime treatment ────────────────────────────
+// The key design feature: "Action:" H2 items in the left sidebar
+// are rendered in --lime as they represent the paper's core recommendations.
+//
+// Implementation: the .nav__sub-link.is-action class (set in nav.html via
+// Liquid) colours the link; the matching .content h2[id^="action"] rule
+// in _typography.scss colours the heading itself in the article.
+//
+// Both share the same visual system:
+//   sidebar sub-item → rgba(120,189,0,.85) foreground
+//   article heading  → darken($lime,15%) on $action-bg background with $lime border
+
+// ─── Print styles ─────────────────────────────────────────────────────────────
+@media print {
+  .sidebar,
+  .topbar,
+  .page-toc,
+  .topbar__toggle,
+  .sidebar-overlay {
+    display: none !important;
+  }
+
+  .main {
+    margin-left: 0 !important;
+  }
+
+  .content {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .figure__inner {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: .75em;
+    color: #666;
+  }
+}

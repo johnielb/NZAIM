@@ -1,0 +1,17 @@
+{% comment %}
+  Breakout box template — used for legislation, government role, and other
+  reference cards extracted from the whitepaper's Heading3-titled tables.
+
+  The extraction script renders boxes directly as <div class="box"> HTML in
+  the markdown files (kramdown processes them with markdown="1" on the body).
+  This include is provided for manual use in layouts or pages.
+
+  Usage:
+    {% include box.html
+       number="Box 1.1.1"
+       title="Official Information Act 1982 (OIA)"
+       id="box-1-1-1"
+    %}
+    Content goes between include and endinclude (not supported in Jekyll —
+    use the raw HTML pattern from the extraction script instead).
+{% endcomment %}

@@ -1,0 +1,94 @@
+{% comment %}
+  Reusable figure wrapper.
+
+  Usage in markdown / layouts:
+    {% include figure.html
+       id="FIGURE_3"
+       src="/assets/images/image5.png"
+       caption="Figure 1: Current state hierarchy..."
+       type="pyramid_hierarchy"
+       alt="Pyramid diagram showing hierarchy of NZ AI governance instruments"
+       full=false
+    %}
+
+  Parameters:
+    id       — placeholder ID from manifest.json (e.g. FIGURE_3). Used as element id.
+    src      — path to image file; omit or leave blank to show placeholder.
+    caption  — caption string (rendered below image).
+    type     — one of: pyramid_hierarchy | nested_taxonomy | matrix_empty |
+                       matrix_populated | annotated_pyramid | table | decorative
+    alt      — img alt text (defaults to caption if omitted).
+    full     — if "true", applies figure--full (edge-to-edge) class.
+    float    — if "right", applies figure--float-right.
+{% endcomment %}
+
+{%- assign fig_id    = include.id    | default: "" -%}
+{%- assign fig_src   = include.src   | default: "" -%}
+{%- assign fig_type  = include.type  | default: "decorative" -%}
+{%- assign fig_cap   = include.caption | default: "" -%}
+{%- assign fig_alt   = include.alt   | default: fig_cap -%}
+{%- assign fig_full  = include.full  | default: false -%}
+{%- assign fig_float = include.float | default: "" -%}
+
+{%- comment -%}Build modifier class list{%- endcomment -%}
+{%- assign mod_classes = "" -%}
+{%- if fig_full == "true" or fig_full == true -%}
+  {%- assign mod_classes = mod_classes | append: " figure--full" -%}
+{%- endif -%}
+{%- if fig_float == "right" -%}
+  {%- assign mod_classes = mod_classes | append: " figure--float-right" -%}
+{%- endif -%}
+
+<figure class="figure figure--{{ fig_type }}{{ mod_classes }}"
+        id="{% if fig_id != '' %}{{ fig_id | downcase }}{% endif %}"
+        role="figure"
+        aria-label="{{ fig_alt | xml_escape }}">
+
+  <div class="figure__inner">
+
+    {%- if fig_src != "" -%}
+      <!-- Actual image -->
+      <img class="figure__image"
+           src="{{ fig_src | relative_url }}"
+           alt="{{ fig_alt | xml_escape }}"
+           loading="lazy"
+           decoding="async">
+    {%- else -%}
+      <!-- Placeholder — image not yet embedded -->
+      <div class="figure__placeholder"
+           data-type="{{ fig_type | replace: '_', ' ' }}"
+           aria-label="Image placeholder: {{ fig_id }}">
+
+        <!-- Generic image icon -->
+        <svg class="figure__placeholder-icon" viewBox="0 0 48 48" fill="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="8" width="44" height="32" rx="4" stroke="currentColor"
+                stroke-width="2.5" fill="none"/>
+          <circle cx="15" cy="20" r="4" stroke="currentColor" stroke-width="2"/>
+          <path d="M2 36 l12-10 8 8 10-12 14 14" stroke="currentColor"
+                stroke-width="2" stroke-linejoin="round" fill="none"/>
+        </svg>
+
+        <p class="figure__placeholder-id">{{ fig_id }}</p>
+        <p class="figure__placeholder-hint">Image asset: {{ fig_src | split: "/" | last }}</p>
+
+        <!-- Expand icon (future lightbox hook) -->
+        <button class="figure__expand" aria-label="Expand figure" tabindex="-1">
+          <svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+            <path d="M1 1h4V0H0v5h1zm8-1v1h4v4h1V0zm4 13h-4v1h5V9h-1zm-13 0V9H0v5h5v-1z"/>
+          </svg>
+        </button>
+      </div>
+    {%- endif -%}
+
+    {%- if fig_cap != "" -%}
+      <figcaption class="figure__caption">
+        {%- if fig_id != "" -%}
+          <strong>{{ fig_id | replace: "_", "&nbsp;" }}</strong>
+        {%- endif -%}
+        {{ fig_cap }}
+      </figcaption>
+    {%- endif -%}
+
+  </div>
+</figure>
