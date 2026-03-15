@@ -99,7 +99,11 @@
 
 <a class="sidebar__download" href="{{ '/assets/whitepaper.pdf' | relative_url }}" download>
   <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12l-4.5-4.5 1.06-1.06L7 8.88V2h2v6.88l2.44-2.44 1.06 1.06L8 12zM2 13h12v1.5H2V13z"/></svg>
-  Download PDF
+  Download Whitepaper
+</a>
+<a class="sidebar__download sidebar__download--secondary" href="{{ '/assets/thesis.pdf' | relative_url }}" download>
+  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12l-4.5-4.5 1.06-1.06L7 8.88V2h2v6.88l2.44-2.44 1.06 1.06L8 12zM2 13h12v1.5H2V13z"/></svg>
+  Download Thesis
 </a>
 
 <div class="sidebar__footer">
@@ -213,6 +217,18 @@
 
   &:hover {
     background: #5e9600;
+  }
+}
+
+.sidebar__download--secondary {
+  background: transparent;
+  color: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.18);
+  margin-top: 0;
+
+  &:hover {
+    background: rgba(255,255,255,.07);
+    color: rgba(255,255,255,.85);
   }
 }
 
