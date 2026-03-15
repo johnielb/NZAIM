@@ -4,11 +4,9 @@
   max-width: 100%;
 
   &--full {
-    margin-left: -$sp-10;
     margin-right: -$sp-10;
 
     @media (max-width: 900px) {
-      margin-left: -$sp-5;
       margin-right: -$sp-5;
     }
   }
@@ -95,6 +93,10 @@
   max-width: 100%;
   max-height: 50vh;
   object-fit: contain;
+}
+
+.figure--full .figure__image {
+  max-height: none;
 }
 
 // ─── Caption bar ──────────────────────────────────────────────────────────

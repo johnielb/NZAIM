@@ -1,8 +1,8 @@
 ---
 layout: section
 title: "Appendix 1: Summary of challenges identified in each technical category"
-short_title: Appendix 1
-section_number: Appendix 1
+short_title: 
+section_number: 
 description: Matrix of build, process and use challenges across algorithm and AI technique categories.
 ---
 # Appendix 1: Summary of challenges identified in each technical ([Section 4](../04-section4/)) category
