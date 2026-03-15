@@ -1,0 +1,327 @@
+<div class="a2euler-wrap" id="fig-appendix2-map">
+<style>
+.a2euler-wrap { font-family: inherit; margin: 2rem 0; overflow-x: auto; }
+.a2euler-wrap svg { width: 100%; height: auto; display: block; min-width: 680px; }
+.a2euler-caption { margin-top:1rem; font-size:.78rem; color:#555; line-height:1.55; border-top:1px solid #e0e0e0; padding-top:.75rem; }
+.a2euler-legend { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; margin-top:.75rem; font-size:.74rem; color:#444; align-items:center; }
+.a2euler-legend-item { display:flex; align-items:center; gap:.3rem; }
+.a2euler-swatch { width:18px; height:12px; border-radius:3px; flex-shrink:0; border:1.5px solid transparent; }
+</style>
+
+<!--
+  ViewBox: 0 0 1100 1340
+  Scale at 760px render: 0.691 → SVG 19px ≈ 0.8rem, SVG 29px ≈ h3 (1.25rem)
+  Columns: Non-core(10–245) Admin(248–462) Frontline(465–718) Research(721–988)
+  Chip cx: Non-core=127  Admin=355  Frontline=591  Research=854
+  Chip w:  Non-core=219  Admin=198  Frontline=236  Research=250
+  Chip heights: 1L=42  2L=66  3L=92  dy=28
+-->
+<svg viewBox="0 0 1100 1340" role="img"
+     aria-label="Euler diagram map of NZ government algorithms and AI under the technical-contextual taxonomy"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="a2sh" x="-25%" y="-35%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2.5" flood-color="rgba(0,0,0,0.09)"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="1340" fill="#fff"/>
+
+  <!-- ══ COLUMN BANDS (semi-transparent, full height y=55–1325) ══ -->
+  <rect x="248" y="55" width="214" height="1270" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/>
+  <rect x="465" y="55" width="253" height="1270" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/>
+  <rect x="721" y="55" width="267" height="1270" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/>
+
+  <!-- ══ ROW BANDS (semi-transparent, full width) ══ -->
+  <rect x="12" y="55"   width="980" height="378" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/><!-- Hand crafted -->
+  <rect x="12" y="443"  width="980" height="252" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/><!-- Supervised -->
+  <rect x="12" y="603"  width="980" height="185" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/><!-- Unsupervised (overlaps supervised y=603–695) -->
+  <rect x="12" y="798"  width="980" height="342" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/><!-- Generative AI -->
+  <rect x="12" y="1150" width="980" height="170" rx="16" fill="rgba(0,163,152,0.22)" stroke="#00A398" stroke-width="1.5"/><!-- Goal-driven -->
+
+  <!-- ══ COLUMN HEADERS ══ -->
+  <text x="127" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#005C58" font-family="inherit">Non-core ▼</text>
+  <text x="355" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#005C58" font-family="inherit">Administration</text>
+  <text x="591" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#005C58" font-family="inherit">Frontline</text>
+  <text x="854" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#005C58" font-family="inherit">Research</text>
+
+  <!-- ════════════════════════════
+       ROW 1 — Hand crafted algorithms  y=55–433
+       ════════════════════════════ -->
+  <text x="127" y="90"  text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">Hand crafted</text>
+  <text x="127" y="124" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">algorithms</text>
+
+  <!-- Non-core -->
+  <rect x="18" y="136" width="219" height="92" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="127" y="158">Automation of</tspan>
+    <tspan x="127" dy="28">non-core functions,</tspan>
+    <tspan x="127" dy="28">e.g. spellcheck</tspan>
+  </text>
+
+  <!-- Admin -->
+  <rect x="256" y="67" width="198" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="355" y="89">Anomaly flagging</tspan>
+    <tspan x="355" dy="28">rules</tspan>
+  </text>
+  <rect x="256" y="141" width="198" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="355" y="168" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Payroll calculations</text>
+  <rect x="256" y="191" width="198" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="355" y="218" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Triage and routing</text>
+
+  <!-- Frontline -->
+  <rect x="473" y="67" width="236" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="591" y="89">ACC Accident</tspan>
+    <tspan x="591" dy="28">Description Service</tspan>
+  </text>
+  <rect x="473" y="141" width="236" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="591" y="168" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">MSD ADM</text>
+  <rect x="473" y="191" width="236" height="92" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="591" y="213">Te Whatu Ora</tspan>
+    <tspan x="591" dy="28">Clinical Priority</tspan>
+    <tspan x="591" dy="28">Assessment Criteria</tspan>
+  </text>
+
+  <!-- Legislation as Code — spans Admin + Frontline (x=248–718, y=291–427) -->
+  <rect x="248" y="291" width="470" height="136" rx="7" fill="#9DDBD7" stroke="#00A398" stroke-width="1.5"/>
+  <text x="483" y="316" text-anchor="middle" font-size="22" font-weight="700" fill="#003D3A" font-family="inherit">Legislation as Code</text>
+  <rect x="253" y="325" width="460" height="94" rx="6" fill="#7CCFCA" stroke="#00A398" stroke-width="1"/>
+  <text x="483" y="347" text-anchor="middle" font-size="19" font-weight="700" fill="#003D3A" font-family="inherit">Rules as Code</text>
+  <rect x="257" y="357" width="218" height="55" rx="5" fill="#fff" stroke="#00A398" stroke-width="1"/>
+  <text x="366" y="390" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Internal action</text>
+  <rect x="479" y="357" width="230" height="55" rx="5" fill="#fff" stroke="#00A398" stroke-width="1"/>
+  <text x="594" y="390" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Conclusive action</text>
+
+  <!-- Research -->
+  <rect x="729" y="67" width="250" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="854" y="94" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Treasury CBAx</text>
+  <rect x="729" y="117" width="250" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="854" y="139">Return on</tspan>
+    <tspan x="854" dy="28">investment</tspan>
+  </text>
+  <rect x="729" y="191" width="250" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="854" y="213">MBIE MRTE tourist</tspan>
+    <tspan x="854" dy="28">classification</tspan>
+  </text>
+  <rect x="729" y="265" width="250" height="42" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text x="854" y="292" text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">Simulation</text>
+  <rect x="729" y="315" width="250" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="854" y="337">Rewriting (e.g.</tspan>
+    <tspan x="854" dy="28">ACC Better Rules)</tspan>
+  </text>
+
+  <!-- ════════════════════════════
+       ROW 2a — Supervised learning  y=443–695
+       ════════════════════════════ -->
+  <text x="127" y="478" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">Supervised</text>
+  <text x="127" y="512" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">learning</text>
+
+  <!-- Non-core chip (supervised-only) -->
+  <rect x="18" y="526" width="219" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="127" y="548">Generative AI</tspan>
+    <tspan x="127" dy="28">prior SFT*</tspan>
+  </text>
+
+  <!-- Admin -->
+  <rect x="256" y="455" width="198" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="355" y="477">DOC aerial object</tspan>
+    <tspan x="355" dy="28">identification</tspan>
+  </text>
+  <rect x="256" y="529" width="198" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="355" y="556" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">MPI face redaction</text>
+
+  <!-- Frontline -->
+  <rect x="473" y="455" width="236" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="591" y="477">ACC Probability</tspan>
+    <tspan x="591" dy="28">of Accept</tspan>
+  </text>
+  <rect x="473" y="529" width="236" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="591" y="556" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Corrections RoC*RoI</text>
+
+  <!-- Research -->
+  <rect x="729" y="455" width="250" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="854" y="477">StatsNZ migrant</tspan>
+    <tspan x="854" dy="28">classification</tspan>
+  </text>
+  <rect x="729" y="529" width="250" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="854" y="551">StatsNZ building</tspan>
+    <tspan x="854" dy="28">consent data coding</tspan>
+  </text>
+
+  <!-- ── OVERLAP ZONE y=603–695: Supervised ∩ Unsupervised (thicker border) ── -->
+
+  <!-- Non-core -->
+  <rect x="18" y="603" width="219" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="2.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="127" y="625">Generative AI</tspan>
+    <tspan x="127" dy="28">pre-training*</tspan>
+  </text>
+
+  <!-- Admin -->
+  <rect x="256" y="603" width="198" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="2.5" filter="url(#a2sh)"/>
+  <text x="355" y="630" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Flagging</text>
+
+  <!-- Frontline -->
+  <rect x="473" y="603" width="236" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="2.5" filter="url(#a2sh)"/>
+  <text x="591" y="630" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Facial recognition</text>
+
+  <!-- Spanning Admin+Frontline (x=256, right=709, w=453, cx=482) -->
+  <rect x="256" y="653" width="453" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="482" y="680" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Complex anomaly/fraud detection</text>
+
+  <!-- ════════════════════════════
+       ROW 2b — Unsupervised learning  y=603–788
+       ════════════════════════════ -->
+  <text x="127" y="726" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">Unsupervised</text>
+  <text x="127" y="760" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">learning</text>
+
+  <!-- Frontline -->
+  <rect x="473" y="709" width="236" height="42" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text x="591" y="736" text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">Conclusion</text>
+
+  <!-- Research -->
+  <rect x="729" y="709" width="250" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="854" y="731">Discovery of cohorts</tspan>
+    <tspan x="854" dy="28">of interest</tspan>
+  </text>
+
+  <!-- ════════════════════════════
+       ROW 3 — Generative AI  y=798–1140
+       ════════════════════════════ -->
+  <text x="127" y="832" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">Generative AI</text>
+
+  <!-- Non-core -->
+  <rect x="18" y="846" width="219" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="127" y="873" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Media generation</text>
+
+  <!-- Admin -->
+  <rect x="256" y="810" width="198" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="355" y="832">Caller voice</tspan>
+    <tspan x="355" dy="28">transcription</tspan>
+  </text>
+
+  <!-- Document creation & summarisation composite (Admin, y=884–1008) -->
+  <rect x="256" y="884" width="198" height="124" rx="7" fill="#9DDBD7" stroke="#00A398" stroke-width="1.5"/>
+  <text text-anchor="middle" font-size="19" font-weight="700" fill="#003D3A" font-family="inherit">
+    <tspan x="355" y="909">Document creation &amp;</tspan>
+    <tspan x="355" dy="25">summarisation</tspan>
+  </text>
+  <!-- inner chips side-by-side (16px) -->
+  <rect x="260" y="942" width="92" height="60" rx="5" fill="#fff" stroke="#00A398" stroke-width="1"/>
+  <text text-anchor="middle" font-size="16" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="306" y="963">Non-core e.g.</tspan>
+    <tspan x="306" dy="22">meeting notes</tspan>
+  </text>
+  <rect x="356" y="942" width="94" height="60" rx="5" fill="#fff" stroke="#00A398" stroke-width="1"/>
+  <text text-anchor="middle" font-size="16" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="403" y="963">Core e.g.</tspan>
+    <tspan x="403" dy="22">ministerials</tspan>
+  </text>
+
+  <rect x="256" y="1016" width="198" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="355" y="1038">User self-service</tspan>
+    <tspan x="355" dy="28">&amp; chatbots</tspan>
+  </text>
+  <rect x="256" y="1090" width="198" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="355" y="1117" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Programming and testing</text>
+
+  <!-- Frontline (italic label + chips) -->
+  <text text-anchor="middle" font-size="19" font-style="italic" font-weight="700" fill="#888" font-family="inherit">
+    <tspan x="591" y="832">Legally high-risk</tspan>
+    <tspan x="591" dy="28">without intrinsic</tspan>
+    <tspan x="591" dy="28">explainability</tspan>
+  </text>
+  <rect x="473" y="908" width="236" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="591" y="930">Unstructured risk</tspan>
+    <tspan x="591" dy="28">factor identification</tspan>
+  </text>
+  <rect x="473" y="982" width="236" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="591" y="1004">Independent</tspan>
+    <tspan x="591" dy="28">decision-making</tspan>
+  </text>
+
+  <!-- Research -->
+  <rect x="729" y="810" width="250" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="854" y="832">Natural language</tspan>
+    <tspan x="854" dy="28">feature extraction</tspan>
+  </text>
+  <rect x="729" y="884" width="250" height="42" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text x="854" y="911" text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">Synthetic data</text>
+
+  <!-- ════════════════════════════
+       ROW 4 — Goal-driven optimisation  y=1150–1320
+       ════════════════════════════ -->
+  <text x="127" y="1185" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">Goal-driven</text>
+  <text x="127" y="1219" text-anchor="middle" font-size="29" font-weight="600" fill="#222686" font-family="inherit">optimisation</text>
+
+  <!-- Non-core -->
+  <rect x="18" y="1235" width="219" height="66" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">
+    <tspan x="127" y="1257">Generative AI</tspan>
+    <tspan x="127" dy="28">prior RFT*</tspan>
+  </text>
+
+  <!-- Admin -->
+  <rect x="256" y="1162" width="198" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="355" y="1184">Resource/staff</tspan>
+    <tspan x="355" dy="28">allocation</tspan>
+  </text>
+
+  <!-- Frontline -->
+  <rect x="473" y="1162" width="236" height="42" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text x="591" y="1189" text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">Funding allocation</text>
+  <rect x="473" y="1212" width="236" height="66" rx="7" fill="#f0f0f0" stroke="#bbb" stroke-width="1.2"/>
+  <text text-anchor="middle" font-size="19" font-style="italic" fill="#888" font-family="inherit">
+    <tspan x="591" y="1234">Dynamic health</tspan>
+    <tspan x="591" dy="28">treatment</tspan>
+  </text>
+
+  <!-- Research -->
+  <rect x="729" y="1162" width="250" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="854" y="1189" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">Digital twins</text>
+  <rect x="729" y="1212" width="250" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="854" y="1239" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">PHF Science ALMA</text>
+  <rect x="729" y="1262" width="250" height="42" rx="7" fill="#fff" stroke="#00A398" stroke-width="1.5" filter="url(#a2sh)"/>
+  <text x="854" y="1289" text-anchor="middle" font-size="19" font-weight="600" fill="#004840" font-family="inherit">MoT Monty</text>
+
+</svg>
+
+<div class="a2euler-legend">
+  <span style="font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#666;">Key:</span>
+  <span class="a2euler-legend-item">
+    <span class="a2euler-swatch" style="background:#fff;border-color:#00A398;"></span>Current / deployed
+  </span>
+  <span class="a2euler-legend-item">
+    <span class="a2euler-swatch" style="background:#f0f0f0;border-color:#bbb;"></span><em>Aspirational / legally constrained</em>
+  </span>
+  <span class="a2euler-legend-item">
+    <span class="a2euler-swatch" style="background:#9DDBD7;border-color:#00A398;"></span>Composite / nested
+  </span>
+  <span class="a2euler-legend-item">
+    <span class="a2euler-swatch" style="background:rgba(0,163,152,0.40);border-color:#00A398;border-width:2.5px;"></span>Supervised ∩ Unsupervised (thicker border)
+  </span>
+</div>
+
+<p class="a2euler-caption">
+  <strong>Figure 7:</strong> Euler diagram mapping known NZ government AI and algorithm systems to the technical-contextual taxonomy. Three vertical bands (Administration, Frontline, Research) and five horizontal row bands overlap — where a row and column band intersect, the teal fill doubles in saturation. Supervised and Unsupervised learning are two overlapping bands; items in their intersection straddle both categories (thicker border). Items in <em>italic</em> are legally high-risk without intrinsic explainability or aspirational. * SFT = supervised fine-tuning; RFT = reinforcement fine-tuning.
+</p>
+
+</div>

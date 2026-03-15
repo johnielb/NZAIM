@@ -11,7 +11,7 @@ authors:
 date: "16 March 2026"
 institution: "Te Herenga Waka Victoria University of Wellington"
 
-baseurl: "/whitepaper"
+baseurl: "/NZAIM"
 url: ""
 
 # Treat _sections/ as a Jekyll collection so each .md becomes an HTML page

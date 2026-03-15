@@ -1,7 +1,7 @@
 ---
 layout: cover
-title: "Re-Engineering New Zealand Government Guidance for Trustworthy AI System Delivery"
-short_title: "Home"
+title: "Overview"
+short_title: "Overview"
 permalink: /
 ---
 The digital revolution brought about by new techniques in Artificial Intelligence (AI), packaged into general-purpose user-friendly tools like ChatGPT, has rapidly transformed how people work, learn, and live. Just as businesses are using AI to enhance productivity and deliver genuinely personalised customer experiences, government agencies in Aotearoa New Zealand ("the Government") are now also using AI to improve how they serve the citizenry. However, just as businesses have used traditional AI techniques for decades for narrow data-driven decision-making, the Government has been using traditional AI techniques as early as 2001 to inform decision-making in offender management. Consequently, the Government has, for decades, considered what it means to develop effective, safe, fair, and accountable AI, given the mandatory, monopolistic nature of government actions and decisions, and the government's enhanced ability to operate when it maintains the trust of its citizens.
