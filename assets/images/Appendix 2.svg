@@ -1445,7 +1445,7 @@
       <rect class="cls-74" x="254.65" y="400.31" width="107.9" height="166.41"/>
     </g>
     <g class="cls-25">
-      <text class="cls-100" transform="translate(271.23 420.13)"><tspan x="0" y="0">Legally high-risk</tspan></text>
+      <text class="cls-100" transform="translate(271.23 420.13)"><tspan x="0" y="0">Legally high-risk </tspan></text>
       <text class="cls-100" transform="translate(271.61 432.58)"><tspan x="0" y="0">without intrinsic </tspan></text>
       <text class="cls-100" transform="translate(278.35 445.03)"><tspan x="0" y="0">explainability</tspan></text>
     </g>
@@ -1454,7 +1454,7 @@
       <rect class="cls-82" x="267.21" y="238.25" width="83" height="30"/>
     </g>
     <g class="cls-182">
-      <text class="cls-21" transform="translate(275.58 250.92)"><tspan x="0" y="0">ACC Probability</tspan></text>
+      <text class="cls-21" transform="translate(275.58 250.92)"><tspan x="0" y="0">ACC Probability </tspan></text>
       <text class="cls-21" transform="translate(288.85 262.54)"><tspan x="0" y="0">of Accept</tspan></text>
     </g>
     <g class="cls-149">
@@ -1462,7 +1462,7 @@
       <rect class="cls-82" x="267.21" y="272.08" width="83" height="30"/>
     </g>
     <g class="cls-15">
-      <text class="cls-21" transform="translate(283.67 284.75)"><tspan x="0" y="0">Corrections</tspan></text>
+      <text class="cls-21" transform="translate(283.67 284.75)"><tspan x="0" y="0">Corrections </tspan></text>
       <text class="cls-21" transform="translate(291.56 296.37)"><tspan x="0" y="0">RoC*RoI</tspan></text>
     </g>
     <g class="cls-49">
@@ -1477,7 +1477,7 @@
       <rect class="cls-82" x="267.21" y="105.53" width="83" height="41.62"/>
     </g>
     <g class="cls-86">
-      <text class="cls-21" transform="translate(279.81 118.2)"><tspan x="0" y="0">Te Whatu Ora</tspan></text>
+      <text class="cls-21" transform="translate(279.81 118.2)"><tspan x="0" y="0">Te Whatu Ora </tspan></text>
       <text class="cls-21" transform="translate(276.51 129.82)"><tspan x="0" y="0">Clinical Priority </tspan></text>
       <text class="cls-21" transform="translate(270.83 141.44)"><tspan x="0" y="0">Assessment Criteria</tspan></text>
     </g>
@@ -1486,139 +1486,141 @@
       <rect class="cls-82" x="267.21" y="42.28" width="83" height="30"/>
     </g>
     <g class="cls-89">
-      <text class="cls-21" transform="translate(282.07 54.95)"><tspan x="0" y="0">ACC Accident
-      Description Service
-    
-    
-      
-      
-    
-    
-      MSD ADM
-    
-    
-      
-      
-    
-    
-      Complex anomaly/fraud detection
-    
-    
-      
-      
-    
-    
-      Conclusion
-    
-    
-      
-      
-    
-    
-      Treasury CBAx
-    
-    
-      
-      
-    
-    
-      Return on 
-      investment
-    
-    
-      
-      
-    
-    
-      Natural language
-      feature
-      extraction
-    
-    
-      
-      
-    
-    
-      MPI face redaction
-    
-    
-      
-      
-    
-    
-      StatsNZ migrant
-      classi
-      ﬁ
-      cation
-    
-    
-      
-      
-    
-    
-      Document creation &amp; summarisation
-    
-    
-      
-      
-    
-    
-      Caller voice
-      transcription
-    
-    
-      
-      
-    
-    
-      User self-service
-      &amp; chatbots
-    
-    
-      
-      
-    
-    
-      Discovery of
-      cohorts of interest
-    
-    
-      
-      
-    
-    
-      Funding allocation
-    
-    
-      
-      
-    
-    
-      Dynamic health
-      treatment
-    
-    
-      
-      
-    
-    
-      DOC aerial object
-      identification
-    
-    
-      
-      
-    
-    
-      Programming and
-      testing
-    
-    
-      
-      
-    
-    
-      Anomalyﬂagging</tspan></text>
+      <text class="cls-21" transform="translate(282.07 54.95)"><tspan x="0" y="0">ACC Accident </tspan></text>
+      <text class="cls-21" transform="translate(271.07 66.57)"><tspan x="0" y="0">Description Service</tspan></text>
+    </g>
+    <g class="cls-124">
+      <rect class="cls-75" x="267.21" y="80.48" width="83" height="18.38"/>
+      <rect class="cls-82" x="267.21" y="80.48" width="83" height="18.38"/>
+    </g>
+    <g class="cls-218">
+      <text class="cls-21" transform="translate(287.81 93.15)"><tspan x="0" y="0">MSD ADM</tspan></text>
+    </g>
+    <g class="cls-179">
+      <rect class="cls-75" x="150.73" y="327.62" width="199.55" height="41.62"/>
+      <rect class="cls-82" x="150.73" y="327.62" width="199.55" height="41.62"/>
+    </g>
+    <g class="cls-27">
+      <text class="cls-21" transform="translate(180.45 340.29)"><tspan x="0" y="0">Complex anomaly/fraud detection </tspan></text>
+    </g>
+    <g class="cls-191">
+      <rect class="cls-75" x="263.06" y="347.3" width="83" height="18.38"/>
+      <rect class="cls-82" x="263.06" y="347.3" width="83" height="18.38"/>
+    </g>
+    <g class="cls-32">
+      <text class="cls-45" transform="translate(282.03 359.96)"><tspan x="0" y="0">Conclusion</tspan></text>
+    </g>
+    <g class="cls-9">
+      <rect class="cls-75" x="383.6" y="42.44" width="83" height="18.38"/>
+      <rect class="cls-82" x="383.6" y="42.44" width="83" height="18.38"/>
+    </g>
+    <g class="cls-120">
+      <text class="cls-21" transform="translate(393.51 55.11)"><tspan x="0" y="0">Treasury CBAx</tspan></text>
+    </g>
+    <g class="cls-116">
+      <rect class="cls-75" x="383.6" y="65.38" width="83" height="30"/>
+      <rect class="cls-82" x="383.6" y="65.38" width="83" height="30"/>
+    </g>
+    <g class="cls-223">
+      <text class="cls-21" transform="translate(404.22 78.05)"><tspan x="0" y="0">Return on </tspan></text>
+      <text class="cls-21" transform="translate(401.71 89.67)"><tspan x="0" y="0">investment</tspan></text>
+    </g>
+    <g class="cls-14">
+      <rect class="cls-75" x="383.6" y="412.4" width="83" height="41.62"/>
+      <rect class="cls-82" x="383.6" y="412.4" width="83" height="41.62"/>
+    </g>
+    <g class="cls-205">
+      <text class="cls-45" transform="translate(388.14 425.07)"><tspan x="0" y="0">Natural language </tspan></text>
+      <text class="cls-45" transform="translate(409.21 436.69)"><tspan x="0" y="0">feature </tspan></text>
+      <text class="cls-45" transform="translate(403.04 448.31)"><tspan x="0" y="0">extraction</tspan></text>
+    </g>
+    <g class="cls-146">
+      <rect class="cls-75" x="150.73" y="305.41" width="83" height="18.38"/>
+      <rect class="cls-82" x="150.73" y="305.41" width="83" height="18.38"/>
+    </g>
+    <g class="cls-160">
+      <text class="cls-21" transform="translate(154.34 318.08)"><tspan x="0" y="0">MPI face redaction</tspan></text>
+    </g>
+    <g class="cls-71">
+      <rect class="cls-75" x="383.51" y="238.75" width="83" height="30"/>
+      <rect class="cls-82" x="383.51" y="238.75" width="83" height="30"/>
+    </g>
+    <g class="cls-77">
+      <text class="cls-21" transform="translate(389.85 251.42)"><tspan x="0" y="0">StatsNZ migrant </tspan></text>
+      <text class="cls-21" transform="translate(398.21 263.04)"><tspan x="0" y="0">classi</tspan></text>
+      <text class="cls-21" transform="translate(420.9 263.04)"><tspan x="0" y="0">ﬁ</tspan></text>
+      <text class="cls-21" transform="translate(426.11 263.04)"><tspan x="0" y="0">cation</tspan></text>
+    </g>
+    <g class="cls-252">
+      <rect class="cls-75" x="42.8" y="438.7" width="190.93" height="53.24"/>
+      <rect class="cls-82" x="42.8" y="438.7" width="190.93" height="53.24"/>
+    </g>
+    <g class="cls-139">
+      <text class="cls-21" transform="translate(61.92 451.37)"><tspan x="0" y="0">Document creation &amp; summarisation </tspan></text>
+    </g>
+    <g class="cls-144">
+      <rect class="cls-75" x="150.73" y="405.67" width="83" height="30"/>
+      <rect class="cls-82" x="150.73" y="405.67" width="83" height="30"/>
+    </g>
+    <g class="cls-40">
+      <text class="cls-21" transform="translate(168.19 418.34)"><tspan x="0" y="0">Caller voice </tspan></text>
+      <text class="cls-21" transform="translate(164.59 429.96)"><tspan x="0" y="0">transcription</tspan></text>
+    </g>
+    <g class="cls-122">
+      <rect class="cls-75" x="150.73" y="496.57" width="83" height="30"/>
+      <rect class="cls-82" x="150.73" y="496.57" width="83" height="30"/>
+    </g>
+    <g class="cls-221">
+      <text class="cls-21" transform="translate(157.41 509.24)"><tspan x="0" y="0">User self-service </tspan></text>
+      <text class="cls-21" transform="translate(169.44 520.86)"><tspan x="0" y="0">&amp; chatbots</tspan></text>
+    </g>
+    <g class="cls-172">
+      <rect class="cls-75" x="379.35" y="341.8" width="91.32" height="30"/>
+      <rect class="cls-82" x="379.35" y="341.8" width="91.32" height="30"/>
+    </g>
+    <g class="cls-4">
+      <text class="cls-45" transform="translate(399.41 354.47)"><tspan x="0" y="0">Discovery of </tspan></text>
+      <text class="cls-45" transform="translate(385.55 366.09)"><tspan x="0" y="0">cohorts of interest</tspan></text>
+    </g>
+    <g class="cls-157">
+      <rect class="cls-75" x="267.21" y="596.19" width="83" height="18.38"/>
+      <rect class="cls-82" x="267.21" y="596.19" width="83" height="18.38"/>
+    </g>
+    <g class="cls-203">
+      <text class="cls-45" transform="translate(271.16 608.86)"><tspan x="0" y="0">Funding allocation</tspan></text>
+    </g>
+    <g class="cls-59">
+      <rect class="cls-75" x="267.21" y="622.24" width="83" height="30"/>
+      <rect class="cls-82" x="267.21" y="622.24" width="83" height="30"/>
+    </g>
+    <g class="cls-195">
+      <text class="cls-45" transform="translate(276.06 634.91)"><tspan x="0" y="0">Dynamic health </tspan></text>
+      <text class="cls-45" transform="translate(286.5 646.54)"><tspan x="0" y="0">treatment</tspan></text>
+    </g>
+    <g class="cls-131">
+      <rect class="cls-75" x="150.82" y="243.04" width="83" height="30"/>
+      <rect class="cls-82" x="150.82" y="243.04" width="83" height="30"/>
+    </g>
+    <g class="cls-106">
+      <text class="cls-21" transform="translate(156.49 255.71)"><tspan x="0" y="0">DOC aerial object </tspan></text>
+      <text class="cls-21" transform="translate(165.67 267.33)"><tspan x="0" y="0">identification</tspan></text>
+    </g>
+    <g class="cls-225">
+      <rect class="cls-75" x="150.73" y="530.06" width="83" height="30"/>
+      <rect class="cls-82" x="150.73" y="530.06" width="83" height="30"/>
+    </g>
+    <g class="cls-73">
+      <text class="cls-21" transform="translate(155.09 542.73)"><tspan x="0" y="0">Programming and </tspan></text>
+      <text class="cls-21" transform="translate(177.5 554.35)"><tspan x="0" y="0">testing</tspan></text>
+    </g>
+    <g class="cls-98">
+      <rect class="cls-75" x="151.55" y="42.28" width="83" height="30"/>
+      <rect class="cls-82" x="151.55" y="42.28" width="83" height="30"/>
+    </g>
+    <g class="cls-33">
+      <text class="cls-21" transform="translate(158.07 54.95)"><tspan x="0" y="0">Anomaly </tspan></text>
+      <text class="cls-21" transform="translate(195.95 54.95)"><tspan x="0" y="0">ﬂ</tspan></text>
+      <text class="cls-21" transform="translate(201.16 54.95)"><tspan x="0" y="0">agging </tspan></text>
       <text class="cls-21" transform="translate(182.62 66.57)"><tspan x="0" y="0">rules</tspan></text>
     </g>
     <g class="cls-254">
@@ -1626,7 +1628,7 @@
       <rect class="cls-82" x="151.55" y="78.92" width="83" height="30"/>
     </g>
     <g class="cls-235">
-      <text class="cls-21" transform="translate(178.78 91.59)"><tspan x="0" y="0">Payroll</tspan></text>
+      <text class="cls-21" transform="translate(178.78 91.59)"><tspan x="0" y="0">Payroll </tspan></text>
       <text class="cls-21" transform="translate(168.54 103.21)"><tspan x="0" y="0">calculations</tspan></text>
     </g>
     <g class="cls-78">
@@ -1641,7 +1643,7 @@
       <rect class="cls-82" x="150.73" y="596.19" width="83" height="30"/>
     </g>
     <g class="cls-161">
-      <text class="cls-45" transform="translate(161.13 608.86)"><tspan x="0" y="0">Resource/staff</tspan></text>
+      <text class="cls-45" transform="translate(161.13 608.86)"><tspan x="0" y="0">Resource/staff </tspan></text>
       <text class="cls-45" transform="translate(171.51 620.48)"><tspan x="0" y="0">allocation</tspan></text>
     </g>
     <g class="cls-247">
@@ -1649,9 +1651,9 @@
       <rect class="cls-82" x="27.1" y="68.17" width="83" height="53.24"/>
     </g>
     <g class="cls-255">
-      <text class="cls-21" transform="translate(38.85 80.84)"><tspan x="0" y="0">Automation of</tspan></text>
-      <text class="cls-21" transform="translate(49.96 92.46)"><tspan x="0" y="0">non-core</tspan></text>
-      <text class="cls-21" transform="translate(39.97 104.08)"><tspan x="0" y="0">functions, e.g.</tspan></text>
+      <text class="cls-21" transform="translate(38.85 80.84)"><tspan x="0" y="0">Automation of  </tspan></text>
+      <text class="cls-21" transform="translate(49.96 92.46)"><tspan x="0" y="0">non-core </tspan></text>
+      <text class="cls-21" transform="translate(39.97 104.08)"><tspan x="0" y="0">functions, e.g. </tspan></text>
       <text class="cls-21" transform="translate(47.19 115.7)"><tspan x="0" y="0">spellcheck</tspan></text>
     </g>
     <g class="cls-68">
@@ -1666,16 +1668,18 @@
       <rect class="cls-82" x="267.21" y="460.12" width="83" height="41.62"/>
     </g>
     <g class="cls-200">
-      <text class="cls-44" transform="translate(280.23 472.79)"><tspan x="0" y="0">Unstructured</tspan></text>
-      <text class="cls-44" transform="translate(286.49 484.41)"><tspan x="0" y="0">risk factor</tspan></text>
-      <text class="cls-44" transform="translate(281.12 496.03)"><tspan x="0" y="0">identiﬁcation</tspan></text>
+      <text class="cls-44" transform="translate(280.23 472.79)"><tspan x="0" y="0">Unstructured  </tspan></text>
+      <text class="cls-44" transform="translate(286.49 484.41)"><tspan x="0" y="0">risk factor </tspan></text>
+      <text class="cls-44" transform="translate(281.12 496.03)"><tspan x="0" y="0">identi</tspan></text>
+      <text class="cls-44" transform="translate(304.64 496.03)"><tspan x="0" y="0">ﬁ</tspan></text>
+      <text class="cls-44" transform="translate(309.84 496.03)"><tspan x="0" y="0">cation</tspan></text>
     </g>
     <g class="cls-163">
       <rect class="cls-75" x="267.21" y="508.45" width="83" height="30"/>
       <rect class="cls-82" x="267.21" y="508.45" width="83" height="30"/>
     </g>
     <g class="cls-29">
-      <text class="cls-44" transform="translate(282.8 521.12)"><tspan x="0" y="0">Independent</tspan></text>
+      <text class="cls-44" transform="translate(282.8 521.12)"><tspan x="0" y="0">Independent </tspan></text>
       <text class="cls-44" transform="translate(274.93 532.74)"><tspan x="0" y="0">decision-making</tspan></text>
     </g>
     <g class="cls-2">
@@ -1690,11 +1694,11 @@
       <rect class="cls-82" x="26.76" y="311.6" width="83" height="30"/>
     </g>
     <g class="cls-28">
-      <text class="cls-21" transform="translate(39.96 324.27)"><tspan x="0" y="0">Generative AI</tspan></text>
+      <text class="cls-21" transform="translate(39.96 324.27)"><tspan x="0" y="0">Generative AI </tspan></text>
       <text class="cls-21" transform="translate(41.47 335.89)"><tspan x="0" y="0">pre-training*</tspan></text>
     </g>
     <g class="cls-26">
-      <text class="cls-23" transform="translate(35.12 18.47)"><tspan x="0" y="0">Non-core</tspan></text>
+      <text class="cls-23" transform="translate(35.12 18.47)"><tspan x="0" y="0">Non-core </tspan></text>
       <polygon class="cls-241" points="89.26 9.84 98.11 9.84 93.69 18.69 89.26 9.84"/>
     </g>
     <g class="cls-206">
@@ -1702,7 +1706,7 @@
       <rect class="cls-82" x="145.82" y="457.76" width="83" height="30"/>
     </g>
     <g class="cls-58">
-      <text class="cls-21" transform="translate(168.94 470.43)"><tspan x="0" y="0">Core e.g.</tspan></text>
+      <text class="cls-21" transform="translate(168.94 470.43)"><tspan x="0" y="0">Core e.g. </tspan></text>
       <text class="cls-21" transform="translate(163.06 482.05)"><tspan x="0" y="0">ministerials</tspan></text>
     </g>
     <g class="cls-248">
@@ -1710,7 +1714,7 @@
       <rect class="cls-82" x="47.67" y="457.76" width="83" height="30"/>
     </g>
     <g class="cls-188">
-      <text class="cls-21" transform="translate(61.69 470.43)"><tspan x="0" y="0">Non-core e.g.</tspan></text>
+      <text class="cls-21" transform="translate(61.69 470.43)"><tspan x="0" y="0">Non-core e.g. </tspan></text>
       <text class="cls-21" transform="translate(59.49 482.05)"><tspan x="0" y="0">meeting notes</tspan></text>
     </g>
     <g class="cls-110">
@@ -1718,7 +1722,7 @@
       <rect class="cls-82" x="26.76" y="617.46" width="83" height="30"/>
     </g>
     <g class="cls-233">
-      <text class="cls-21" transform="translate(39.96 630.13)"><tspan x="0" y="0">Generative AI</tspan></text>
+      <text class="cls-21" transform="translate(39.96 630.13)"><tspan x="0" y="0">Generative AI </tspan></text>
       <text class="cls-21" transform="translate(45.95 641.75)"><tspan x="0" y="0">prior RFT*</tspan></text>
     </g>
     <g class="cls-246">
@@ -1726,7 +1730,7 @@
       <rect class="cls-82" x="27.1" y="277.39" width="83" height="30"/>
     </g>
     <g class="cls-107">
-      <text class="cls-21" transform="translate(40.29 290.06)"><tspan x="0" y="0">Generative AI</tspan></text>
+      <text class="cls-21" transform="translate(40.29 290.06)"><tspan x="0" y="0">Generative AI </tspan></text>
       <text class="cls-21" transform="translate(46.52 301.68)"><tspan x="0" y="0">prior SFT*</tspan></text>
     </g>
     <g class="cls-143">
@@ -1734,17 +1738,19 @@
       <rect class="cls-82" x="383.51" y="102.04" width="83" height="41.62"/>
     </g>
     <g class="cls-138">
-      <text class="cls-21" transform="translate(400.46 114.71)"><tspan x="0" y="0">MBIE MRTE</tspan></text>
+      <text class="cls-21" transform="translate(400.46 114.71)"><tspan x="0" y="0">MBIE MRTE </tspan></text>
       <text class="cls-21" transform="translate(410.47 126.33)"><tspan x="0" y="0">tourist </tspan></text>
-      <text class="cls-21" transform="translate(398.21 137.95)"><tspan x="0" y="0">classiﬁcation</tspan></text>
+      <text class="cls-21" transform="translate(398.21 137.95)"><tspan x="0" y="0">classi</tspan></text>
+      <text class="cls-21" transform="translate(420.9 137.95)"><tspan x="0" y="0">ﬁ</tspan></text>
+      <text class="cls-21" transform="translate(426.11 137.95)"><tspan x="0" y="0">cation</tspan></text>
     </g>
     <g class="cls-169">
       <rect class="cls-75" x="383.6" y="271.31" width="83" height="41.62"/>
       <rect class="cls-82" x="383.6" y="271.31" width="83" height="41.62"/>
     </g>
     <g class="cls-117">
-      <text class="cls-21" transform="translate(390.42 283.98)"><tspan x="0" y="0">StatsNZ building</tspan></text>
-      <text class="cls-21" transform="translate(398 295.6)"><tspan x="0" y="0">consent data</tspan></text>
+      <text class="cls-21" transform="translate(390.42 283.98)"><tspan x="0" y="0">StatsNZ building </tspan></text>
+      <text class="cls-21" transform="translate(398 295.6)"><tspan x="0" y="0">consent data </tspan></text>
       <text class="cls-21" transform="translate(411.55 307.22)"><tspan x="0" y="0">coding</tspan></text>
     </g>
     <g class="cls-103">
@@ -1752,14 +1758,14 @@
       <rect class="cls-82" x="150.73" y="153.27" width="315.96" height="64.86"/>
     </g>
     <g class="cls-239">
-      <text class="cls-21" transform="translate(268.55 165.94)"><tspan x="0" y="0">Legislation as Code</tspan></text>
+      <text class="cls-21" transform="translate(268.55 165.94)"><tspan x="0" y="0">Legislation as Code </tspan></text>
     </g>
     <g class="cls-150">
       <rect class="cls-75" x="154.74" y="172.49" width="199.55" height="41.62"/>
       <rect class="cls-82" x="154.74" y="172.49" width="199.55" height="41.62"/>
     </g>
     <g class="cls-147">
-      <text class="cls-21" transform="translate(226.83 185.16)"><tspan x="0" y="0">Rules as Code</tspan></text>
+      <text class="cls-21" transform="translate(226.83 185.16)"><tspan x="0" y="0">Rules as Code </tspan></text>
     </g>
     <g class="cls-178">
       <rect class="cls-75" x="267.07" y="192.16" width="83" height="18.38"/>
@@ -1787,7 +1793,7 @@
       <rect class="cls-82" x="151.55" y="115.57" width="83" height="30"/>
     </g>
     <g class="cls-123">
-      <text class="cls-21" transform="translate(171.03 128.24)"><tspan x="0" y="0">Triage and</tspan></text>
+      <text class="cls-21" transform="translate(171.03 128.24)"><tspan x="0" y="0">Triage and </tspan></text>
       <text class="cls-21" transform="translate(177.81 139.86)"><tspan x="0" y="0">routing</tspan></text>
     </g>
     <g class="cls-115">
@@ -1816,7 +1822,7 @@
       <rect class="cls-82" x="378.52" y="183.37" width="83" height="30"/>
     </g>
     <g class="cls-180">
-      <text class="cls-45" transform="translate(390.36 196.04)"><tspan x="0" y="0">Rewriting (e.g.</tspan></text>
+      <text class="cls-45" transform="translate(390.36 196.04)"><tspan x="0" y="0">Rewriting (e.g. </tspan></text>
       <text class="cls-45" transform="translate(381.97 207.66)"><tspan x="0" y="0">ACC Better Rules)</tspan></text>
     </g>
   </g>
