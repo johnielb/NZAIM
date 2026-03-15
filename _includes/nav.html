@@ -15,7 +15,7 @@
   <ul class="nav__list">
 
     {%- assign home_active = false -%}
-    {%- if page.url == "/" or page.url == "/whitepaper/" -%}
+    {%- if page.url == "/" or page.url == "/NZAIM/" -%}
       {%- assign home_active = true -%}
     {%- endif -%}
     <li class="nav__item {% if home_active %}is-active{% endif %}">
@@ -96,6 +96,11 @@
 
   </ul>
 </nav>
+
+<a class="sidebar__download" href="{{ '/assets/whitepaper.pdf' | relative_url }}" download>
+  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12l-4.5-4.5 1.06-1.06L7 8.88V2h2v6.88l2.44-2.44 1.06 1.06L8 12zM2 13h12v1.5H2V13z"/></svg>
+  Download PDF
+</a>
 
 <div class="sidebar__footer">
   <p>{{ site.institution }}</p>
@@ -181,6 +186,33 @@
   &:hover {
     color: rgba(255,255,255,.85);
     border-left-color: rgba(255,255,255,.2);
+  }
+}
+
+/* Download button */
+.sidebar__download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin: 1rem 1.25rem .5rem;
+  padding: .6rem 1rem;
+  background: #78BD00;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 150ms ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: #5e9600;
   }
 }
 

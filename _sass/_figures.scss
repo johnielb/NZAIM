@@ -28,16 +28,7 @@
 }
 
 .figure__inner {
-  background: $surface;
-  border: 1px solid $border;
-  border-radius: $border-radius-lg;
   overflow: hidden;
-  box-shadow: $shadow-sm;
-  transition: box-shadow $transition-base;
-
-  &:hover {
-    box-shadow: $shadow-md;
-  }
 }
 
 // ─── Placeholder container (for <!-- FIGURE_N --> images not yet embedded) ───
@@ -102,6 +93,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
 // ─── Caption bar ──────────────────────────────────────────────────────────
@@ -157,10 +150,8 @@
   border-top: 3px solid $green;
 }
 
-// decorative → subtle lime
+// decorative → no border
 .figure--decorative .figure__inner {
-  border-top: 3px solid $lime;
-  opacity: 0.7;
 }
 
 // ─── Diagram interactive container ────────────────────────────────────────

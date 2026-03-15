@@ -47,12 +47,23 @@
   <div class="figure__inner">
 
     {%- if fig_src != "" -%}
-      <!-- Actual image -->
-      <img class="figure__image"
-           src="{{ fig_src | relative_url }}"
-           alt="{{ fig_alt | xml_escape }}"
-           loading="lazy"
-           decoding="async">
+      {%- if fig_src contains '.svg' -%}
+        <!-- SVG loaded as <object> so it can access external fonts -->
+        <object class="figure__image"
+                type="image/svg+xml"
+                data="{{ fig_src | relative_url }}"
+                style="width:100%;height:auto;display:block;max-height:50vh;"
+                aria-label="{{ fig_alt | xml_escape }}">
+          <img src="{{ fig_src | relative_url }}" alt="{{ fig_alt | xml_escape }}">
+        </object>
+      {%- else -%}
+        <!-- Actual image -->
+        <img class="figure__image"
+             src="{{ fig_src | relative_url }}"
+             alt="{{ fig_alt | xml_escape }}"
+             loading="lazy"
+             decoding="async">
+      {%- endif -%}
     {%- else -%}
       <!-- Placeholder — image not yet embedded -->
       <div class="figure__placeholder"

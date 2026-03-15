@@ -5,18 +5,6 @@ short_title: 5. Use Cases
 section_number: Section 5
 description: "Contextual taxonomy: front-line, research, and administrative AI use cases."
 ---
-This use case is not hypothetical, as agencies such as the Ministry of Transport use GDO (co-evolutionary algorithms) to simulate changes in traveller behaviour in response to a given transport system intervention. Vendors like PHF Science have developed new GDO models that lower the computational barriers to precisely and representatively simulate five million New Zealanders and their reactions to interventions.
-
-Promoting effective and trustworthy AI use and decision-making with GDO requires system-wide coordination, as multiple agencies contribute data to these models and explore their use in isolation. Issues that a system lead agency can address include:
-
-- Source data improvements: simulation actors are trained by replicating patterns from historical data and often rely on data sources that the interested agency does not collect, such as StatsNZ’s Census data. The impending redevelopment of StatsNZ’s census and survey programme presents a timely opportunity to consider how effective existing data sources are in simulations and GDO, and which new (or extensions to existing) datasets can have the greatest impact for a wide range of user agencies.
-
-- Streamlining procurement: agencies currently commission bespoke GDO solutions tailored to their needs. The vendor market could be evaluated to see if vendor(s) can meet a wide range of agencies' requirements by offering domain-agnostic models that provide flexibility across agencies’ data and operational environments without creating bespoke model architectures for each use case.
-
-- Encouraging use cases: existing communities of practice and networks can more intentionally promote this category of AI, which is currently limited to agencies responsible for explicit system design, such as the transport system. Any agency can reconceptualise their operations – or even policy remit – as an explicit system to be simulated, such as customer journey optimisation or regulatory impact management, with greater detail than traditional coarse appraisal models like Treasury’s CBAx.
-
-> ML models predict to decide, generative models mimic to create, GDO models simulate to solve. GDO is already being used by agencies like MoT. System leadership can promote use and streamline development of GDO models.
-
 # Guidance must acknowledge different requirements across different use cases in which AI is applied
 
 All-of-Government stocktakes in 2018 and 2024 have demonstrated the wide variety of ways that agencies already use or plan to use AI. The 2018 Algorithm Assessment Report clearly distinguished three different types of algorithms, consistent with my definition: operational algorithms, algorithms used for policy development and research, and business rules. This categorisation offers a useful contextual distinction between the aims of each kind of algorithm. Operational algorithms make or recommend complex decisions about individual users of government services. Policy algorithms make or recommend policy decisions that intervene at the aggregate system level. Business rules automate routine administrative processes without applying the same level of individual discretion as more advanced algorithms.
@@ -35,7 +23,7 @@ A systematic taxonomy can ground AI standards and guidance on the specific consi
 
 - Most business rules and generative AI tools now fall into the **“administration”** category of techniques, which do not directly lead to a definitive decision but still have a significant impact. They may utilise personal data, subjecting it to the Privacy Act.
 
-{% include figure.html id="FIGURE_5" src="" caption="" type="decorative" %}
+{% include figure.html id="FIGURE_3" src="/assets/images/Figure 3.svg" caption="" type="decorative" %}
 
 > _Figure 3: Taxonomy of use cases based on the relevant legal obligations within each category. Operational algorithms and any conclusive algorithm or GenAI are grouped into frontline. Evidence-generating algorithms and AI are grouped into research. Impactful but non-conclusive algorithms and GenAI are grouped into administration._
 
@@ -56,6 +44,7 @@ Algorithms and AI with its own set of rules that make decisions or recommendatio
 - **Unsupervised front-line models**: definitive fraud and abuse detection
 - **Goal-driven front-line optimisation**: (hypothetical) dynamic clinical treatment policy personalised to patient characteristics and needs and real-time diagnostics, simulations appraising efficacy of a service provider’s intervention
 - **Front-line generative AI**: (hypothetical) risk profiling from trawling big data (call transcripts, client documents and assessments). **Should not be used in front-line without intrinsic, faithful explanations of its inferences.**
+
 **Challenges**:
 - **Accountability** – government decisions can be reviewed by **dedicated independent reviewers** (e.g. Benefit Review Committee for MSD benefit decisions). If such a channel is unavailable, the **Ombudsman** may also investigate decisions and actions, who may report back to the agency if they find a decision to be contrary to law, unreasonable, unjust, oppressive, improperly discriminatory, a mistake or wrong. Decisions and actions made under a specific legal power are also judicially reviewable, where the **High Court** assesses if actions were undertaken within the constraints of the law (e.g. algorithm’s consistency with legislation). In any case, an oversight body will require a sufficient degree of explanation as to how a decision was reached.
 - **Transparency** – any front-line decision made by an AI regarding an individual must be logically explainable linking the requestor’s data (“material issues of fact”) with every step of reasoning to the conclusion (“the reasons for the decision”). This requirement rules out many non-intrinsic explainable AI methods that rely on apparent or likely reasons, or post-hoc rationalisations of opaque reasoning. Prompt engineering techniques like chain-of-thought reasoning simply imitate statistically likely reasoning and does not provide a trace of the actual computations that led to the decision.  Furthermore, without intrinsic explanation, developers cannot eliminate the risk of the use or unintentional inference of protected attributes that should never be considered in a decision. No mainstream GenAI tool rendering its own conclusions independently can provide such faithful explanations that may be required under OIA s23.
@@ -73,6 +62,7 @@ Outputs of these systems form part of the evidence base for system-level decisio
 - **Unsupervised research models**: clustering cohorts of interest to target interventions
 - **Goal-driven optimisation research models**: MoT’s Monty simulation (co-evolutionary computation), PHF Science’s ALMA digital twin (large population model), MoE school bus route optimiser (possibly traditional combinatorial optimisation)
 - **Research large language models**: thematic analysis of qualitative data like customer feedback and statutory consultation, orchestrating LLMs that perform analysis and predictions.
+
 **Challenges**:
 - **Transparency of models:** Requests for this information are handled by the more general section 12, where information can be withheld by any exemption. Objective data and evidence generally are not withheld to the same extent as advice and opinion.
 - **Trustworthy policymaking**: The subject matter surrounding research AI may be conceptually inaccessible to the public, if not inaccessible due to conclusive or good withholding grounds. Citizens, and accountable decision-makers who also may not have the same degree of expertise, place a unique trust in these specialists to provide “comprehensive, objective and balanced” policy advice (as characterised by DPMC). Given the reduced accessibility, increased breadth of impact, and the presence of context-agnostic technical challenges from [Section 4](../04-section4/), fostering public trust in research AI should still be sought through robust quality assurance processes and disclosure.
@@ -93,7 +83,17 @@ Algorithms and AI that automate (or otherwise significantly support) core functi
 - **Unsupervised administrative models**: fraud and abuse event flagging, where no definitive decision is made
 - **Administrative generative AI**: customer service chatbots, assistive web search, customer call transcription, customer call real-time knowledge discovery, document creation e.g. policy documents, business processes.
 
-> **Challenges**: as for the specific type of algorithm used, e.g. varying degrees of automation bias by technique; user acceptance testing is still advisable. Use of these kinds of AI may still be contentious with the public, e.g. staff rigidly following AI recommendations without an element of human discretion, so process controls remain relevant.
+**Challenges**: as for the specific type of algorithm used, e.g. varying degrees of automation bias by technique; user acceptance testing is still advisable. Use of these kinds of AI may still be contentious with the public, e.g. staff rigidly following AI recommendations without an element of human discretion, so process controls remain relevant.
 
 </div>
 </div>
+
+## 5.3 Action: Overlay the technical and contextual categorisation to refine algorithm and AI guidance {#s5-3}
+
+Other jurisdictions, such as the EU and Canada, along with the current Algorithm Charter, adopt a risk-based approach to classifying algorithms and AI. New Zealand’s approach has been criticised for being too flexible to be practical, as it depends on agencies to self-assess the material impact of algorithms while offering little guidance through precedents. More effective taxonomies have been developed by organisations such as the OECD. Their Framework for the Classification of AI Systems offers 31 different criteria for classifying AI systems, grouped into 5 dimensions. Although this framework may be suitable for the international, sector-spanning environment that the OECD operates in, much of the criteria can be answered similarly, some even irrelevant, for various government applications.
+
+{% include figure.html id="FIGURE_4" src="/assets/images/Figure 4.svg" caption="" type="decorative" %}
+
+> _Figure 4: Diagram overlaying the technical categories outlined in [Section 4](../04-section4/) (symbolic AI, supervised learning, unsupervised learning, goal-driven optimisation and generative AI) with the contextual categories outlined in Section 5 (front-line, research, and administration). Frontline generative AI systems are currently shown as a gap deliberately given the limitations of generative AI systems in fulfilling transparency obligations._
+
+A two-way technical-contextual taxonomy, as shown by [Figure 3](#figure-3), offers sufficient practical specificity for monitoring and governance within the New Zealand context. One axis delves into just enough technical detail to group similar monitoring and evaluation approaches into a category. The other axis is based on the environment and risk profile in which the system operates. When new technologies emerge, guidance along the contextual axis should already be in place to help agencies navigate their existing legal obligations, fostering an environment in which they can innovate safely. Appendix 2 demonstrates how this taxonomy can be used to categorise existing and potential AI use cases, providing a visual method to conceptualise how AI is used and could be used in government.

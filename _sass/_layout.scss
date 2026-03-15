@@ -367,6 +367,8 @@ body {
 .cover__hero-image {
   flex: 1;
   min-height: 200px;
+  max-height: 70vh;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   margin: $sp-8 0;
   border-radius: $border-radius-lg;

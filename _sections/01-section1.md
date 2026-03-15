@@ -11,9 +11,9 @@ Deployers of AI systems in government face a complex maze of laws, principles, s
 
 This fragmentation becomes problematic when each specialist entity develops its own framework, toolkit, or checklist for AI, often with overlapping elements. This issue worsens for implementing agencies, which must interpret the various rules and tools and incorporate these frameworks into their policies. While this integration can help tailor governance to each agency’s operational environment, a lack of a common scope and framework leads to inconsistent recordkeeping across agencies. This inconsistency makes it harder for the public –including academia and the media – or even a government system leader, to understand AI use across the government.
 
-<div id="figure-1">{% include diagrams/figure1-current-pyramid.html %}</div>
+{% include figure.html id="FIGURE_1" src="/assets/images/Figure 1.svg" caption="" type="decorative" %}
 
-Figure 1: Current hierarchy of laws, standards, principles, and guidance that inform the use of information, information technology, algorithms, and AI systems, coloured by the type of instrument, and outlined if the instrument is maintained by a system leader. Following guidance in all layers is essential to fully realise its benefits.
+> _Figure 1: Current hierarchy of laws, standards, principles, and guidance that inform the use of information, information technology, algorithms, and AI systems, coloured by the type of instrument, and outlined if the instrument is maintained by a system leader. Following guidance in all layers is essential to fully realise its benefits._
 
 ## 1.1 **Generic legislation** mandates broad obligations on the use of AI, like transparency, privacy and information provenance {#s1-1}
 
@@ -251,7 +251,7 @@ This framework was extended by Brown et al. (2024) to promote the sovereignty of
 | **Kotahitanga:** As above, for algorithmic systems | **Manaakitanga:** Consider individual and collective privacy throughout the entire operation of the system | **Kaitiakitanga**: As above, for algorithmic systems |
 {:.table-plain}
 
-> _Table 3: Principles of Māori Algorithmic Sovereignty. From _Paul T. Brown, Daniel Wilson, Kiri West, Kirita-Rose Escott, Kiya Basabas, Ben Ritchie, Danielle Lucas, Ivy Taia, Natalie Kusabs, Te Taka Keegan, April 2024. Māori Algorithmic Sovereignty: Idea, Principles, and Use._ [https://datascience.codata.org/articles/10.5334/dsj-2024-015](https://datascience.codata.org/articles/10.5334/dsj-2024-015)_
+> _Table 3: Principles of Māori Algorithmic Sovereignty. From _Paul T. Brown, Daniel Wilson, Kiri West, Kirita-Rose Escott, Kiya Basabas, Ben Ritchie, Danielle Lucas, Ivy Taia, Natalie Kusabs, Te Taka Keegan, April 2024. Māori Algorithmic Sovereignty: Idea, Principles, and Use. [https://datascience.codata.org/articles/10.5334/dsj-2024-015](https://datascience.codata.org/articles/10.5334/dsj-2024-015)_
 
 Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devised Māori Data and AI Governance frameworks for use within the public service. The Māori Data Governance model implements the six principles from Te Mana Raraunga. Five values frame the directives under the eight pou, which categorise actions that give effect to the values, as shown in [Table 4](#table-4).
 

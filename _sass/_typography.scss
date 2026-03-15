@@ -68,13 +68,11 @@
   // ─── Body text ─────────────────────────────────────────────────────────────
   p {
     margin-bottom: $sp-5;
-    max-width: $content-max;
   }
 
   // ─── Lists ─────────────────────────────────────────────────────────────────
   ul, ol {
     margin: 0 0 $sp-5 $sp-6;
-    max-width: $content-max;
 
     li {
       margin-bottom: $sp-2;
@@ -121,7 +119,6 @@
     background: $surface;
     border-left: 4px solid $teal;
     border-radius: 0 $border-radius $border-radius 0;
-    max-width: $content-max;
 
     p {
       margin-bottom: $sp-2;
@@ -162,8 +159,8 @@
       width: 56px;
       height: 56px;
       background-color: $teal;
-      -webkit-mask-image: url('/whitepaper/assets/images/image8.svg');
-      mask-image: url('/whitepaper/assets/images/image8.svg');
+      -webkit-mask-image: url('/NZAIM/assets/images/image17.svg');
+      mask-image: url('/NZAIM/assets/images/image17.svg');
       -webkit-mask-size: contain;
       mask-size: contain;
       -webkit-mask-repeat: no-repeat;
@@ -504,7 +501,6 @@
   border-radius: $border-radius-lg;
   // overflow: visible so absolutely-positioned tooltips inside aren't clipped
   box-shadow: $shadow-sm;
-  max-width: $content-max;
 
   & + .box {
     margin-top: $sp-6;
@@ -614,8 +610,8 @@
       width: 40px;
       height: 40px;
       background-color: $teal;
-      -webkit-mask-image: url('/whitepaper/assets/images/image8.svg');
-      mask-image: url('/whitepaper/assets/images/image8.svg');
+      -webkit-mask-image: url('/NZAIM/assets/images/image17.svg');
+      mask-image: url('/NZAIM/assets/images/image17.svg');
       -webkit-mask-size: contain;
       mask-size: contain;
       -webkit-mask-repeat: no-repeat;

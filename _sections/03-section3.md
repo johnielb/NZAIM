@@ -5,12 +5,6 @@ short_title: 3. PSAIF & RAIG
 section_number: Section 3
 description: Examination of the Public Service AI Framework and Responsible AI Guidance gaps.
 ---
-- How compliance with GCDS guidance is assessed within implementing agencies, in lieu of legislative, Cabinet or voluntary enforcement. Another potential mechanism is a standardised data maturity assessment, through which agencies are evaluated, directly associating a trustworthy, respectful data culture with high performance. It is unclear how or if the GCDS currently assesses organisational data maturity.
-
-After streamlining normative commitments, what remains of the Algorithm Charter comprises operational obligations that are already mandated by legislation and standards and thus are best clarified in the NZAIM. Transparency around algorithmic decision-making is largely compulsory under the OIA. Failing to ensure and regularly review the fitness of data and algorithms constitutes poor professional practice and exposes agencies to material risk. Privacy and the human right to non-discrimination (through bias mitigation) are safeguarded by existing laws. Accordingly, these residual commitments are largely addressable through technical controls rather than requiring standalone normative commitments.
-
-> The GCDS maintains a range of normative best practice on specific systems (algorithms, IDI) which are largely applicable to any data use. All guidance promoting a trustworthy, respectful data culture can be consolidated into DPUP.
-
 # The GCDO’s PSAIF and RAIG are not currently a unified guidance framework
 
 The Public Service AI Framework (PSAIF) is a strategy, not an implementation framework. It offers an achievable vision, grounds it in the OECD AI Principles and our unique legal context, and identifies a work programme to realise the PSAIF’s desired outcome. Viewed as a strategy, the PSAIF is fit for purpose as it provides strategic direction and defines what good looks like. While it helps agencies devise their own AI strategies, it does not specify how agencies should execute this strategy. For example, the PSAIF correctly identifies the OIA as a relevant law that applies to AI. However, the PSAIF does not explain how the OIA places significant constraints on AI usage, as in [Box 1.1.1](../01-section1/#box-1-1-1).
@@ -30,3 +24,13 @@ Some of the best guidance for responsible AI delivery comes from an agency that 
 > Responsible AI guidance for businesses also provides useful technical advice for government agencies. This advice should be integrated into the NZAIM.
 
 ## 3.2 Action: Reorganise all guidance around the PSAIF to provide clarity on how agencies meet the expectations of the strategy {#s3-2}
+
+While the PSAIF and RAIG-PSG are fit for purpose as independent artefacts, reading them in conjunction can be difficult, as they are not structured similarly. The two were released simultaneously from the same agency, so it is unclear why the RAIG-PSG has opted to use the OECD AI Principles, rather than the principles of the PSAIF, which have been “inform[ed]” by the OECD principles but ostensibly modified for the New Zealand context.
+
+The PSAIF prompts the consideration of legal and regulatory instruments, but the RAIG-PSG does not acknowledge important laws that enforce its guidance, such as the transparency obligations arising from the OIA, the anti-discrimination obligations from the Human Rights Act, and only references the Privacy Act once. The RAIG-PSG does not mention the Treaty of Waitangi or relevant Waitangi Tribunal findings, which the PSAIF identifies as significant constitutional context. The RAIG-PSG does not mention “social licence” which the PSAIF identifies as one of its six pillars.
+
+As discussed before, the AIA toolkit can be reorganised around the PSAIF principles. This approach aligns with the PIA toolkit, organised around the information privacy principles.
+
+As the suite of responsible AI guidance expands, greater structural consistency across guidance artefacts can improve usability and coherence of the GCDO’s overall strategy and guidance ecosystem. Clearly aligning subordinate guidance with the PSAIF can enhance this framework’s operational effectiveness by translating its strategic intent and vision into clear actions for agencies. Structural alignment may also further enable agencies to responsibly innovate with novel forms of AI (such as the emerging techniques discussed in [Section 4.3](../04-section4/#s4-3)), by establishing precedents through which the PSAIF can be given practical effect, rather than agencies relying on prescriptive guidance, each with its own unique structure.
+
+> The PSAIF provides a flexible framework to organise AI guidance. The RAIGs and the AIA toolkit should be organised around the principles of the PSAIF.
