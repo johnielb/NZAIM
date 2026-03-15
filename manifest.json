@@ -15,22 +15,27 @@
     "type": "decorative"
   },
   "FIGURE_4": {
-    "filename": "image14.png",
+    "filename": "image14.emf",
     "caption": "",
     "type": "decorative"
   },
   "FIGURE_5": {
-    "filename": "image39.png",
+    "filename": "image35.emf",
     "caption": "",
     "type": "decorative"
   },
   "FIGURE_6": {
-    "filename": "image40.png",
+    "filename": "image39.emf",
     "caption": "",
     "type": "decorative"
   },
   "FIGURE_7": {
-    "filename": "image41.png",
+    "filename": "image40.png",
+    "caption": "",
+    "type": "decorative"
+  },
+  "FIGURE_8": {
+    "filename": "image41.emf",
     "caption": "",
     "type": "decorative"
   }
