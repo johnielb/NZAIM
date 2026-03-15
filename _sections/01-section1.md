@@ -59,13 +59,8 @@ Promotes the human right to privacy by requiring any holder of a person’s info
 - Unique identifiers are only generated when necessary for an entity’s functions, and cannot be reused by another entity (13)
 This Act establishes the Privacy Commissioner, who may issue guidance (e.g. [a]), tools like the Privacy Impact Assessment, and legally binding codes of practice, outlining different standards (may be more or less stringent) for specific types of information, such as the Health Information Privacy Code applicable to all health agencies.
 
-Wherever AI systems in government use personal information, the Privacy Act’s principles prompt deployers to consider several questions:
-- Does the information used come directly from the person it is about (2)? Is AI being used to generate predictions or assumptions, or draw on public sources, rather than collected from the person directly?
-- Does the individual know their information may be used by (or used to train) AI tools (3)?
-- Is personal information protected against unauthorised access, particularly where publicly available AI tools risk data leakage and other unintentional data memorisation (5)?
-- Can individuals access and correct data being used to train an agency’s predictive models (6-7)?
-- Can individuals correct (7) or challenge the accuracy of a prediction or other AI-derived output (8)? Such AI-derived outputs itself are still considered personal information under the Privacy Act.
-- Is the use of personal information in AI directly related to the original purpose of its collection (10)? Could it be reused by the AI provider, particularly publicly available AI tools?
+> Wherever AI systems in government use personal information, the Privacy Act’s principles prompt deployers to consider several questions:<br>• Does the information used come directly from the person it is about (2)? Is AI being used to generate predictions or assumptions, or draw on public sources, rather than collected from the person directly?<br>• Does the individual know their information may be used by (or used to train) AI tools (3)?<br>• Is personal information protected against unauthorised access, particularly where publicly available AI tools risk data leakage and other unintentional data memorisation (5)?<br>• Can individuals access and correct data being used to train an agency’s predictive models (6-7)?<br>• Can individuals correct (7) or challenge the accuracy of a prediction or other AI-derived output (8)? Such AI-derived outputs itself are still considered personal information under the Privacy Act.<br>• Is the use of personal information in AI directly related to the original purpose of its collection (10)? Could it be reused by the AI provider, particularly publicly available AI tools?
+
 **Further reading**: [a] [Artificial intelligence and the Information Privacy Principles - Privacy Commissioner - Sept 2023](https://www.privacy.org.nz/assets/New-order/Resources-/Publications/Guidance-resources/AI-Guidance-Resources-/AI-and-the-Information-Privacy-Principles.pdf)
 
 </div>
@@ -257,15 +252,70 @@ Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devi
 
 <a id="table-4"></a>
 
-| **Vision:** Tuia te korowai o Hine-Raraunga / Data for self-determination |  |  |  |  |
-| --- | --- | --- | --- | --- |
-| **Values** |  |  |  |  |
-| Nurture data as taonga | Use data for good | Put iwi Māori data in iwi Māori hands | Be accountable | Decolonise data systems |
-| **Pou (Pillars)** |  |  |  |  |
-| 1. Capacities and workforce development | 2. Data / **IT** infrastructure | 3. Data collection / **AI data generation** | 4. Data protection |  |
-| 5. Data access, sharing and repatriation | 6. Data use and reuse / **for AI implementation** | 7. Data / **AI** quality and system integrity |  |  |
-| 8. Data classification |  |  |  |  |
-{:.table-plain}
+<style>
+.t4 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+}
+.t4 td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+  color: var(--navy);
+  transition: background 120ms ease;
+}
+.t4 td:hover {
+  background: var(--surface);
+}
+.t4 .hdr {
+  font-weight: 700;
+  background: var(--surface);
+}
+.t4 .hdr:hover {
+  background: #eeeef6;
+}
+</style>
+
+<table class="t4">
+  <tbody>
+    <tr>
+      <td colspan="20"><strong>Vision:</strong> Tuia te korowai o Hine-Raraunga / Data for self-determination</td>
+    </tr>
+    <tr>
+      <td colspan="20" class="hdr">Values</td>
+    </tr>
+    <tr>
+      <td colspan="4">Nurture data as taonga</td>
+      <td colspan="4">Use data for good</td>
+      <td colspan="4">Put iwi Māori data in iwi Māori hands</td>
+      <td colspan="4">Be accountable</td>
+      <td colspan="4">Decolonise data systems</td>
+    </tr>
+    <tr>
+      <td colspan="20" class="hdr">Pou (Pillars)</td>
+    </tr>
+    <tr>
+      <td colspan="5">1. Capacities and workforce development</td>
+      <td colspan="5">2. Data / <strong>IT</strong> infrastructure</td>
+      <td colspan="5">3. Data collection / <strong>AI data generation</strong></td>
+      <td colspan="5">4. Data protection</td>
+    </tr>
+    <tr>
+      <td colspan="7">5. Data access, sharing and repatriation</td>
+      <td colspan="7">6. Data use and reuse / <strong>for AI implementation</strong></td>
+      <td colspan="6">7. Data / <strong>AI</strong> quality and system integrity</td>
+    </tr>
+    <tr>
+      <td colspan="20">8. Data classification</td>
+    </tr>
+  </tbody>
+</table>
 
 > _Table 4: Māori Data Governance Model (with Māori AI Governance Model overlaid in bold). From Tahu Kukutai, Kyla Campbell-Kamariera, Aroha Mead, Kirikowhai Mikaere, Caleb Moses, Jesse Whitehead and Donna Cormack, 2023. Māori data governance model, Te Kāhui Raraunga, [https://www.kahuiraraunga.io/maoridatagovernance](https://www.kahuiraraunga.io/maoridatagovernance) and Te Kāhui Raraunga, 2025. Māori Artificial Intelligence Governance Framework. Contextualised advice for AI use, extending the Māori data governance model, [https://www.kahuiraraunga.io/maoriaigovernance](https://www.kahuiraraunga.io/maoriaigovernance)_
 

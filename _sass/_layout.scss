@@ -43,15 +43,6 @@ body {
   z-index: 100;
   transition: width $transition-base;
   box-shadow: 2px 0 16px rgba(14, 40, 65, 0.25);
-
-  // Thin accent stripe at top
-  &::before {
-    content: "";
-    display: block;
-    height: 4px;
-    background: linear-gradient(90deg, $blue, $teal, $lime);
-    flex-shrink: 0;
-  }
 }
 
 .sidebar__brand {
