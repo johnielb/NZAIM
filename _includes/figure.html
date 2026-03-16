@@ -40,7 +40,7 @@
 {%- endif -%}
 
 <figure class="figure figure--{{ fig_type }}{{ mod_classes }}"
-        id="{% if fig_id != '' %}{{ fig_id | downcase }}{% endif %}"
+        id="{% if fig_id != '' %}{{ fig_id | downcase | replace: '_', '-' }}{% endif %}"
         role="figure"
         aria-label="{{ fig_alt | xml_escape }}">
 

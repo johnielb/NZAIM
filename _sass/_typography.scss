@@ -141,7 +141,7 @@
   // ─── Takeaway blockquote ────────────────────────────────────────────────────
   // Single-paragraph, non-italic blockquotes = section takeaways.
   // Excludes figure captions (p > em:only-child) and legislation cards (p + p).
-  blockquote:not(:has(p > em:only-child)):not(:has(p + p)) {
+  blockquote:not(:has(p > em)):not(:has(p + p)) {
     display: flex;
     align-items: center;
     gap: $sp-5;
@@ -438,13 +438,6 @@
       color: $navy;
       text-decoration-color: $navy;
     }
-  }
-
-  // ─── Section intro paragraph (first p after h1) ────────────────────────────
-  h1 + p {
-    // font-size: $text-md;
-    color: $text-light;
-    line-height: $leading-loose;
   }
 }
 
