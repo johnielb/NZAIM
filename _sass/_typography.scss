@@ -141,7 +141,7 @@
   // ─── Takeaway blockquote ────────────────────────────────────────────────────
   // Single-paragraph, non-italic blockquotes = section takeaways.
   // Excludes figure captions (p > em:only-child) and legislation cards (p + p).
-  blockquote:not(:has(p > em)):not(:has(p + p)) {
+  blockquote:not(.bq--caption):not(:has(p + p)) {
     display: flex;
     align-items: center;
     gap: $sp-5;

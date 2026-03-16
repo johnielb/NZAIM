@@ -26,6 +26,7 @@ A systematic taxonomy can ground AI standards and guidance on the specific consi
 {% include figure.html id="FIGURE_3" src="/assets/images/Figure 3.svg" caption="" type="decorative" %}
 
 > _Figure 3: Taxonomy of use cases based on the relevant legal obligations within each category. Operational algorithms and any conclusive algorithm or GenAI are grouped into frontline. Evidence-generating algorithms and AI are grouped into research. Impactful but non-conclusive algorithms and GenAI are grouped into administration._
+{: .bq--caption}
 
 As in the previous section, I propose new definitions for these three categories, rooted in the relevant legal obligations associated with each, along with examples and the unique challenges each faces. Applications inherit challenges from the intersection they form with the technical taxonomy (e.g. all three contextual categories are susceptible to learning biases when developing supervised learning models).
 
@@ -101,6 +102,7 @@ Other jurisdictions, such as the EU and Canada, along with the current Algorithm
 {% include figure.html id="FIGURE_4" src="/assets/images/Figure 4.svg" caption="" type="decorative" %}
 
 > _Figure 4: Diagram overlaying the technical categories outlined in [Section 4](../04-section4/) (symbolic AI, supervised learning, unsupervised learning, goal-driven optimisation and generative AI) with the contextual categories outlined in Section 5 (front-line, research, and administration). Frontline generative AI systems are currently shown as a gap deliberately given the limitations of generative AI systems in fulfilling transparency obligations._
+{: .bq--caption}
 
 A two-way technical-contextual taxonomy, as shown by [Figure 3](#figure-3), offers sufficient practical specificity for monitoring and governance within the New Zealand context. One axis delves into just enough technical detail to group similar monitoring and evaluation approaches into a category. The other axis is based on the environment and risk profile in which the system operates. When new technologies emerge, guidance along the contextual axis should already be in place to help agencies navigate their existing legal obligations, fostering an environment in which they can innovate safely. [Appendix 2](../08-appendix2/) demonstrates how this taxonomy can be used to categorise existing and potential AI use cases, providing a visual method to conceptualise how AI is used and could be used in government.
 

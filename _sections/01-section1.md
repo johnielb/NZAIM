@@ -14,6 +14,7 @@ This fragmentation becomes problematic when each specialist entity develops its 
 {% include figure.html id="FIGURE_1" src="/assets/images/Figure 1.svg" caption="" type="decorative" %}
 
 > _Figure 1: Current hierarchy of laws, standards, principles, and guidance that inform the use of information, information technology, algorithms, and AI systems, coloured by the type of instrument, and outlined if the instrument is maintained by a system leader. Following guidance in all layers is essential to fully realise its benefits._
+{: .bq--caption}
 
 ## 1.1 **Generic legislation** mandates broad obligations on the use of AI, like transparency, privacy and information provenance {#s1-1}
 
@@ -221,6 +222,7 @@ Notably, early-adopter government agencies like ACC have opted to adopt the Amer
 | Impact and control assessment | ISO 27008 | ISO 42005 |
 
 > _Table 1: Functional alignment between ISO information system and AI system standards_
+{: .bq--caption}
 
 > Mandatory security requirements are largely based on international standards. Agencies can confidently adopt emerging recognised international standards for AI risk management as future requirements are likely to closely align with them.
 
@@ -236,6 +238,7 @@ Iwi Māori retain tino rangatiratanga over all their taonga, as guaranteed in Ar
 {:.table-plain}
 
 > _Table 2: Principles of Māori Data Sovereignty. From Te Mana Raraunga, October 2018. [https://www.temanararaunga.maori.nz/principles-of-maori-data-sovereignty](https://www.temanararaunga.maori.nz/principles-of-maori-data-sovereignty)_
+{: .bq--caption}
 
 This framework was extended by Brown et al. (2024) to promote the sovereignty of algorithmic systems (not just the algorithm itself, but the inputs, output interpretation, design, and ongoing management), informed by data about or from Māori. In addition to the obligations above regarding data used by algorithms, the framework also offers further algorithm-specific guidance for each principle, as outlined in [Table 3](#table-3).
 
@@ -247,6 +250,7 @@ This framework was extended by Brown et al. (2024) to promote the sovereignty of
 {:.table-plain}
 
 > _Table 3: Principles of Māori Algorithmic Sovereignty. From _Paul T. Brown, Daniel Wilson, Kiri West, Kirita-Rose Escott, Kiya Basabas, Ben Ritchie, Danielle Lucas, Ivy Taia, Natalie Kusabs, Te Taka Keegan, April 2024. Māori Algorithmic Sovereignty: Idea, Principles, and Use. [https://datascience.codata.org/articles/10.5334/dsj-2024-015](https://datascience.codata.org/articles/10.5334/dsj-2024-015)_
+{: .bq--caption}
 
 Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devised Māori Data and AI Governance frameworks for use within the public service. The Māori Data Governance model implements the six principles from Te Mana Raraunga. Five values frame the directives under the eight pou, which categorise actions that give effect to the values, as shown in [Table 4](#table-4).
 
@@ -318,6 +322,7 @@ Te Kāhui Raraunga, under the direction of the Data Iwi Leaders Group, have devi
 </table>
 
 > _Table 4: Māori Data Governance Model (with Māori AI Governance Model overlaid in bold). From Tahu Kukutai, Kyla Campbell-Kamariera, Aroha Mead, Kirikowhai Mikaere, Caleb Moses, Jesse Whitehead and Donna Cormack, 2023. Māori data governance model, Te Kāhui Raraunga, [https://www.kahuiraraunga.io/maoridatagovernance](https://www.kahuiraraunga.io/maoridatagovernance) and Te Kāhui Raraunga, 2025. Māori Artificial Intelligence Governance Framework. Contextualised advice for AI use, extending the Māori data governance model, [https://www.kahuiraraunga.io/maoriaigovernance](https://www.kahuiraraunga.io/maoriaigovernance)_
+{: .bq--caption}
 
 > Much like the NZISM outlines how to comply with the PSR’s principles, the Māori Data and AI Governance Models outline requirements that affirm the principles of Māori data sovereignty that arise from Te Tiriti o Waitangi.
 

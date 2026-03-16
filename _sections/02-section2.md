@@ -45,6 +45,7 @@ Operationalising Year 1 Review findings has been challenging, with recommendatio
 {:.table-status}
 
 > _Table 5: Actionable considerations identified in the year 1 review of the Algorithm Charter. "Actionable" excludes passive considerations that recommend maintaining current direction. From Taylor Fry, 2021. Algorithm Charter for Aotearoa New Zealand Year 1 Review. [https://www.data.govt.nz/assets/data-ethics/algorithm/Algorithm-Charter-Year-1-Review-FINAL.pdf](https://www.data.govt.nz/assets/data-ethics/algorithm/Algorithm-Charter-Year-1-Review-FINAL.pdf)_
+{: .bq--caption}
 
 Over the same period, the GC has adopted a relatively proactive approach to maintenance, completing four reviews of the DADM. Two of these reviews were conducted in the generative AI era following the release of ChatGPT. Like New Zealand, the GC has issued specific guidance on the use of generative AI. However, unlike New Zealand’s guidance, their GenAI guidance clearly separates it from existing algorithmic guidance. The GC’s guidance also offers advice on the most suitable contexts for applying these techniques. [Section 3](../03-section3/) of this report evaluates the progress of the New Zealand Government’s generative AI guidance.
 

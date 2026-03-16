@@ -38,6 +38,7 @@ A similar risk arises when conflating AI with generative AI. AI systems have lon
 {% include figure.html id="FIGURE_2" src="/assets/images/Figure 2.svg" caption="" type="decorative" %}
 
 > _Figure 2: Overview of relevant categories for algorithmic and AI techniques with distinct evaluation and interpretation considerations. Algorithms form the superset of all analytical techniques discussed in this paper, within which AI constitutes a subset. Two of the most relevant paradigms in AI are shown. The first is machine learning (ML), the main set of the most used AI techniques. The second is evolutionary computation (EC), a distinct type of AI used for optimisation and simulation. Relevant types of ML are also shown: supervised learning, unsupervised learning, reinforcement learning. Two other categories employ a mix of those three techniques in an advanced, novel manner: deep learning (which itself is not an evaluation paradigm but a type of model), and generative AI. Goal-driven optimisation is a distinct evaluation paradigm._
+{: .bq--caption}
 
 
 <div class="box" id="box-4-1-1">
