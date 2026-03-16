@@ -170,6 +170,7 @@ body {
   .box,
   a[id],
   div[id^="figure-"],
+  figure[id^="figure-"],
   .box__header h3[id] {
     scroll-margin-top: calc(var(--topbar-h, 52px) + #{$sp-4});
   }
