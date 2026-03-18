@@ -1,6 +1,6 @@
 ---
 layout: section
-title: "Appendix 2: Map of NZ government algorithms and AI under the technical-contextual taxonomy"
+title: "Appendix 2: Public Sector AI Taxonomy and Map"
 short_title: Appendix 2
 section_number: Appendix 2
 description: Mapping of known New Zealand government AI systems to the proposed taxonomy.
