@@ -441,6 +441,12 @@ body {
 
 // ─── Responsive: collapse sidebar on small screens ────────────────────────────
 @media (max-width: 900px) {
+  .cover__abstract,
+  .cover__nav-hint {
+    padding-left: $sp-10;
+    padding-right: $sp-10;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     transition: transform $transition-base, width $transition-base;
