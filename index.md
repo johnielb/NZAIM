@@ -22,4 +22,4 @@ His current role at ACC has informed his perspective around the use of AI in an 
 
 ## Acknowledgements
 
-Special thanks go to Gareth Derby (Office of the Ombudsman), Matt Farrington (THW-VUW), Tom Barraclough (Syncopate/Brainbox Institute), Emma MacDonald and Emma Naji (StatsNZ Centre for Data Ethics and Innovation) for providing feedback. The GCDO was unavailable for comment when contacted. The cover image’s background is in the public domain and was photographed by Lucas W via Pexels.
+Special thanks go to Gareth Derby (Office of the Ombudsman) for providing AI-specific guidance around the OIA and Ombudsman Act, and to Matt Farrington (THW-VUW), Tom Barraclough (Syncopate/Brainbox Institute), Emma MacDonald and Emma Naji (StatsNZ Centre for Data Ethics and Innovation) for providing feedback. The GCDO was unavailable for comment when contacted. The cover image’s background is in the public domain and was photographed by Lucas W via Pexels.
